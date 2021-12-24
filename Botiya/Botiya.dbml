@@ -1,0 +1,144 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="Botiya" Class="BotiyaDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=.;Initial Catalog=Botiya;Integrated Security=True;Pooling=False" SettingsObjectName="Botiya.Properties.Settings" SettingsPropertyName="BotiyaConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.Persons" Member="Persons">
+    <Type Name="Person">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="FName" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="LName" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="FatherName" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="CodeMelli" Type="System.String" DbType="NVarChar(10)" CanBeNull="true" />
+      <Column Name="Phone" Type="System.String" DbType="NVarChar(11)" CanBeNull="true" />
+      <Column Name="Mobile" Type="System.String" DbType="NVarChar(11)" CanBeNull="true" />
+      <Column Name="Address" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="Hoqoqi" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="SherkatName" Type="System.String" DbType="NVarChar(150)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Products" Member="Products">
+    <Type Name="Product">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="CodeId" Type="System.String" DbType="NChar(10)" CanBeNull="true" />
+      <Column Name="Name" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="Vahed" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="PriceKala" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="PriceDastMozd" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="SumPrice" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Vaheds" Member="Vaheds">
+    <Type Name="Vahed">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Function Name="dbo.InsertPersons" Method="InsertPersons">
+    <Parameter Name="FName" Parameter="fName" Type="System.String" DbType="NVarChar(100)" />
+    <Parameter Name="LName" Parameter="lName" Type="System.String" DbType="NVarChar(100)" />
+    <Parameter Name="FatherName" Parameter="fatherName" Type="System.String" DbType="NVarChar(100)" />
+    <Parameter Name="CodeMelli" Parameter="codeMelli" Type="System.String" DbType="NVarChar(10)" />
+    <Parameter Name="Phone" Parameter="phone" Type="System.String" DbType="NVarChar(11)" />
+    <Parameter Name="Mobile" Parameter="mobile" Type="System.String" DbType="NVarChar(11)" />
+    <Parameter Name="Address" Parameter="address" Type="System.String" DbType="NVarChar(MAX)" />
+    <Parameter Name="Hoqoqi" Parameter="hoqoqi" Type="System.Int32" DbType="Int" />
+    <Parameter Name="SherkatName" Parameter="sherkatName" Type="System.String" DbType="NVarChar(150)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.UpdatePerson" Method="UpdatePerson">
+    <Parameter Name="Id" Parameter="id" Type="System.Int32" DbType="Int" />
+    <Parameter Name="FName" Parameter="fName" Type="System.String" DbType="NVarChar(100)" />
+    <Parameter Name="LName" Parameter="lName" Type="System.String" DbType="NVarChar(100)" />
+    <Parameter Name="FatherName" Parameter="fatherName" Type="System.String" DbType="NVarChar(100)" />
+    <Parameter Name="CodeMelli" Parameter="codeMelli" Type="System.String" DbType="NVarChar(10)" />
+    <Parameter Name="Phone" Parameter="phone" Type="System.String" DbType="NVarChar(11)" />
+    <Parameter Name="Mobile" Parameter="mobile" Type="System.String" DbType="NVarChar(11)" />
+    <Parameter Name="Address" Parameter="address" Type="System.String" DbType="NVarChar(MAX)" />
+    <Parameter Name="Hoqoqi" Parameter="hoqoqi" Type="System.Int32" DbType="Int" />
+    <Parameter Name="SherkatName" Parameter="sherkatName" Type="System.String" DbType="NVarChar(150)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.FillPersons" Method="FillPersons">
+    <ElementType Name="FillPersonsResult">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="FName" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="LName" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="FatherName" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="CodeMelli" Type="System.String" DbType="NVarChar(10)" CanBeNull="true" />
+      <Column Name="Phone" Type="System.String" DbType="NVarChar(11)" CanBeNull="true" />
+      <Column Name="Mobile" Type="System.String" DbType="NVarChar(11)" CanBeNull="true" />
+      <Column Name="Address" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="Hoqoqi" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="SherkatName" Type="System.String" DbType="NVarChar(150)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.FillPersonsById" Method="FillPersonsById">
+    <Parameter Name="Id" Parameter="id" Type="System.Int32" DbType="Int" />
+    <ElementType Name="FillPersonsByIdResult">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="FName" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="LName" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="FatherName" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="CodeMelli" Type="System.String" DbType="NVarChar(10)" CanBeNull="true" />
+      <Column Name="Phone" Type="System.String" DbType="NVarChar(11)" CanBeNull="true" />
+      <Column Name="Mobile" Type="System.String" DbType="NVarChar(11)" CanBeNull="true" />
+      <Column Name="Address" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="Hoqoqi" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="SherkatName" Type="System.String" DbType="NVarChar(150)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.GetPerson" Method="GetPerson">
+    <Parameter Name="Id" Parameter="id" Type="System.Int32" DbType="Int" />
+    <Parameter Name="Fname" Parameter="fname" Type="System.String" DbType="NVarChar(100)" Direction="InOut" />
+    <Parameter Name="Lname" Parameter="lname" Type="System.String" DbType="NVarChar(100)" Direction="InOut" />
+    <Parameter Name="FatherName" Parameter="fatherName" Type="System.String" DbType="NVarChar(100)" Direction="InOut" />
+    <Parameter Name="CodeMelli" Parameter="codeMelli" Type="System.String" DbType="NVarChar(10)" Direction="InOut" />
+    <Parameter Name="Phone" Parameter="phone" Type="System.String" DbType="NVarChar(10)" Direction="InOut" />
+    <Parameter Name="Mobile" Parameter="mobile" Type="System.String" DbType="NVarChar(11)" Direction="InOut" />
+    <Parameter Name="Address" Parameter="address" Type="System.String" DbType="NVarChar(MAX)" Direction="InOut" />
+    <Parameter Name="Hoqoqi" Parameter="hoqoqi" Type="System.Int32" DbType="Int" Direction="InOut" />
+    <Parameter Name="SherkatName" Parameter="sherkatName" Type="System.String" DbType="NVarChar(150)" Direction="InOut" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.DeletePerson" Method="DeletePerson">
+    <Parameter Name="Id" Parameter="id" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.DeleteVahed" Method="DeleteVahed">
+    <Parameter Name="Id" Parameter="id" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.FillVaheds" Method="FillVaheds">
+    <ElementType Name="FillVahedsResult">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.GetVahed" Method="GetVahed">
+    <Parameter Name="Id" Parameter="id" Type="System.Int32" DbType="Int" />
+    <Parameter Name="Name" Parameter="name" Type="System.String" DbType="NVarChar(200)" Direction="InOut" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.InsertVahed" Method="InsertVahed">
+    <Parameter Name="Name" Parameter="name" Type="System.String" DbType="NVarChar(200)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.UpdateVahed" Method="UpdateVahed">
+    <Parameter Name="Id" Parameter="id" Type="System.Int32" DbType="Int" />
+    <Parameter Name="Name" Parameter="name" Type="System.String" DbType="NVarChar(200)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.FillPersonByLname" Method="FillPersonByLname">
+    <Parameter Name="Lname" Parameter="lname" Type="System.String" DbType="NVarChar(100)" />
+    <ElementType Name="FillPersonByLnameResult">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="FName" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="LName" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="FatherName" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="CodeMelli" Type="System.String" DbType="NVarChar(10)" CanBeNull="true" />
+      <Column Name="Phone" Type="System.String" DbType="NVarChar(11)" CanBeNull="true" />
+      <Column Name="Mobile" Type="System.String" DbType="NVarChar(11)" CanBeNull="true" />
+      <Column Name="Address" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="Hoqoqi" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="SherkatName" Type="System.String" DbType="NVarChar(150)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+</Database>

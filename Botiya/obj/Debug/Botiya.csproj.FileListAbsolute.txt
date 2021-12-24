@@ -1,0 +1,17 @@
+F:\MY  APP\Botiya-Akhtar\Botiya\bin\Debug\Botiya.exe
+F:\MY  APP\Botiya-Akhtar\Botiya\bin\Debug\Botiya.pdb
+F:\MY  APP\Botiya-Akhtar\Botiya\obj\Debug\Botiya.csprojAssemblyReference.cache
+F:\MY  APP\Botiya-Akhtar\Botiya\obj\Debug\Botiya.frm_Main.resources
+F:\MY  APP\Botiya-Akhtar\Botiya\obj\Debug\Botiya.frm_Persons.resources
+F:\MY  APP\Botiya-Akhtar\Botiya\obj\Debug\Botiya.Properties.Resources.resources
+F:\MY  APP\Botiya-Akhtar\Botiya\obj\Debug\Botiya.csproj.GenerateResource.cache
+F:\MY  APP\Botiya-Akhtar\Botiya\obj\Debug\Botiya.csproj.CoreCompileInputs.cache
+F:\MY  APP\Botiya-Akhtar\Botiya\obj\Debug\Botiya.exe
+F:\MY  APP\Botiya-Akhtar\Botiya\obj\Debug\Botiya.pdb
+F:\MY  APP\Botiya-Akhtar\Botiya\obj\Debug\CustomControls.RJControls.RJTextBox.resources
+F:\MY  APP\Botiya-Akhtar\Botiya\obj\Debug\Botiya.frm_MessageBox.resources
+F:\MY  APP\Botiya-Akhtar\Botiya\obj\Debug\Botiya.frm_PersonInfo.resources
+F:\MY  APP\Botiya-Akhtar\Botiya\bin\Debug\Botiya.exe.config
+F:\MY  APP\Botiya-Akhtar\Botiya\obj\Debug\Botiya.csproj.CopyComplete
+F:\MY  APP\Botiya-Akhtar\Botiya\obj\Debug\Botiya.frm_Products.resources
+F:\MY  APP\Botiya-Akhtar\Botiya\obj\Debug\Botiya.frm_Vaheds.resources

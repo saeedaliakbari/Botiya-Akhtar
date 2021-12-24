@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 8.5" name="Botiya">
+  <DataContextMoniker Name="/BotiyaDataContext" />
+  <nestedChildShapes>
+    <classShape Id="6b6fcf20-f227-43ab-ab08-ac5186444f56" absoluteBounds="0.5, 0.5, 2, 2.7324039713541666">
+      <DataClassMoniker Name="/BotiyaDataContext/Person" />
+      <nestedChildShapes>
+        <elementListCompartment Id="d9311872-31cc-41ad-8720-3c2426baae3c" absoluteBounds="0.51500000000000012, 0.96, 1.9700000000000002, 2.1724039713541665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="933f9848-43c6-448f-8f3f-996aa293503b" absoluteBounds="3, 0.5, 2, 2.1554996744791666">
+      <DataClassMoniker Name="/BotiyaDataContext/Product" />
+      <nestedChildShapes>
+        <elementListCompartment Id="4ccd7ba6-0c26-40a1-add9-c60a99fbd34d" absoluteBounds="3.0149999999999997, 0.96, 1.9700000000000002, 1.5954996744791665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="e211f3f0-0162-44b2-a166-ffc7fd6ef8e0" absoluteBounds="5.5, 0.5, 2, 1.1939925130208333">
+      <DataClassMoniker Name="/BotiyaDataContext/Vahed" />
+      <nestedChildShapes>
+        <elementListCompartment Id="02a8ce56-80ad-424b-bbf4-5d05416a8668" absoluteBounds="5.515, 0.96, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>
