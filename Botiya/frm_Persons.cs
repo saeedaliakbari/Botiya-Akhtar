@@ -26,10 +26,13 @@ namespace Botiya
                 frm_PersonInfo.frmPerson = this;
                 new frm_PersonInfo().ShowDialog();
             }
-            catch {
-                //frm_MessageBK
-            } 
-            
+            catch
+            {
+
+                MessageBoxFarsi.Show("ارتباط با پایگاه داده قطع است", "اخطار", MessageBoxFarsiButtons.OK, MessageBoxFarsiIcon.Error, MessageBoxFarsiDefaultButton.Button1);
+            }
+
+
 
         }
 
@@ -44,8 +47,10 @@ namespace Botiya
             }
             catch
             {
-                //frm_MessageBK
+
+                MessageBoxFarsi.Show("ارتباط با پایگاه داده قطع است", "اخطار", MessageBoxFarsiButtons.OK, MessageBoxFarsiIcon.Error, MessageBoxFarsiDefaultButton.Button1);
             }
+
         }
 
         private void BtnBack_Click(object sender, EventArgs e)
@@ -57,18 +62,7 @@ namespace Botiya
         {
             try
             {
-                bsPersons.DataSource = db.FillPersons();
-                if (dgvPesons.Rows.Count == 0)
-                {
-                    BtnDelete.Enabled = false;
-                    BtnEdit.Enabled = false;
-                }
-                else
-                {
-                    BtnDelete.Enabled = true;
-                    BtnEdit.Enabled = true;
-            
-                }
+                UpdateDb();
             }
             catch
             {
@@ -96,6 +90,17 @@ namespace Botiya
         public void UpdateDb()
         {
             bsPersons.DataSource = db.FillPersons();
+            if (dgvPesons.Rows.Count == 0)
+            {
+                BtnDelete.Enabled = false;
+                BtnEdit.Enabled = false;
+            }
+            else
+            {
+                BtnDelete.Enabled = true;
+                BtnEdit.Enabled = true;
+
+            }
         }
 
         private void txtSearchFamily__TextChanged(object sender, EventArgs e)
@@ -103,6 +108,17 @@ namespace Botiya
             try
             {
                 bsPersons.DataSource = db.FillPersonByLname(txtSearchFamily.Texts);
+                if (dgvPesons.Rows.Count == 0)
+                {
+                    BtnDelete.Enabled = false;
+                    BtnEdit.Enabled = false;
+                }
+                else
+                {
+                    BtnDelete.Enabled = true;
+                    BtnEdit.Enabled = true;
+
+                }
             }
             catch
             {

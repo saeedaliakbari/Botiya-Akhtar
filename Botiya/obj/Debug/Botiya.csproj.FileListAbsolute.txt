@@ -15,3 +15,9 @@ F:\MY  APP\Botiya-Akhtar\Botiya\bin\Debug\Botiya.exe.config
 F:\MY  APP\Botiya-Akhtar\Botiya\obj\Debug\Botiya.csproj.CopyComplete
 F:\MY  APP\Botiya-Akhtar\Botiya\obj\Debug\Botiya.frm_Products.resources
 F:\MY  APP\Botiya-Akhtar\Botiya\obj\Debug\Botiya.frm_Vaheds.resources
+F:\MY  APP\Botiya-Akhtar\Botiya\obj\Debug\Botiya.frm_ProductInfo.resources
+F:\MY  APP\Botiya-Akhtar\Botiya\obj\Debug\Botiya.frm_AddQarardad.resources
+F:\MY  APP\Botiya-Akhtar\Botiya\obj\Debug\Botiya.frm_Qarardad_SelectPerson.resources
+F:\MY  APP\Botiya-Akhtar\Botiya\obj\Debug\Botiya.frm_Qarardad_SelectProduct.resources
+F:\MY  APP\Botiya-Akhtar\Botiya\obj\Debug\Botiya.frm_Qarardadha.resources
+F:\MY  APP\Botiya-Akhtar\Botiya\obj\Debug\Botiya.frm_Matn.resources

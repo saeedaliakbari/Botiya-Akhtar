@@ -31,14 +31,26 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frm_Products));
             this.label1 = new System.Windows.Forms.Label();
+            this.dgvProducts = new System.Windows.Forms.DataGridView();
+            this.bsViewProductVahed = new System.Windows.Forms.BindingSource(this.components);
+            this.bsProducts = new System.Windows.Forms.BindingSource(this.components);
+            this.txtSerachKala = new CustomControls.RJControls.RJTextBox();
             this.BtnDelete = new CustomControls.RJControls.RJButton();
             this.BtnEdit = new CustomControls.RJControls.RJButton();
             this.BtnAdd = new CustomControls.RJControls.RJButton();
             this.BtnBack = new CustomControls.RJControls.RJButton();
-            this.bsProducts = new System.Windows.Forms.BindingSource(this.components);
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.codeIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.vahedNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.priceKala1DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.priceDastMozd1DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.pricKala2DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.priceDastMozd2DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.vahedDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvProducts)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bsViewProductVahed)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bsProducts)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -54,6 +66,62 @@
             this.label1.TabIndex = 1;
             this.label1.Text = "محصولات";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // dgvProducts
+            // 
+            this.dgvProducts.AllowUserToAddRows = false;
+            this.dgvProducts.AllowUserToDeleteRows = false;
+            this.dgvProducts.AutoGenerateColumns = false;
+            this.dgvProducts.BackgroundColor = System.Drawing.Color.White;
+            this.dgvProducts.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvProducts.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.idDataGridViewTextBoxColumn,
+            this.codeIdDataGridViewTextBoxColumn,
+            this.nameDataGridViewTextBoxColumn,
+            this.vahedNameDataGridViewTextBoxColumn,
+            this.priceKala1DataGridViewTextBoxColumn,
+            this.priceDastMozd1DataGridViewTextBoxColumn,
+            this.pricKala2DataGridViewTextBoxColumn,
+            this.priceDastMozd2DataGridViewTextBoxColumn,
+            this.vahedDataGridViewTextBoxColumn});
+            this.dgvProducts.DataSource = this.bsViewProductVahed;
+            this.dgvProducts.GridColor = System.Drawing.Color.Chocolate;
+            this.dgvProducts.Location = new System.Drawing.Point(12, 55);
+            this.dgvProducts.Name = "dgvProducts";
+            this.dgvProducts.ReadOnly = true;
+            this.dgvProducts.Size = new System.Drawing.Size(974, 511);
+            this.dgvProducts.TabIndex = 18;
+            // 
+            // bsViewProductVahed
+            // 
+            this.bsViewProductVahed.DataSource = typeof(Botiya.ViewProductsVahed);
+            // 
+            // bsProducts
+            // 
+            this.bsProducts.DataSource = typeof(Botiya.Product);
+            // 
+            // txtSerachKala
+            // 
+            this.txtSerachKala.BackColor = System.Drawing.SystemColors.Window;
+            this.txtSerachKala.BorderColor = System.Drawing.Color.SteelBlue;
+            this.txtSerachKala.BorderFocusColor = System.Drawing.Color.Chocolate;
+            this.txtSerachKala.BorderRadius = 5;
+            this.txtSerachKala.BorderSize = 2;
+            this.txtSerachKala.Font = new System.Drawing.Font("B Yekan", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
+            this.txtSerachKala.ForeColor = System.Drawing.Color.SteelBlue;
+            this.txtSerachKala.Location = new System.Drawing.Point(460, 589);
+            this.txtSerachKala.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.txtSerachKala.Multiline = false;
+            this.txtSerachKala.Name = "txtSerachKala";
+            this.txtSerachKala.Padding = new System.Windows.Forms.Padding(7);
+            this.txtSerachKala.PasswordChar = false;
+            this.txtSerachKala.PlaceholderColor = System.Drawing.Color.DarkGray;
+            this.txtSerachKala.PlaceholderText = "جستجو نام محصول";
+            this.txtSerachKala.Size = new System.Drawing.Size(250, 35);
+            this.txtSerachKala.TabIndex = 19;
+            this.txtSerachKala.Texts = "";
+            this.txtSerachKala.UnderlinedStyle = true;
+            this.txtSerachKala._TextChanged += new System.EventHandler(this.txtSerachKala__TextChanged);
             // 
             // BtnDelete
             // 
@@ -77,6 +145,7 @@
             this.BtnDelete.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.BtnDelete.TextColor = System.Drawing.Color.SteelBlue;
             this.BtnDelete.UseVisualStyleBackColor = false;
+            this.BtnDelete.Click += new System.EventHandler(this.BtnDelete_Click);
             // 
             // BtnEdit
             // 
@@ -100,6 +169,7 @@
             this.BtnEdit.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.BtnEdit.TextColor = System.Drawing.Color.SteelBlue;
             this.BtnEdit.UseVisualStyleBackColor = false;
+            this.BtnEdit.Click += new System.EventHandler(this.BtnEdit_Click);
             // 
             // BtnAdd
             // 
@@ -123,6 +193,7 @@
             this.BtnAdd.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.BtnAdd.TextColor = System.Drawing.Color.SteelBlue;
             this.BtnAdd.UseVisualStyleBackColor = false;
+            this.BtnAdd.Click += new System.EventHandler(this.BtnAdd_Click);
             // 
             // BtnBack
             // 
@@ -137,7 +208,7 @@
             this.BtnBack.ForeColor = System.Drawing.Color.SteelBlue;
             this.BtnBack.Image = ((System.Drawing.Image)(resources.GetObject("BtnBack.Image")));
             this.BtnBack.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.BtnBack.Location = new System.Drawing.Point(852, 584);
+            this.BtnBack.Location = new System.Drawing.Point(846, 584);
             this.BtnBack.Name = "BtnBack";
             this.BtnBack.Padding = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.BtnBack.Size = new System.Drawing.Size(140, 42);
@@ -146,20 +217,73 @@
             this.BtnBack.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.BtnBack.TextColor = System.Drawing.Color.SteelBlue;
             this.BtnBack.UseVisualStyleBackColor = false;
+            this.BtnBack.Click += new System.EventHandler(this.BtnBack_Click);
             // 
-            // dataGridView1
+            // idDataGridViewTextBoxColumn
             // 
-            this.dataGridView1.AllowUserToAddRows = false;
-            this.dataGridView1.AllowUserToDeleteRows = false;
-            this.dataGridView1.AutoGenerateColumns = false;
-            this.dataGridView1.BackgroundColor = System.Drawing.Color.White;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.DataSource = this.bsProducts;
-            this.dataGridView1.Location = new System.Drawing.Point(23, 93);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.Size = new System.Drawing.Size(948, 473);
-            this.dataGridView1.TabIndex = 18;
+            this.idDataGridViewTextBoxColumn.DataPropertyName = "Id";
+            this.idDataGridViewTextBoxColumn.HeaderText = "Id";
+            this.idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
+            this.idDataGridViewTextBoxColumn.ReadOnly = true;
+            this.idDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // codeIdDataGridViewTextBoxColumn
+            // 
+            this.codeIdDataGridViewTextBoxColumn.DataPropertyName = "CodeId";
+            this.codeIdDataGridViewTextBoxColumn.HeaderText = "کدمحصول";
+            this.codeIdDataGridViewTextBoxColumn.Name = "codeIdDataGridViewTextBoxColumn";
+            this.codeIdDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // nameDataGridViewTextBoxColumn
+            // 
+            this.nameDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.nameDataGridViewTextBoxColumn.DataPropertyName = "Name";
+            this.nameDataGridViewTextBoxColumn.HeaderText = "نام محصول";
+            this.nameDataGridViewTextBoxColumn.Name = "nameDataGridViewTextBoxColumn";
+            this.nameDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // vahedNameDataGridViewTextBoxColumn
+            // 
+            this.vahedNameDataGridViewTextBoxColumn.DataPropertyName = "VahedName";
+            this.vahedNameDataGridViewTextBoxColumn.HeaderText = "واحد";
+            this.vahedNameDataGridViewTextBoxColumn.Name = "vahedNameDataGridViewTextBoxColumn";
+            this.vahedNameDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // priceKala1DataGridViewTextBoxColumn
+            // 
+            this.priceKala1DataGridViewTextBoxColumn.DataPropertyName = "PriceKala1";
+            this.priceKala1DataGridViewTextBoxColumn.HeaderText = "قیمت محصول1";
+            this.priceKala1DataGridViewTextBoxColumn.Name = "priceKala1DataGridViewTextBoxColumn";
+            this.priceKala1DataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // priceDastMozd1DataGridViewTextBoxColumn
+            // 
+            this.priceDastMozd1DataGridViewTextBoxColumn.DataPropertyName = "PriceDastMozd1";
+            this.priceDastMozd1DataGridViewTextBoxColumn.HeaderText = "قیمت دستمزد 1";
+            this.priceDastMozd1DataGridViewTextBoxColumn.Name = "priceDastMozd1DataGridViewTextBoxColumn";
+            this.priceDastMozd1DataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // pricKala2DataGridViewTextBoxColumn
+            // 
+            this.pricKala2DataGridViewTextBoxColumn.DataPropertyName = "PricKala2";
+            this.pricKala2DataGridViewTextBoxColumn.HeaderText = "قیمت محصول 2";
+            this.pricKala2DataGridViewTextBoxColumn.Name = "pricKala2DataGridViewTextBoxColumn";
+            this.pricKala2DataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // priceDastMozd2DataGridViewTextBoxColumn
+            // 
+            this.priceDastMozd2DataGridViewTextBoxColumn.DataPropertyName = "PriceDastMozd2";
+            this.priceDastMozd2DataGridViewTextBoxColumn.HeaderText = "قیمت دستمزد 2";
+            this.priceDastMozd2DataGridViewTextBoxColumn.Name = "priceDastMozd2DataGridViewTextBoxColumn";
+            this.priceDastMozd2DataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // vahedDataGridViewTextBoxColumn
+            // 
+            this.vahedDataGridViewTextBoxColumn.DataPropertyName = "Vahed";
+            this.vahedDataGridViewTextBoxColumn.HeaderText = "Vahed";
+            this.vahedDataGridViewTextBoxColumn.Name = "vahedDataGridViewTextBoxColumn";
+            this.vahedDataGridViewTextBoxColumn.ReadOnly = true;
+            this.vahedDataGridViewTextBoxColumn.Visible = false;
             // 
             // frm_Products
             // 
@@ -168,7 +292,8 @@
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(998, 638);
             this.ControlBox = false;
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.txtSerachKala);
+            this.Controls.Add(this.dgvProducts);
             this.Controls.Add(this.BtnDelete);
             this.Controls.Add(this.BtnEdit);
             this.Controls.Add(this.BtnAdd);
@@ -183,8 +308,10 @@
             this.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.RightToLeftLayout = true;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Load += new System.EventHandler(this.frm_Products_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvProducts)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bsViewProductVahed)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bsProducts)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -197,6 +324,17 @@
         private CustomControls.RJControls.RJButton BtnAdd;
         private CustomControls.RJControls.RJButton BtnBack;
         private System.Windows.Forms.BindingSource bsProducts;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dgvProducts;
+        private CustomControls.RJControls.RJTextBox txtSerachKala;
+        private System.Windows.Forms.BindingSource bsViewProductVahed;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn codeIdDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nameDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn vahedNameDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn priceKala1DataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn priceDastMozd1DataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn pricKala2DataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn priceDastMozd2DataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn vahedDataGridViewTextBoxColumn;
     }
 }

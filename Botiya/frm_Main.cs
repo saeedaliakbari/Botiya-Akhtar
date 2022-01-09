@@ -91,5 +91,25 @@ namespace Botiya
         {
             new frm_Vaheds().ShowDialog();
         }
+
+        private void محصولاتToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            new frm_Products().ShowDialog();
+        }
+
+        private void ایجادقراردادToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            //frm_AddQarardad.idPerson = -1;
+            //frm_AddQarardad.idProduct = -1;
+            //frm_AddQarardad.idQarardad = -1;
+            //frm_AddQarardad.dateString = string.Empty;
+            //new frm_AddQarardad().ShowDialog();
+            new frm_Qarardadha().ShowDialog();
+        }
+
+        private void متنقراردادToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            new frm_Matn().ShowDialog();
+        }
     }
 }

@@ -33,6 +33,7 @@
             this.تعریفToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.کارفرماToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.محصولاتToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.واحدToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.عملیاتToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ایجادقراردادToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.تنظیماتToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -49,7 +50,10 @@
             this.BtnBack = new CustomControls.RJControls.RJButton();
             this.BtnSave = new CustomControls.RJControls.RJButton();
             this.BtnOk = new CustomControls.RJControls.RJButton();
-            this.واحدToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.rjComboBox1 = new CustomControls.RJControls.RJComboBox();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.btnPrint = new CustomControls.RJControls.RJButton();
+            this.متنقراردادToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -90,7 +94,7 @@
             this.کارفرماToolStripMenuItem.ForeColor = System.Drawing.Color.Chocolate;
             this.کارفرماToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("کارفرماToolStripMenuItem.Image")));
             this.کارفرماToolStripMenuItem.Name = "کارفرماToolStripMenuItem";
-            this.کارفرماToolStripMenuItem.Size = new System.Drawing.Size(180, 28);
+            this.کارفرماToolStripMenuItem.Size = new System.Drawing.Size(132, 28);
             this.کارفرماToolStripMenuItem.Text = "مشتریان";
             this.کارفرماToolStripMenuItem.Click += new System.EventHandler(this.کارفرماToolStripMenuItem_Click);
             // 
@@ -100,8 +104,18 @@
             this.محصولاتToolStripMenuItem.ForeColor = System.Drawing.Color.Chocolate;
             this.محصولاتToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("محصولاتToolStripMenuItem.Image")));
             this.محصولاتToolStripMenuItem.Name = "محصولاتToolStripMenuItem";
-            this.محصولاتToolStripMenuItem.Size = new System.Drawing.Size(180, 28);
+            this.محصولاتToolStripMenuItem.Size = new System.Drawing.Size(132, 28);
             this.محصولاتToolStripMenuItem.Text = "محصولات";
+            this.محصولاتToolStripMenuItem.Click += new System.EventHandler(this.محصولاتToolStripMenuItem_Click);
+            // 
+            // واحدToolStripMenuItem
+            // 
+            this.واحدToolStripMenuItem.ForeColor = System.Drawing.Color.Chocolate;
+            this.واحدToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("واحدToolStripMenuItem.Image")));
+            this.واحدToolStripMenuItem.Name = "واحدToolStripMenuItem";
+            this.واحدToolStripMenuItem.Size = new System.Drawing.Size(132, 28);
+            this.واحدToolStripMenuItem.Text = "واحد";
+            this.واحدToolStripMenuItem.Click += new System.EventHandler(this.واحدToolStripMenuItem_Click);
             // 
             // عملیاتToolStripMenuItem
             // 
@@ -116,16 +130,19 @@
             // 
             // ایجادقراردادToolStripMenuItem
             // 
-            this.ایجادقراردادToolStripMenuItem.BackColor = System.Drawing.Color.Chocolate;
-            this.ایجادقراردادToolStripMenuItem.ForeColor = System.Drawing.Color.White;
+            this.ایجادقراردادToolStripMenuItem.BackColor = System.Drawing.Color.White;
+            this.ایجادقراردادToolStripMenuItem.ForeColor = System.Drawing.Color.Chocolate;
+            this.ایجادقراردادToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("ایجادقراردادToolStripMenuItem.Image")));
             this.ایجادقراردادToolStripMenuItem.Name = "ایجادقراردادToolStripMenuItem";
-            this.ایجادقراردادToolStripMenuItem.Size = new System.Drawing.Size(122, 28);
+            this.ایجادقراردادToolStripMenuItem.Size = new System.Drawing.Size(180, 28);
             this.ایجادقراردادToolStripMenuItem.Text = "قرارداد";
+            this.ایجادقراردادToolStripMenuItem.Click += new System.EventHandler(this.ایجادقراردادToolStripMenuItem_Click);
             // 
             // تنظیماتToolStripMenuItem
             // 
             this.تنظیماتToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.کاربرانToolStripMenuItem});
+            this.کاربرانToolStripMenuItem,
+            this.متنقراردادToolStripMenuItem});
             this.تنظیماتToolStripMenuItem.ForeColor = System.Drawing.Color.White;
             this.تنظیماتToolStripMenuItem.Name = "تنظیماتToolStripMenuItem";
             this.تنظیماتToolStripMenuItem.Size = new System.Drawing.Size(66, 27);
@@ -135,10 +152,10 @@
             // 
             // کاربرانToolStripMenuItem
             // 
-            this.کاربرانToolStripMenuItem.BackColor = System.Drawing.Color.Chocolate;
-            this.کاربرانToolStripMenuItem.ForeColor = System.Drawing.Color.White;
+            this.کاربرانToolStripMenuItem.BackColor = System.Drawing.Color.White;
+            this.کاربرانToolStripMenuItem.ForeColor = System.Drawing.Color.Chocolate;
             this.کاربرانToolStripMenuItem.Name = "کاربرانToolStripMenuItem";
-            this.کاربرانToolStripMenuItem.Size = new System.Drawing.Size(120, 28);
+            this.کاربرانToolStripMenuItem.Size = new System.Drawing.Size(180, 28);
             this.کاربرانToolStripMenuItem.Text = "کاربران";
             // 
             // پشتیبانیToolStripMenuItem
@@ -363,14 +380,80 @@
             this.BtnOk.TextColor = System.Drawing.Color.SteelBlue;
             this.BtnOk.UseVisualStyleBackColor = false;
             // 
-            // واحدToolStripMenuItem
+            // rjComboBox1
             // 
-            this.واحدToolStripMenuItem.ForeColor = System.Drawing.Color.Chocolate;
-            this.واحدToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("واحدToolStripMenuItem.Image")));
-            this.واحدToolStripMenuItem.Name = "واحدToolStripMenuItem";
-            this.واحدToolStripMenuItem.Size = new System.Drawing.Size(180, 28);
-            this.واحدToolStripMenuItem.Text = "واحد";
-            this.واحدToolStripMenuItem.Click += new System.EventHandler(this.واحدToolStripMenuItem_Click);
+            this.rjComboBox1.BackColor = System.Drawing.Color.White;
+            this.rjComboBox1.BorderColor = System.Drawing.Color.SteelBlue;
+            this.rjComboBox1.BorderSize = 2;
+            this.rjComboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDown;
+            this.rjComboBox1.Font = new System.Drawing.Font("B Yekan", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
+            this.rjComboBox1.ForeColor = System.Drawing.Color.SteelBlue;
+            this.rjComboBox1.IconColor = System.Drawing.Color.SteelBlue;
+            this.rjComboBox1.Items.AddRange(new object[] {
+            "گزینه1",
+            "گزینه 2",
+            "گزینه 2",
+            "گزیمه 3",
+            "یسشیشی"});
+            this.rjComboBox1.ListBackColor = System.Drawing.Color.WhiteSmoke;
+            this.rjComboBox1.ListTextColor = System.Drawing.Color.SteelBlue;
+            this.rjComboBox1.Location = new System.Drawing.Point(287, 187);
+            this.rjComboBox1.MinimumSize = new System.Drawing.Size(200, 30);
+            this.rjComboBox1.Name = "rjComboBox1";
+            this.rjComboBox1.Padding = new System.Windows.Forms.Padding(2);
+            this.rjComboBox1.Size = new System.Drawing.Size(250, 42);
+            this.rjComboBox1.TabIndex = 13;
+            this.rjComboBox1.Texts = "";
+            // 
+            // comboBox1
+            // 
+            this.comboBox1.FlatStyle = System.Windows.Forms.FlatStyle.System;
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Items.AddRange(new object[] {
+            "fwerf",
+            "werew",
+            "rewrwer",
+            "گزینه 2",
+            "گزینه2",
+            "34"});
+            this.comboBox1.Location = new System.Drawing.Point(287, 246);
+            this.comboBox1.Margin = new System.Windows.Forms.Padding(5);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.comboBox1.Size = new System.Drawing.Size(250, 31);
+            this.comboBox1.TabIndex = 14;
+            // 
+            // btnPrint
+            // 
+            this.btnPrint.BackColor = System.Drawing.Color.White;
+            this.btnPrint.BackgroundColor = System.Drawing.Color.White;
+            this.btnPrint.BorderColor = System.Drawing.Color.SteelBlue;
+            this.btnPrint.BorderRadius = 12;
+            this.btnPrint.BorderSize = 2;
+            this.btnPrint.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnPrint.FlatAppearance.BorderSize = 0;
+            this.btnPrint.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnPrint.ForeColor = System.Drawing.Color.SteelBlue;
+            this.btnPrint.Image = ((System.Drawing.Image)(resources.GetObject("btnPrint.Image")));
+            this.btnPrint.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnPrint.Location = new System.Drawing.Point(109, 475);
+            this.btnPrint.Name = "btnPrint";
+            this.btnPrint.Padding = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.btnPrint.Size = new System.Drawing.Size(140, 42);
+            this.btnPrint.TabIndex = 15;
+            this.btnPrint.Text = "پرینت";
+            this.btnPrint.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnPrint.TextColor = System.Drawing.Color.SteelBlue;
+            this.btnPrint.UseVisualStyleBackColor = false;
+            // 
+            // متنقراردادToolStripMenuItem
+            // 
+            this.متنقراردادToolStripMenuItem.BackColor = System.Drawing.Color.White;
+            this.متنقراردادToolStripMenuItem.ForeColor = System.Drawing.Color.Chocolate;
+            this.متنقراردادToolStripMenuItem.Name = "متنقراردادToolStripMenuItem";
+            this.متنقراردادToolStripMenuItem.Size = new System.Drawing.Size(180, 28);
+            this.متنقراردادToolStripMenuItem.Text = "متن قرارداد";
+            this.متنقراردادToolStripMenuItem.Click += new System.EventHandler(this.متنقراردادToolStripMenuItem_Click);
             // 
             // frm_Main
             // 
@@ -379,6 +462,9 @@
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1024, 680);
             this.ControlBox = false;
+            this.Controls.Add(this.btnPrint);
+            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.rjComboBox1);
             this.Controls.Add(this.BtnOk);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.rjTextBox1);
@@ -429,5 +515,9 @@
         private CustomControls.RJControls.RJButton btnCancel;
         private CustomControls.RJControls.RJButton BtnOk;
         private System.Windows.Forms.ToolStripMenuItem واحدToolStripMenuItem;
+        private CustomControls.RJControls.RJComboBox rjComboBox1;
+        private System.Windows.Forms.ComboBox comboBox1;
+        private CustomControls.RJControls.RJButton btnPrint;
+        private System.Windows.Forms.ToolStripMenuItem متنقراردادToolStripMenuItem;
     }
 }

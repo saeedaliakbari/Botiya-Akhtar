@@ -67,7 +67,7 @@
             this.label1.Margin = new System.Windows.Forms.Padding(0);
             this.label1.Name = "label1";
             this.label1.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.label1.Size = new System.Drawing.Size(672, 34);
+            this.label1.Size = new System.Drawing.Size(668, 34);
             this.label1.TabIndex = 29;
             this.label1.Text = "مشتریان";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -225,6 +225,7 @@
             this.txtMobile.TabIndex = 5;
             this.txtMobile.Texts = "";
             this.txtMobile.UnderlinedStyle = true;
+            this.txtMobile.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtMobile_KeyPress);
             // 
             // txtLName
             // 
@@ -269,6 +270,7 @@
             this.txtPhone.TabIndex = 4;
             this.txtPhone.Texts = "";
             this.txtPhone.UnderlinedStyle = true;
+            this.txtPhone.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPhone_KeyPress);
             // 
             // txtCodeMelli
             // 
@@ -291,6 +293,7 @@
             this.txtCodeMelli.TabIndex = 3;
             this.txtCodeMelli.Texts = "";
             this.txtCodeMelli.UnderlinedStyle = true;
+            this.txtCodeMelli.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCodeMelli_KeyPress);
             // 
             // txtAddress
             // 
@@ -323,7 +326,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 23F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(672, 409);
+            this.ClientSize = new System.Drawing.Size(668, 405);
             this.ControlBox = false;
             this.Controls.Add(this.BtnBack);
             this.Controls.Add(this.BtnSave);

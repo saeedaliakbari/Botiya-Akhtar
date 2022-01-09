@@ -56,11 +56,23 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Botiya.dbml</DependentUpon>
     </Compile>
+    <Compile Include="frm_AddQarardad.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_AddQarardad.Designer.cs">
+      <DependentUpon>frm_AddQarardad.cs</DependentUpon>
+    </Compile>
     <Compile Include="frm_Main.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="frm_Main.Designer.cs">
       <DependentUpon>frm_Main.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frm_Matn.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_Matn.Designer.cs">
+      <DependentUpon>frm_Matn.cs</DependentUpon>
     </Compile>
     <Compile Include="frm_MessageBox.cs">
       <SubType>Form</SubType>
@@ -92,6 +104,24 @@
     <Compile Include="frm_Products.Designer.cs">
       <DependentUpon>frm_Products.cs</DependentUpon>
     </Compile>
+    <Compile Include="frm_Qarardadha.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_Qarardadha.Designer.cs">
+      <DependentUpon>frm_Qarardadha.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frm_Qarardad_SelectPerson.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_Qarardad_SelectPerson.Designer.cs">
+      <DependentUpon>frm_Qarardad_SelectPerson.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frm_Qarardad_SelectProduct.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_Qarardad_SelectProduct.Designer.cs">
+      <DependentUpon>frm_Qarardad_SelectProduct.cs</DependentUpon>
+    </Compile>
     <Compile Include="frm_Vaheds.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -103,6 +133,9 @@
     <Compile Include="RJControls\RJButton.cs">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="RJControls\RJComboBox.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Include="RJControls\RJTextBox.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -112,8 +145,14 @@
     <Compile Include="RJControls\RJToggleButton.cs">
       <SubType>Component</SubType>
     </Compile>
+    <EmbeddedResource Include="frm_AddQarardad.resx">
+      <DependentUpon>frm_AddQarardad.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frm_Main.resx">
       <DependentUpon>frm_Main.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_Matn.resx">
+      <DependentUpon>frm_Matn.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frm_MessageBox.resx">
       <DependentUpon>frm_MessageBox.cs</DependentUpon>
@@ -124,8 +163,20 @@
     <EmbeddedResource Include="frm_Persons.resx">
       <DependentUpon>frm_Persons.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frm_ProductInfo.resx">
+      <DependentUpon>frm_ProductInfo.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frm_Products.resx">
       <DependentUpon>frm_Products.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_Qarardadha.resx">
+      <DependentUpon>frm_Qarardadha.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_Qarardad_SelectPerson.resx">
+      <DependentUpon>frm_Qarardad_SelectPerson.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_Qarardad_SelectProduct.resx">
+      <DependentUpon>frm_Qarardad_SelectProduct.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frm_Vaheds.resx">
       <DependentUpon>frm_Vaheds.cs</DependentUpon>
@@ -152,9 +203,15 @@
     <None Include="Botiya.dbml.layout">
       <DependentUpon>Botiya.dbml</DependentUpon>
     </None>
+    <None Include="Properties\DataSources\Factor.datasource" />
+    <None Include="Properties\DataSources\MatnQarardad.datasource" />
     <None Include="Properties\DataSources\Person.datasource" />
     <None Include="Properties\DataSources\Product.datasource" />
+    <None Include="Properties\DataSources\Qarardad.datasource" />
     <None Include="Properties\DataSources\Vahed.datasource" />
+    <None Include="Properties\DataSources\ViewFactorProduct.datasource" />
+    <None Include="Properties\DataSources\ViewProductsVahed.datasource" />
+    <None Include="Properties\DataSources\ViewQarardadPerson.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

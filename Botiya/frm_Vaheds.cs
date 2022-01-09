@@ -13,6 +13,7 @@ namespace Botiya
     public partial class frm_Vaheds : Form
     {
         BotiyaDataContext db = new BotiyaDataContext();
+        string? nameVahedCheck = string.Empty;
         private int idVahed = -1;
         public frm_Vaheds()
         {
@@ -42,9 +43,17 @@ namespace Botiya
         {
             try
             {
+                db.GetVahedByName(txtVahedName.Texts, ref nameVahedCheck);
                 if (txtVahedName.Texts == String.Empty)
                 {
                     errorProvider1.SetError(txtVahedName, "ورود مقدار الزامی است");
+                }
+                else if (nameVahedCheck!= null)
+                {
+                    nameVahedCheck = String.Empty;
+                    errorProvider1.Clear();
+                    errorProvider1.SetError(txtVahedName, "مثدار تکراری است");
+                    
                 }
                 else
                 {
@@ -52,6 +61,7 @@ namespace Botiya
                     db.InsertVahed(txtVahedName.Texts);
                     MessageBoxFarsi.Show("واحد جدید افزوده شد", "عملیات موفق", MessageBoxFarsiButtons.OK, MessageBoxFarsiIcon.Information, MessageBoxFarsiDefaultButton.Button1);
                     txtVahedName.Texts = String.Empty;
+                    nameVahedCheck = String.Empty;
                     bsVaheds.DataSource = db.FillVaheds();
                     CheckDgv();
                 }
@@ -80,9 +90,20 @@ namespace Botiya
         {
             try
             {
+                db.GetVahedByName(txtVahedName.Texts, ref nameVahedCheck);
+                MessageBox.Show(nameVahedCheck);
                 if (txtVahedName.Texts == String.Empty)
                 {
+                    errorProvider1.Clear();
                     errorProvider1.SetError(txtVahedName, "ورود مقدار الزامی است");
+                }
+                else if (nameVahedCheck != string.Empty)
+                {
+                    MessageBox.Show(nameVahedCheck);
+                    nameVahedCheck = String.Empty;
+                    MessageBox.Show(nameVahedCheck);
+                    errorProvider1.Clear();
+                    errorProvider1.SetError(txtVahedName, "مثدار تکراری است");
                 }
                 else
                 {
@@ -90,7 +111,8 @@ namespace Botiya
                     db.UpdateVahed(idVahed, txtVahedName.Texts);
                     MessageBoxFarsi.Show("واحد ویرایش شد", "عملیات موفق", MessageBoxFarsiButtons.OK, MessageBoxFarsiIcon.Information, MessageBoxFarsiDefaultButton.Button1);
                     txtVahedName.Texts = String.Empty;
-                    bsVaheds.DataSource = db.FillVaheds();
+                        nameVahedCheck = String.Empty;
+                        bsVaheds.DataSource = db.FillVaheds();
                     ManageEditMode(false);
                 }
             }

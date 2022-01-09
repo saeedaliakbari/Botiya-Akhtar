@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 8.5" name="Botiya">
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 11.375" name="Botiya">
   <DataContextMoniker Name="/BotiyaDataContext" />
   <nestedChildShapes>
     <classShape Id="6b6fcf20-f227-43ab-ab08-ac5186444f56" absoluteBounds="0.5, 0.5, 2, 2.7324039713541666">
@@ -8,16 +8,52 @@
         <elementListCompartment Id="d9311872-31cc-41ad-8720-3c2426baae3c" absoluteBounds="0.51500000000000012, 0.96, 1.9700000000000002, 2.1724039713541665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="933f9848-43c6-448f-8f3f-996aa293503b" absoluteBounds="3, 0.5, 2, 2.1554996744791666">
-      <DataClassMoniker Name="/BotiyaDataContext/Product" />
-      <nestedChildShapes>
-        <elementListCompartment Id="4ccd7ba6-0c26-40a1-add9-c60a99fbd34d" absoluteBounds="3.0149999999999997, 0.96, 1.9700000000000002, 1.5954996744791665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
-      </nestedChildShapes>
-    </classShape>
     <classShape Id="e211f3f0-0162-44b2-a166-ffc7fd6ef8e0" absoluteBounds="5.5, 0.5, 2, 1.1939925130208333">
       <DataClassMoniker Name="/BotiyaDataContext/Vahed" />
       <nestedChildShapes>
         <elementListCompartment Id="02a8ce56-80ad-424b-bbf4-5d05416a8668" absoluteBounds="5.515, 0.96, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="df3341c1-071e-4465-b827-83fe141cf271" absoluteBounds="3, 0.5, 2, 2.3478011067708335">
+      <DataClassMoniker Name="/BotiyaDataContext/Product" />
+      <nestedChildShapes>
+        <elementListCompartment Id="5f4b0b95-59dd-4ff5-a28d-4f2952162a96" absoluteBounds="3.015, 0.96, 1.9700000000000002, 1.7878011067708335" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="fc50d142-53a9-497a-a160-868f9b332dc2" absoluteBounds="5.5, 2, 2, 2.5401025390625">
+      <DataClassMoniker Name="/BotiyaDataContext/ViewProductsVahed" />
+      <nestedChildShapes>
+        <elementListCompartment Id="3a583787-d0a9-4adf-aa13-1a2835af31e2" absoluteBounds="5.515, 2.46, 1.9700000000000002, 1.9801025390625" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="676a4a51-d901-48e8-b4ad-5dcb5ae79f34" absoluteBounds="0.5, 3.375, 2, 3.1170068359375">
+      <DataClassMoniker Name="/BotiyaDataContext/Qarardad" />
+      <nestedChildShapes>
+        <elementListCompartment Id="00073e25-a094-4443-9bf3-461840b53007" absoluteBounds="0.51500000000000012, 3.835, 1.9700000000000002, 2.5570068359375" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="349a19cc-ad4c-4050-9ce9-76d539fa061e" absoluteBounds="2.625, 3.375, 2, 1.9631982421875">
+      <DataClassMoniker Name="/BotiyaDataContext/Factor" />
+      <nestedChildShapes>
+        <elementListCompartment Id="58793e9f-3710-4c27-a20e-ab603032c4e9" absoluteBounds="2.64, 3.835, 1.9700000000000002, 1.4031982421875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="58c9490d-f0b0-4f08-b667-dfe4b76992a3" absoluteBounds="5.5, 4.75, 2, 2.3478011067708335">
+      <DataClassMoniker Name="/BotiyaDataContext/ViewFactorProduct" />
+      <nestedChildShapes>
+        <elementListCompartment Id="30273988-d356-4375-b820-b65fbc9a38af" absoluteBounds="5.515, 5.21, 1.9700000000000002, 1.7878011067708335" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="30686604-2ca5-47f4-a5dd-1bc80d80b76d" absoluteBounds="2.75, 5.625, 2, 3.8862125651041666">
+      <DataClassMoniker Name="/BotiyaDataContext/ViewQarardadPerson" />
+      <nestedChildShapes>
+        <elementListCompartment Id="dac55ea1-4283-44bd-8d58-37a00eb16e51" absoluteBounds="2.7649999999999997, 6.085, 1.9700000000000002, 3.3262125651041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="68b0e3ab-35eb-4281-9a87-c6b33e9754f4" absoluteBounds="5.5, 7.25, 2, 3.8862125651041666">
+      <DataClassMoniker Name="/BotiyaDataContext/MatnQarardad" />
+      <nestedChildShapes>
+        <elementListCompartment Id="98111d04-850d-4d79-bea9-da8712c2d547" absoluteBounds="5.515, 7.7100000000000009, 1.9700000000000002, 3.3262125651041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
   </nestedChildShapes>

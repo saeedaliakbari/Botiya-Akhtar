@@ -33,12 +33,21 @@ namespace Botiya
     partial void InsertPerson(Person instance);
     partial void UpdatePerson(Person instance);
     partial void DeletePerson(Person instance);
-    partial void InsertProduct(Product instance);
-    partial void UpdateProduct(Product instance);
-    partial void DeleteProduct(Product instance);
     partial void InsertVahed(Vahed instance);
     partial void UpdateVahed(Vahed instance);
     partial void DeleteVahed(Vahed instance);
+    partial void InsertProduct(Product instance);
+    partial void UpdateProduct(Product instance);
+    partial void DeleteProduct(Product instance);
+    partial void InsertQarardad(Qarardad instance);
+    partial void UpdateQarardad(Qarardad instance);
+    partial void DeleteQarardad(Qarardad instance);
+    partial void InsertFactor(Factor instance);
+    partial void UpdateFactor(Factor instance);
+    partial void DeleteFactor(Factor instance);
+    partial void InsertMatnQarardad(frm_MatnQarardad instance);
+    partial void UpdateMatnQarardad(frm_MatnQarardad instance);
+    partial void DeleteMatnQarardad(frm_MatnQarardad instance);
     #endregion
 		
 		public BotiyaDataContext() : 
@@ -79,6 +88,14 @@ namespace Botiya
 			}
 		}
 		
+		public System.Data.Linq.Table<Vahed> Vaheds
+		{
+			get
+			{
+				return this.GetTable<Vahed>();
+			}
+		}
+		
 		public System.Data.Linq.Table<Product> Products
 		{
 			get
@@ -87,11 +104,51 @@ namespace Botiya
 			}
 		}
 		
-		public System.Data.Linq.Table<Vahed> Vaheds
+		public System.Data.Linq.Table<ViewProductsVahed> ViewProductsVaheds
 		{
 			get
 			{
-				return this.GetTable<Vahed>();
+				return this.GetTable<ViewProductsVahed>();
+			}
+		}
+		
+		public System.Data.Linq.Table<Qarardad> Qarardads
+		{
+			get
+			{
+				return this.GetTable<Qarardad>();
+			}
+		}
+		
+		public System.Data.Linq.Table<Factor> Factors
+		{
+			get
+			{
+				return this.GetTable<Factor>();
+			}
+		}
+		
+		public System.Data.Linq.Table<ViewFactorProduct> ViewFactorProducts
+		{
+			get
+			{
+				return this.GetTable<ViewFactorProduct>();
+			}
+		}
+		
+		public System.Data.Linq.Table<ViewQarardadPerson> ViewQarardadPersons
+		{
+			get
+			{
+				return this.GetTable<ViewQarardadPerson>();
+			}
+		}
+		
+		public System.Data.Linq.Table<frm_MatnQarardad> MatnQarardads
+		{
+			get
+			{
+				return this.GetTable<frm_MatnQarardad>();
 			}
 		}
 		
@@ -187,6 +244,246 @@ namespace Botiya
 		{
 			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), lname);
 			return ((ISingleResult<FillPersonByLnameResult>)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.DeleteProducts")]
+		public int DeleteProducts([global::System.Data.Linq.Mapping.ParameterAttribute(Name="Id", DbType="Int")] System.Nullable<int> id)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), id);
+			return ((int)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.FillPrdouctByName")]
+		public ISingleResult<FillPrdouctByNameResult> FillPrdouctByName([global::System.Data.Linq.Mapping.ParameterAttribute(Name="Name", DbType="NVarChar(MAX)")] string name)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), name);
+			return ((ISingleResult<FillPrdouctByNameResult>)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.FillProducts")]
+		public ISingleResult<FillProductsResult> FillProducts()
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())));
+			return ((ISingleResult<FillProductsResult>)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.FillProductById")]
+		public ISingleResult<FillProductByIdResult> FillProductById([global::System.Data.Linq.Mapping.ParameterAttribute(Name="Id", DbType="Int")] System.Nullable<int> id)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), id);
+			return ((ISingleResult<FillProductByIdResult>)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.FillPersonByCodeMelli")]
+		public ISingleResult<FillPersonByCodeMelliResult> FillPersonByCodeMelli([global::System.Data.Linq.Mapping.ParameterAttribute(Name="CodeMelli", DbType="NVarChar(10)")] string codeMelli)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), codeMelli);
+			return ((ISingleResult<FillPersonByCodeMelliResult>)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.FillPrdouctByCode")]
+		public ISingleResult<FillPrdouctByCodeResult> FillPrdouctByCode([global::System.Data.Linq.Mapping.ParameterAttribute(Name="Code", DbType="NVarChar(100)")] string code)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), code);
+			return ((ISingleResult<FillPrdouctByCodeResult>)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.InsertQarardad")]
+		public int InsertQarardad([global::System.Data.Linq.Mapping.ParameterAttribute(Name="IdQardad", DbType="Int")] ref System.Nullable<int> idQardad)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), idQardad);
+			idQardad = ((System.Nullable<int>)(result.GetParameterValue(0)));
+			return ((int)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.GetProductsByCodeId")]
+		public int GetProductsByCodeId([global::System.Data.Linq.Mapping.ParameterAttribute(Name="CodeIdIn", DbType="NVarChar(100)")] string codeIdIn, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="CodeIdOut", DbType="NVarChar(100)")] ref string codeIdOut)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), codeIdIn, codeIdOut);
+			codeIdOut = ((string)(result.GetParameterValue(1)));
+			return ((int)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.GetPersonByCodeMelli")]
+		public int GetPersonByCodeMelli([global::System.Data.Linq.Mapping.ParameterAttribute(Name="CodeMelliIn", DbType="NVarChar(10)")] string codeMelliIn, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="CodeMelliOut", DbType="NVarChar(10)")] ref string codeMelliOut)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), codeMelliIn, codeMelliOut);
+			codeMelliOut = ((string)(result.GetParameterValue(1)));
+			return ((int)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.GetVahedByName")]
+		public int GetVahedByName([global::System.Data.Linq.Mapping.ParameterAttribute(Name="NameIn", DbType="NVarChar(200)")] string nameIn, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="NameOut", DbType="NVarChar(200)")] ref string nameOut)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), nameIn, nameOut);
+			nameOut = ((string)(result.GetParameterValue(1)));
+			return ((int)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.DeleteFactor")]
+		public int DeleteFactor([global::System.Data.Linq.Mapping.ParameterAttribute(Name="Id", DbType="Int")] System.Nullable<int> id)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), id);
+			return ((int)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.GetProducts")]
+		public int GetProducts([global::System.Data.Linq.Mapping.ParameterAttribute(Name="Id", DbType="Int")] System.Nullable<int> id, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="CodeId", DbType="NVarChar(100)")] ref string codeId, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Name", DbType="NVarChar(MAX)")] ref string name, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Vahed", DbType="Int")] ref System.Nullable<int> vahed, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="PriceKala1", DbType="Float")] ref System.Nullable<double> priceKala1, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="PriceDastMozd1", DbType="Float")] ref System.Nullable<double> priceDastMozd1, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="PriceKala2", DbType="Float")] ref System.Nullable<double> priceKala2, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="PriceDastMozd2", DbType="Float")] ref System.Nullable<double> priceDastMozd2)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), id, codeId, name, vahed, priceKala1, priceDastMozd1, priceKala2, priceDastMozd2);
+			codeId = ((string)(result.GetParameterValue(1)));
+			name = ((string)(result.GetParameterValue(2)));
+			vahed = ((System.Nullable<int>)(result.GetParameterValue(3)));
+			priceKala1 = ((System.Nullable<double>)(result.GetParameterValue(4)));
+			priceDastMozd1 = ((System.Nullable<double>)(result.GetParameterValue(5)));
+			priceKala2 = ((System.Nullable<double>)(result.GetParameterValue(6)));
+			priceDastMozd2 = ((System.Nullable<double>)(result.GetParameterValue(7)));
+			return ((int)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.GetProductByCode")]
+		public int GetProductByCode([global::System.Data.Linq.Mapping.ParameterAttribute(Name="Id", DbType="Int")] ref System.Nullable<int> id, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="CodeId", DbType="NVarChar(100)")] string codeId, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Name", DbType="NVarChar(MAX)")] ref string name, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Vahed", DbType="Int")] ref System.Nullable<int> vahed, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="PriceKala1", DbType="Float")] ref System.Nullable<double> priceKala1, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="PriceDastMozd1", DbType="Float")] ref System.Nullable<double> priceDastMozd1, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="PriceKala2", DbType="Float")] ref System.Nullable<double> priceKala2, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="PriceDastMozd2", DbType="Float")] ref System.Nullable<double> priceDastMozd2)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), id, codeId, name, vahed, priceKala1, priceDastMozd1, priceKala2, priceDastMozd2);
+			id = ((System.Nullable<int>)(result.GetParameterValue(0)));
+			name = ((string)(result.GetParameterValue(2)));
+			vahed = ((System.Nullable<int>)(result.GetParameterValue(3)));
+			priceKala1 = ((System.Nullable<double>)(result.GetParameterValue(4)));
+			priceDastMozd1 = ((System.Nullable<double>)(result.GetParameterValue(5)));
+			priceKala2 = ((System.Nullable<double>)(result.GetParameterValue(6)));
+			priceDastMozd2 = ((System.Nullable<double>)(result.GetParameterValue(7)));
+			return ((int)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.GetFactorById")]
+		public int GetFactorById([global::System.Data.Linq.Mapping.ParameterAttribute(Name="Id", DbType="Int")] System.Nullable<int> id, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="IdKala", DbType="Int")] ref System.Nullable<int> idKala, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="CodeId", DbType="NVarChar(100)")] ref string codeId, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Name", DbType="NVarChar(MAX)")] ref string name, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Tedad", DbType="Float")] ref System.Nullable<double> tedad, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="PriceVahed", DbType="Float")] ref System.Nullable<double> priceVahed, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="PriceKol", DbType="Float")] ref System.Nullable<double> priceKol)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), id, idKala, codeId, name, tedad, priceVahed, priceKol);
+			idKala = ((System.Nullable<int>)(result.GetParameterValue(1)));
+			codeId = ((string)(result.GetParameterValue(2)));
+			name = ((string)(result.GetParameterValue(3)));
+			tedad = ((System.Nullable<double>)(result.GetParameterValue(4)));
+			priceVahed = ((System.Nullable<double>)(result.GetParameterValue(5)));
+			priceKol = ((System.Nullable<double>)(result.GetParameterValue(6)));
+			return ((int)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.UpdateQarardad")]
+		public int UpdateQarardad([global::System.Data.Linq.Mapping.ParameterAttribute(Name="Id", DbType="Int")] System.Nullable<int> id, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="IdPerson", DbType="Int")] System.Nullable<int> idPerson, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Date", DbType="NVarChar(10)")] string date, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="PriceHaml", DbType="Float")] System.Nullable<double> priceHaml, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="IdQarardad", DbType="NVarChar(100)")] string idQarardad, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="MozoQarardad", DbType="NVarChar(MAX)")] string mozoQarardad, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="ModatQarardad", DbType="NVarChar(30)")] string modatQarardad, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="ShomareEnsheab", DbType="NVarChar(100)")] string shomareEnsheab, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="DateEnsheab", DbType="NVarChar(10)")] string dateEnsheab, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="DoreTazmin", DbType="NVarChar(30)")] string doreTazmin, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="ModatRageNaghz", DbType="NVarChar(50)")] string modatRageNaghz, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="PriceJarimeTakhir", DbType="Float")] System.Nullable<double> priceJarimeTakhir)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), id, idPerson, date, priceHaml, idQarardad, mozoQarardad, modatQarardad, shomareEnsheab, dateEnsheab, doreTazmin, modatRageNaghz, priceJarimeTakhir);
+			return ((int)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.UpdateProduct")]
+		public int UpdateProduct([global::System.Data.Linq.Mapping.ParameterAttribute(Name="Id", DbType="Int")] System.Nullable<int> id, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="CodeId", DbType="NVarChar(100)")] string codeId, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Name", DbType="NVarChar(MAX)")] string name, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Vahed", DbType="Int")] System.Nullable<int> vahed, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="PriceKala1", DbType="Float")] System.Nullable<double> priceKala1, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="PriceDastMozd1", DbType="Float")] System.Nullable<double> priceDastMozd1, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="PriceKala2", DbType="Float")] System.Nullable<double> priceKala2, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="PriceDastMozd2", DbType="Float")] System.Nullable<double> priceDastMozd2)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), id, codeId, name, vahed, priceKala1, priceDastMozd1, priceKala2, priceDastMozd2);
+			return ((int)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.UpdateFactor")]
+		public int UpdateFactor([global::System.Data.Linq.Mapping.ParameterAttribute(Name="Id", DbType="Int")] System.Nullable<int> id, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="IdProduct", DbType="Int")] System.Nullable<int> idProduct, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Tedad", DbType="Float")] System.Nullable<double> tedad, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="PriceVahed", DbType="Float")] System.Nullable<double> priceVahed, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="PriceKol", DbType="Float")] System.Nullable<double> priceKol)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), id, idProduct, tedad, priceVahed, priceKol);
+			return ((int)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.InsertProducts")]
+		public int InsertProducts([global::System.Data.Linq.Mapping.ParameterAttribute(Name="CodeId", DbType="NVarChar(100)")] string codeId, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Name", DbType="NVarChar(MAX)")] string name, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Vahed", DbType="Int")] System.Nullable<int> vahed, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="PriceKala1", DbType="Float")] System.Nullable<double> priceKala1, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="PriceDastMozd1", DbType="Float")] System.Nullable<double> priceDastMozd1, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="PriceKala2", DbType="Float")] System.Nullable<double> priceKala2, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="PriceDastMozd2", DbType="Float")] System.Nullable<double> priceDastMozd2)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), codeId, name, vahed, priceKala1, priceDastMozd1, priceKala2, priceDastMozd2);
+			return ((int)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.InsertFactor")]
+		public int InsertFactor([global::System.Data.Linq.Mapping.ParameterAttribute(Name="IdQarardad", DbType="Int")] System.Nullable<int> idQarardad, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="IdProduct", DbType="Int")] System.Nullable<int> idProduct, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Tedad", DbType="Float")] System.Nullable<double> tedad, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="PriceVahed", DbType="Float")] System.Nullable<double> priceVahed, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="PriceKol", DbType="Float")] System.Nullable<double> priceKol)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), idQarardad, idProduct, tedad, priceVahed, priceKol);
+			return ((int)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.GetFactorByIdKala")]
+		public int GetFactorByIdKala([global::System.Data.Linq.Mapping.ParameterAttribute(Name="Id", DbType="Int")] ref System.Nullable<int> id, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="IdQarardad", DbType="Int")] System.Nullable<int> idQarardad, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="IdKala", DbType="Int")] System.Nullable<int> idKala, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="CodeId", DbType="NVarChar(100)")] ref string codeId, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Name", DbType="NVarChar(MAX)")] ref string name, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Tedad", DbType="Float")] ref System.Nullable<double> tedad, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="PriceVahed", DbType="Float")] ref System.Nullable<double> priceVahed, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="PriceKol", DbType="Float")] ref System.Nullable<double> priceKol)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), id, idQarardad, idKala, codeId, name, tedad, priceVahed, priceKol);
+			id = ((System.Nullable<int>)(result.GetParameterValue(0)));
+			codeId = ((string)(result.GetParameterValue(3)));
+			name = ((string)(result.GetParameterValue(4)));
+			tedad = ((System.Nullable<double>)(result.GetParameterValue(5)));
+			priceVahed = ((System.Nullable<double>)(result.GetParameterValue(6)));
+			priceKol = ((System.Nullable<double>)(result.GetParameterValue(7)));
+			return ((int)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.FillViewFatcorProduct")]
+		public ISingleResult<FillViewFatcorProductResult> FillViewFatcorProduct([global::System.Data.Linq.Mapping.ParameterAttribute(Name="IdQarardad", DbType="Int")] System.Nullable<int> idQarardad)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), idQarardad);
+			return ((ISingleResult<FillViewFatcorProductResult>)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.FillViewQarardadPerson")]
+		public ISingleResult<FillViewQarardadPersonResult> FillViewQarardadPerson()
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())));
+			return ((ISingleResult<FillViewQarardadPersonResult>)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.FillViewQarardadPersonByName")]
+		public ISingleResult<FillViewQarardadPersonByNameResult> FillViewQarardadPersonByName([global::System.Data.Linq.Mapping.ParameterAttribute(Name="Name", DbType="NVarChar(150)")] string name)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), name);
+			return ((ISingleResult<FillViewQarardadPersonByNameResult>)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.DeleteQarardad")]
+		public int DeleteQarardad([global::System.Data.Linq.Mapping.ParameterAttribute(Name="Id", DbType="Int")] System.Nullable<int> id)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), id);
+			return ((int)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.FillViewQarardadPersonById")]
+		public ISingleResult<FillViewQarardadPersonByIdResult> FillViewQarardadPersonById([global::System.Data.Linq.Mapping.ParameterAttribute(Name="Id", DbType="Int")] System.Nullable<int> id)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), id);
+			return ((ISingleResult<FillViewQarardadPersonByIdResult>)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.FillViewPrdouctByCode")]
+		public ISingleResult<FillViewPrdouctByCodeResult> FillViewPrdouctByCode([global::System.Data.Linq.Mapping.ParameterAttribute(Name="Code", DbType="NVarChar(100)")] string code)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), code);
+			return ((ISingleResult<FillViewPrdouctByCodeResult>)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.FillViewPrdouctByName")]
+		public ISingleResult<FillViewPrdouctByNameResult1> FillViewPrdouctByName([global::System.Data.Linq.Mapping.ParameterAttribute(Name="Name", DbType="NVarChar(MAX)")] string name)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), name);
+			return ((ISingleResult<FillViewPrdouctByNameResult1>)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.FillViewProductVahed")]
+		public ISingleResult<FillViewProductVahedResult> FillViewProductVahed()
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())));
+			return ((ISingleResult<FillViewProductVahedResult>)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.FillMatnQarardad")]
+		public ISingleResult<FillMatnQarardadResult> FillMatnQarardad()
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())));
+			return ((ISingleResult<FillMatnQarardadResult>)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.UpdateMatnQarardad")]
+		public int UpdateMatnQarardad([global::System.Data.Linq.Mapping.ParameterAttribute(Name="Made1", DbType="NVarChar(MAX)")] string made1, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Made2", DbType="NVarChar(MAX)")] string made2, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Made3", DbType="NVarChar(MAX)")] string made3, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Made4", DbType="NVarChar(MAX)")] string made4, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Made5", DbType="NVarChar(MAX)")] string made5, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Made6", DbType="NVarChar(MAX)")] string made6, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Made7", DbType="NVarChar(MAX)")] string made7, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Made8", DbType="NVarChar(MAX)")] string made8, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Made9", DbType="NVarChar(MAX)")] string made9, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Made10", DbType="NVarChar(MAX)")] string made10, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Made11", DbType="NVarChar(MAX)")] string made11, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Made12", DbType="NVarChar(MAX)")] string made12, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Made13", DbType="NVarChar(MAX)")] string made13, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Made14", DbType="NVarChar(MAX)")] string made14, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Made15", DbType="NVarChar(MAX)")] string made15)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), made1, made2, made3, made4, made5, made6, made7, made8, made9, made10, made11, made12, made13, made14, made15);
+			return ((int)(result.ReturnValue));
 		}
 	}
 	
@@ -468,6 +765,92 @@ namespace Botiya
 		}
 	}
 	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Vaheds")]
+	public partial class Vahed : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _Id;
+		
+		private string _Name;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnIdChanging(int value);
+    partial void OnIdChanged();
+    partial void OnNameChanging(string value);
+    partial void OnNameChanged();
+    #endregion
+		
+		public Vahed()
+		{
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Id", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public int Id
+		{
+			get
+			{
+				return this._Id;
+			}
+			set
+			{
+				if ((this._Id != value))
+				{
+					this.OnIdChanging(value);
+					this.SendPropertyChanging();
+					this._Id = value;
+					this.SendPropertyChanged("Id");
+					this.OnIdChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Name", DbType="NVarChar(200)")]
+		public string Name
+		{
+			get
+			{
+				return this._Name;
+			}
+			set
+			{
+				if ((this._Name != value))
+				{
+					this.OnNameChanging(value);
+					this.SendPropertyChanging();
+					this._Name = value;
+					this.SendPropertyChanged("Name");
+					this.OnNameChanged();
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+	}
+	
 	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Products")]
 	public partial class Product : INotifyPropertyChanging, INotifyPropertyChanged
 	{
@@ -482,11 +865,13 @@ namespace Botiya
 		
 		private System.Nullable<int> _Vahed;
 		
-		private System.Nullable<long> _PriceKala;
+		private System.Nullable<long> _PriceKala1;
 		
-		private System.Nullable<long> _PriceDastMozd;
+		private System.Nullable<long> _PriceDastMozd1;
 		
-		private System.Nullable<long> _SumPrice;
+		private System.Nullable<long> _PricKala2;
+		
+		private System.Nullable<long> _PriceDastMozd2;
 		
     #region Extensibility Method Definitions
     partial void OnLoaded();
@@ -500,12 +885,14 @@ namespace Botiya
     partial void OnNameChanged();
     partial void OnVahedChanging(System.Nullable<int> value);
     partial void OnVahedChanged();
-    partial void OnPriceKalaChanging(System.Nullable<long> value);
-    partial void OnPriceKalaChanged();
-    partial void OnPriceDastMozdChanging(System.Nullable<long> value);
-    partial void OnPriceDastMozdChanged();
-    partial void OnSumPriceChanging(System.Nullable<long> value);
-    partial void OnSumPriceChanged();
+    partial void OnPriceKala1Changing(System.Nullable<long> value);
+    partial void OnPriceKala1Changed();
+    partial void OnPriceDastMozd1Changing(System.Nullable<long> value);
+    partial void OnPriceDastMozd1Changed();
+    partial void OnPricKala2Changing(System.Nullable<long> value);
+    partial void OnPricKala2Changed();
+    partial void OnPriceDastMozd2Changing(System.Nullable<long> value);
+    partial void OnPriceDastMozd2Changed();
     #endregion
 		
 		public Product()
@@ -593,62 +980,82 @@ namespace Botiya
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PriceKala", DbType="BigInt")]
-		public System.Nullable<long> PriceKala
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PriceKala1", DbType="BigInt")]
+		public System.Nullable<long> PriceKala1
 		{
 			get
 			{
-				return this._PriceKala;
+				return this._PriceKala1;
 			}
 			set
 			{
-				if ((this._PriceKala != value))
+				if ((this._PriceKala1 != value))
 				{
-					this.OnPriceKalaChanging(value);
+					this.OnPriceKala1Changing(value);
 					this.SendPropertyChanging();
-					this._PriceKala = value;
-					this.SendPropertyChanged("PriceKala");
-					this.OnPriceKalaChanged();
+					this._PriceKala1 = value;
+					this.SendPropertyChanged("PriceKala1");
+					this.OnPriceKala1Changed();
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PriceDastMozd", DbType="BigInt")]
-		public System.Nullable<long> PriceDastMozd
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PriceDastMozd1", DbType="BigInt")]
+		public System.Nullable<long> PriceDastMozd1
 		{
 			get
 			{
-				return this._PriceDastMozd;
+				return this._PriceDastMozd1;
 			}
 			set
 			{
-				if ((this._PriceDastMozd != value))
+				if ((this._PriceDastMozd1 != value))
 				{
-					this.OnPriceDastMozdChanging(value);
+					this.OnPriceDastMozd1Changing(value);
 					this.SendPropertyChanging();
-					this._PriceDastMozd = value;
-					this.SendPropertyChanged("PriceDastMozd");
-					this.OnPriceDastMozdChanged();
+					this._PriceDastMozd1 = value;
+					this.SendPropertyChanged("PriceDastMozd1");
+					this.OnPriceDastMozd1Changed();
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SumPrice", DbType="BigInt")]
-		public System.Nullable<long> SumPrice
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PricKala2", DbType="BigInt")]
+		public System.Nullable<long> PricKala2
 		{
 			get
 			{
-				return this._SumPrice;
+				return this._PricKala2;
 			}
 			set
 			{
-				if ((this._SumPrice != value))
+				if ((this._PricKala2 != value))
 				{
-					this.OnSumPriceChanging(value);
+					this.OnPricKala2Changing(value);
 					this.SendPropertyChanging();
-					this._SumPrice = value;
-					this.SendPropertyChanged("SumPrice");
-					this.OnSumPriceChanged();
+					this._PricKala2 = value;
+					this.SendPropertyChanged("PricKala2");
+					this.OnPricKala2Changed();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PriceDastMozd2", DbType="BigInt")]
+		public System.Nullable<long> PriceDastMozd2
+		{
+			get
+			{
+				return this._PriceDastMozd2;
+			}
+			set
+			{
+				if ((this._PriceDastMozd2 != value))
+				{
+					this.OnPriceDastMozd2Changing(value);
+					this.SendPropertyChanging();
+					this._PriceDastMozd2 = value;
+					this.SendPropertyChanged("PriceDastMozd2");
+					this.OnPriceDastMozd2Changed();
 				}
 			}
 		}
@@ -674,15 +1081,206 @@ namespace Botiya
 		}
 	}
 	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Vaheds")]
-	public partial class Vahed : INotifyPropertyChanging, INotifyPropertyChanged
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.ViewProductsVahed")]
+	public partial class ViewProductsVahed
+	{
+		
+		private int _Id;
+		
+		private string _CodeId;
+		
+		private string _Name;
+		
+		private System.Nullable<int> _Vahed;
+		
+		private System.Nullable<long> _PriceKala1;
+		
+		private System.Nullable<long> _PriceDastMozd1;
+		
+		private System.Nullable<long> _PricKala2;
+		
+		private System.Nullable<long> _PriceDastMozd2;
+		
+		private string _VahedName;
+		
+		public ViewProductsVahed()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Id", DbType="Int NOT NULL")]
+		public int Id
+		{
+			get
+			{
+				return this._Id;
+			}
+			set
+			{
+				if ((this._Id != value))
+				{
+					this._Id = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CodeId", DbType="NChar(100)")]
+		public string CodeId
+		{
+			get
+			{
+				return this._CodeId;
+			}
+			set
+			{
+				if ((this._CodeId != value))
+				{
+					this._CodeId = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Name", DbType="NVarChar(MAX)")]
+		public string Name
+		{
+			get
+			{
+				return this._Name;
+			}
+			set
+			{
+				if ((this._Name != value))
+				{
+					this._Name = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Vahed", DbType="Int")]
+		public System.Nullable<int> Vahed
+		{
+			get
+			{
+				return this._Vahed;
+			}
+			set
+			{
+				if ((this._Vahed != value))
+				{
+					this._Vahed = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PriceKala1", DbType="BigInt")]
+		public System.Nullable<long> PriceKala1
+		{
+			get
+			{
+				return this._PriceKala1;
+			}
+			set
+			{
+				if ((this._PriceKala1 != value))
+				{
+					this._PriceKala1 = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PriceDastMozd1", DbType="BigInt")]
+		public System.Nullable<long> PriceDastMozd1
+		{
+			get
+			{
+				return this._PriceDastMozd1;
+			}
+			set
+			{
+				if ((this._PriceDastMozd1 != value))
+				{
+					this._PriceDastMozd1 = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PricKala2", DbType="BigInt")]
+		public System.Nullable<long> PricKala2
+		{
+			get
+			{
+				return this._PricKala2;
+			}
+			set
+			{
+				if ((this._PricKala2 != value))
+				{
+					this._PricKala2 = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PriceDastMozd2", DbType="BigInt")]
+		public System.Nullable<long> PriceDastMozd2
+		{
+			get
+			{
+				return this._PriceDastMozd2;
+			}
+			set
+			{
+				if ((this._PriceDastMozd2 != value))
+				{
+					this._PriceDastMozd2 = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_VahedName", DbType="NVarChar(200)")]
+		public string VahedName
+		{
+			get
+			{
+				return this._VahedName;
+			}
+			set
+			{
+				if ((this._VahedName != value))
+				{
+					this._VahedName = value;
+				}
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Qarardad")]
+	public partial class Qarardad : INotifyPropertyChanging, INotifyPropertyChanged
 	{
 		
 		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
 		
 		private int _Id;
 		
-		private string _Name;
+		private System.Nullable<int> _IdPerson;
+		
+		private string _Date;
+		
+		private System.Nullable<long> _PriceHaml;
+		
+		private string _IdQarardad;
+		
+		private string _MozoQarardad;
+		
+		private string _ModatQarardad;
+		
+		private string _ShomareEnsheab;
+		
+		private string _DateEnsheab;
+		
+		private string _DoreTazmin;
+		
+		private string _ModatRafeNaghz;
+		
+		private System.Nullable<long> _PriceJarimeTakhir;
 		
     #region Extensibility Method Definitions
     partial void OnLoaded();
@@ -690,11 +1288,31 @@ namespace Botiya
     partial void OnCreated();
     partial void OnIdChanging(int value);
     partial void OnIdChanged();
-    partial void OnNameChanging(string value);
-    partial void OnNameChanged();
+    partial void OnIdPersonChanging(System.Nullable<int> value);
+    partial void OnIdPersonChanged();
+    partial void OnDateChanging(string value);
+    partial void OnDateChanged();
+    partial void OnPriceHamlChanging(System.Nullable<long> value);
+    partial void OnPriceHamlChanged();
+    partial void OnIdQarardadChanging(string value);
+    partial void OnIdQarardadChanged();
+    partial void OnMozoQarardadChanging(string value);
+    partial void OnMozoQarardadChanged();
+    partial void OnModatQarardadChanging(string value);
+    partial void OnModatQarardadChanged();
+    partial void OnShomareEnsheabChanging(string value);
+    partial void OnShomareEnsheabChanged();
+    partial void OnDateEnsheabChanging(string value);
+    partial void OnDateEnsheabChanged();
+    partial void OnDoreTazminChanging(string value);
+    partial void OnDoreTazminChanged();
+    partial void OnModatRafeNaghzChanging(string value);
+    partial void OnModatRafeNaghzChanged();
+    partial void OnPriceJarimeTakhirChanging(System.Nullable<long> value);
+    partial void OnPriceJarimeTakhirChanged();
     #endregion
 		
-		public Vahed()
+		public Qarardad()
 		{
 			OnCreated();
 		}
@@ -719,7 +1337,518 @@ namespace Botiya
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Name", DbType="NVarChar(200)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_IdPerson", DbType="Int")]
+		public System.Nullable<int> IdPerson
+		{
+			get
+			{
+				return this._IdPerson;
+			}
+			set
+			{
+				if ((this._IdPerson != value))
+				{
+					this.OnIdPersonChanging(value);
+					this.SendPropertyChanging();
+					this._IdPerson = value;
+					this.SendPropertyChanged("IdPerson");
+					this.OnIdPersonChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Date", DbType="NVarChar(10)")]
+		public string Date
+		{
+			get
+			{
+				return this._Date;
+			}
+			set
+			{
+				if ((this._Date != value))
+				{
+					this.OnDateChanging(value);
+					this.SendPropertyChanging();
+					this._Date = value;
+					this.SendPropertyChanged("Date");
+					this.OnDateChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PriceHaml", DbType="BigInt")]
+		public System.Nullable<long> PriceHaml
+		{
+			get
+			{
+				return this._PriceHaml;
+			}
+			set
+			{
+				if ((this._PriceHaml != value))
+				{
+					this.OnPriceHamlChanging(value);
+					this.SendPropertyChanging();
+					this._PriceHaml = value;
+					this.SendPropertyChanged("PriceHaml");
+					this.OnPriceHamlChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_IdQarardad", DbType="NVarChar(100)")]
+		public string IdQarardad
+		{
+			get
+			{
+				return this._IdQarardad;
+			}
+			set
+			{
+				if ((this._IdQarardad != value))
+				{
+					this.OnIdQarardadChanging(value);
+					this.SendPropertyChanging();
+					this._IdQarardad = value;
+					this.SendPropertyChanged("IdQarardad");
+					this.OnIdQarardadChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MozoQarardad", DbType="NVarChar(MAX)")]
+		public string MozoQarardad
+		{
+			get
+			{
+				return this._MozoQarardad;
+			}
+			set
+			{
+				if ((this._MozoQarardad != value))
+				{
+					this.OnMozoQarardadChanging(value);
+					this.SendPropertyChanging();
+					this._MozoQarardad = value;
+					this.SendPropertyChanged("MozoQarardad");
+					this.OnMozoQarardadChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ModatQarardad", DbType="NVarChar(30)")]
+		public string ModatQarardad
+		{
+			get
+			{
+				return this._ModatQarardad;
+			}
+			set
+			{
+				if ((this._ModatQarardad != value))
+				{
+					this.OnModatQarardadChanging(value);
+					this.SendPropertyChanging();
+					this._ModatQarardad = value;
+					this.SendPropertyChanged("ModatQarardad");
+					this.OnModatQarardadChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ShomareEnsheab", DbType="NVarChar(100)")]
+		public string ShomareEnsheab
+		{
+			get
+			{
+				return this._ShomareEnsheab;
+			}
+			set
+			{
+				if ((this._ShomareEnsheab != value))
+				{
+					this.OnShomareEnsheabChanging(value);
+					this.SendPropertyChanging();
+					this._ShomareEnsheab = value;
+					this.SendPropertyChanged("ShomareEnsheab");
+					this.OnShomareEnsheabChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DateEnsheab", DbType="NVarChar(10)")]
+		public string DateEnsheab
+		{
+			get
+			{
+				return this._DateEnsheab;
+			}
+			set
+			{
+				if ((this._DateEnsheab != value))
+				{
+					this.OnDateEnsheabChanging(value);
+					this.SendPropertyChanging();
+					this._DateEnsheab = value;
+					this.SendPropertyChanged("DateEnsheab");
+					this.OnDateEnsheabChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DoreTazmin", DbType="NVarChar(30)")]
+		public string DoreTazmin
+		{
+			get
+			{
+				return this._DoreTazmin;
+			}
+			set
+			{
+				if ((this._DoreTazmin != value))
+				{
+					this.OnDoreTazminChanging(value);
+					this.SendPropertyChanging();
+					this._DoreTazmin = value;
+					this.SendPropertyChanged("DoreTazmin");
+					this.OnDoreTazminChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ModatRafeNaghz", DbType="NVarChar(50)")]
+		public string ModatRafeNaghz
+		{
+			get
+			{
+				return this._ModatRafeNaghz;
+			}
+			set
+			{
+				if ((this._ModatRafeNaghz != value))
+				{
+					this.OnModatRafeNaghzChanging(value);
+					this.SendPropertyChanging();
+					this._ModatRafeNaghz = value;
+					this.SendPropertyChanged("ModatRafeNaghz");
+					this.OnModatRafeNaghzChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PriceJarimeTakhir", DbType="BigInt")]
+		public System.Nullable<long> PriceJarimeTakhir
+		{
+			get
+			{
+				return this._PriceJarimeTakhir;
+			}
+			set
+			{
+				if ((this._PriceJarimeTakhir != value))
+				{
+					this.OnPriceJarimeTakhirChanging(value);
+					this.SendPropertyChanging();
+					this._PriceJarimeTakhir = value;
+					this.SendPropertyChanged("PriceJarimeTakhir");
+					this.OnPriceJarimeTakhirChanged();
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Factor")]
+	public partial class Factor : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _Id;
+		
+		private int _IdQarardad;
+		
+		private System.Nullable<int> _IdProduct;
+		
+		private System.Nullable<double> _Tedad;
+		
+		private System.Nullable<long> _PriceVahed;
+		
+		private System.Nullable<long> _PriceKol;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnIdChanging(int value);
+    partial void OnIdChanged();
+    partial void OnIdQarardadChanging(int value);
+    partial void OnIdQarardadChanged();
+    partial void OnIdProductChanging(System.Nullable<int> value);
+    partial void OnIdProductChanged();
+    partial void OnTedadChanging(System.Nullable<double> value);
+    partial void OnTedadChanged();
+    partial void OnPriceVahedChanging(System.Nullable<long> value);
+    partial void OnPriceVahedChanged();
+    partial void OnPriceKolChanging(System.Nullable<long> value);
+    partial void OnPriceKolChanged();
+    #endregion
+		
+		public Factor()
+		{
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Id", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public int Id
+		{
+			get
+			{
+				return this._Id;
+			}
+			set
+			{
+				if ((this._Id != value))
+				{
+					this.OnIdChanging(value);
+					this.SendPropertyChanging();
+					this._Id = value;
+					this.SendPropertyChanged("Id");
+					this.OnIdChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_IdQarardad", DbType="Int NOT NULL")]
+		public int IdQarardad
+		{
+			get
+			{
+				return this._IdQarardad;
+			}
+			set
+			{
+				if ((this._IdQarardad != value))
+				{
+					this.OnIdQarardadChanging(value);
+					this.SendPropertyChanging();
+					this._IdQarardad = value;
+					this.SendPropertyChanged("IdQarardad");
+					this.OnIdQarardadChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_IdProduct", DbType="Int")]
+		public System.Nullable<int> IdProduct
+		{
+			get
+			{
+				return this._IdProduct;
+			}
+			set
+			{
+				if ((this._IdProduct != value))
+				{
+					this.OnIdProductChanging(value);
+					this.SendPropertyChanging();
+					this._IdProduct = value;
+					this.SendPropertyChanged("IdProduct");
+					this.OnIdProductChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Tedad", DbType="Float")]
+		public System.Nullable<double> Tedad
+		{
+			get
+			{
+				return this._Tedad;
+			}
+			set
+			{
+				if ((this._Tedad != value))
+				{
+					this.OnTedadChanging(value);
+					this.SendPropertyChanging();
+					this._Tedad = value;
+					this.SendPropertyChanged("Tedad");
+					this.OnTedadChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PriceVahed", DbType="BigInt")]
+		public System.Nullable<long> PriceVahed
+		{
+			get
+			{
+				return this._PriceVahed;
+			}
+			set
+			{
+				if ((this._PriceVahed != value))
+				{
+					this.OnPriceVahedChanging(value);
+					this.SendPropertyChanging();
+					this._PriceVahed = value;
+					this.SendPropertyChanged("PriceVahed");
+					this.OnPriceVahedChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PriceKol", DbType="BigInt")]
+		public System.Nullable<long> PriceKol
+		{
+			get
+			{
+				return this._PriceKol;
+			}
+			set
+			{
+				if ((this._PriceKol != value))
+				{
+					this.OnPriceKolChanging(value);
+					this.SendPropertyChanging();
+					this._PriceKol = value;
+					this.SendPropertyChanged("PriceKol");
+					this.OnPriceKolChanged();
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.ViewFactorProduct")]
+	public partial class ViewFactorProduct
+	{
+		
+		private int _Id;
+		
+		private int _IdQarardad;
+		
+		private System.Nullable<int> _IdProduct;
+		
+		private string _CodeId;
+		
+		private string _Name;
+		
+		private System.Nullable<double> _Tedad;
+		
+		private System.Nullable<long> _PriceVahed;
+		
+		private System.Nullable<long> _PriceKol;
+		
+		public ViewFactorProduct()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Id", DbType="Int NOT NULL")]
+		public int Id
+		{
+			get
+			{
+				return this._Id;
+			}
+			set
+			{
+				if ((this._Id != value))
+				{
+					this._Id = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_IdQarardad", DbType="Int NOT NULL")]
+		public int IdQarardad
+		{
+			get
+			{
+				return this._IdQarardad;
+			}
+			set
+			{
+				if ((this._IdQarardad != value))
+				{
+					this._IdQarardad = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_IdProduct", DbType="Int")]
+		public System.Nullable<int> IdProduct
+		{
+			get
+			{
+				return this._IdProduct;
+			}
+			set
+			{
+				if ((this._IdProduct != value))
+				{
+					this._IdProduct = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CodeId", DbType="NVarChar(100)")]
+		public string CodeId
+		{
+			get
+			{
+				return this._CodeId;
+			}
+			set
+			{
+				if ((this._CodeId != value))
+				{
+					this._CodeId = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Name", DbType="NVarChar(MAX)")]
 		public string Name
 		{
 			get
@@ -730,11 +1859,754 @@ namespace Botiya
 			{
 				if ((this._Name != value))
 				{
-					this.OnNameChanging(value);
-					this.SendPropertyChanging();
 					this._Name = value;
-					this.SendPropertyChanged("Name");
-					this.OnNameChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Tedad", DbType="Float")]
+		public System.Nullable<double> Tedad
+		{
+			get
+			{
+				return this._Tedad;
+			}
+			set
+			{
+				if ((this._Tedad != value))
+				{
+					this._Tedad = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PriceVahed", DbType="BigInt")]
+		public System.Nullable<long> PriceVahed
+		{
+			get
+			{
+				return this._PriceVahed;
+			}
+			set
+			{
+				if ((this._PriceVahed != value))
+				{
+					this._PriceVahed = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PriceKol", DbType="BigInt")]
+		public System.Nullable<long> PriceKol
+		{
+			get
+			{
+				return this._PriceKol;
+			}
+			set
+			{
+				if ((this._PriceKol != value))
+				{
+					this._PriceKol = value;
+				}
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.ViewQarardadPerson")]
+	public partial class ViewQarardadPerson
+	{
+		
+		private int _Id;
+		
+		private System.Nullable<int> _IdPerson;
+		
+		private string _FName;
+		
+		private string _LName;
+		
+		private string _CodeMelli;
+		
+		private string _SherkatName;
+		
+		private string _Date;
+		
+		private System.Nullable<double> _PriceHaml;
+		
+		private string _IdQarardad;
+		
+		private string _MozoQarardad;
+		
+		private string _ModatQarardad;
+		
+		private string _ShomareEnsheab;
+		
+		private string _DateEnsheab;
+		
+		private string _DoreTazmin;
+		
+		private string _ModatRafeNaghz;
+		
+		private System.Nullable<double> _PriceJarimeTakhir;
+		
+		public ViewQarardadPerson()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Id", DbType="Int NOT NULL")]
+		public int Id
+		{
+			get
+			{
+				return this._Id;
+			}
+			set
+			{
+				if ((this._Id != value))
+				{
+					this._Id = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_IdPerson", DbType="Int")]
+		public System.Nullable<int> IdPerson
+		{
+			get
+			{
+				return this._IdPerson;
+			}
+			set
+			{
+				if ((this._IdPerson != value))
+				{
+					this._IdPerson = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_FName", DbType="NVarChar(100)")]
+		public string FName
+		{
+			get
+			{
+				return this._FName;
+			}
+			set
+			{
+				if ((this._FName != value))
+				{
+					this._FName = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_LName", DbType="NVarChar(100)")]
+		public string LName
+		{
+			get
+			{
+				return this._LName;
+			}
+			set
+			{
+				if ((this._LName != value))
+				{
+					this._LName = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CodeMelli", DbType="NVarChar(10)")]
+		public string CodeMelli
+		{
+			get
+			{
+				return this._CodeMelli;
+			}
+			set
+			{
+				if ((this._CodeMelli != value))
+				{
+					this._CodeMelli = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SherkatName", DbType="NVarChar(150)")]
+		public string SherkatName
+		{
+			get
+			{
+				return this._SherkatName;
+			}
+			set
+			{
+				if ((this._SherkatName != value))
+				{
+					this._SherkatName = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Date", DbType="NVarChar(10)")]
+		public string Date
+		{
+			get
+			{
+				return this._Date;
+			}
+			set
+			{
+				if ((this._Date != value))
+				{
+					this._Date = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PriceHaml", DbType="Float")]
+		public System.Nullable<double> PriceHaml
+		{
+			get
+			{
+				return this._PriceHaml;
+			}
+			set
+			{
+				if ((this._PriceHaml != value))
+				{
+					this._PriceHaml = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_IdQarardad", DbType="NVarChar(100)")]
+		public string IdQarardad
+		{
+			get
+			{
+				return this._IdQarardad;
+			}
+			set
+			{
+				if ((this._IdQarardad != value))
+				{
+					this._IdQarardad = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MozoQarardad", DbType="NVarChar(MAX)")]
+		public string MozoQarardad
+		{
+			get
+			{
+				return this._MozoQarardad;
+			}
+			set
+			{
+				if ((this._MozoQarardad != value))
+				{
+					this._MozoQarardad = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ModatQarardad", DbType="NVarChar(30)")]
+		public string ModatQarardad
+		{
+			get
+			{
+				return this._ModatQarardad;
+			}
+			set
+			{
+				if ((this._ModatQarardad != value))
+				{
+					this._ModatQarardad = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ShomareEnsheab", DbType="NVarChar(100)")]
+		public string ShomareEnsheab
+		{
+			get
+			{
+				return this._ShomareEnsheab;
+			}
+			set
+			{
+				if ((this._ShomareEnsheab != value))
+				{
+					this._ShomareEnsheab = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DateEnsheab", DbType="NVarChar(10)")]
+		public string DateEnsheab
+		{
+			get
+			{
+				return this._DateEnsheab;
+			}
+			set
+			{
+				if ((this._DateEnsheab != value))
+				{
+					this._DateEnsheab = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DoreTazmin", DbType="NVarChar(30)")]
+		public string DoreTazmin
+		{
+			get
+			{
+				return this._DoreTazmin;
+			}
+			set
+			{
+				if ((this._DoreTazmin != value))
+				{
+					this._DoreTazmin = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ModatRafeNaghz", DbType="NVarChar(50)")]
+		public string ModatRafeNaghz
+		{
+			get
+			{
+				return this._ModatRafeNaghz;
+			}
+			set
+			{
+				if ((this._ModatRafeNaghz != value))
+				{
+					this._ModatRafeNaghz = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PriceJarimeTakhir", DbType="Float")]
+		public System.Nullable<double> PriceJarimeTakhir
+		{
+			get
+			{
+				return this._PriceJarimeTakhir;
+			}
+			set
+			{
+				if ((this._PriceJarimeTakhir != value))
+				{
+					this._PriceJarimeTakhir = value;
+				}
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.MatnQarardad")]
+	public partial class frm_MatnQarardad : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _Id;
+		
+		private string _Made1;
+		
+		private string _Made2;
+		
+		private string _Made3;
+		
+		private string _Made4;
+		
+		private string _Made5;
+		
+		private string _Made6;
+		
+		private string _Made7;
+		
+		private string _Made8;
+		
+		private string _Made9;
+		
+		private string _Made10;
+		
+		private string _Made11;
+		
+		private string _Made12;
+		
+		private string _Made13;
+		
+		private string _Made14;
+		
+		private string _Made15;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnIdChanging(int value);
+    partial void OnIdChanged();
+    partial void OnMade1Changing(string value);
+    partial void OnMade1Changed();
+    partial void OnMade2Changing(string value);
+    partial void OnMade2Changed();
+    partial void OnMade3Changing(string value);
+    partial void OnMade3Changed();
+    partial void OnMade4Changing(string value);
+    partial void OnMade4Changed();
+    partial void OnMade5Changing(string value);
+    partial void OnMade5Changed();
+    partial void OnMade6Changing(string value);
+    partial void OnMade6Changed();
+    partial void OnMade7Changing(string value);
+    partial void OnMade7Changed();
+    partial void OnMade8Changing(string value);
+    partial void OnMade8Changed();
+    partial void OnMade9Changing(string value);
+    partial void OnMade9Changed();
+    partial void OnMade10Changing(string value);
+    partial void OnMade10Changed();
+    partial void OnMade11Changing(string value);
+    partial void OnMade11Changed();
+    partial void OnMade12Changing(string value);
+    partial void OnMade12Changed();
+    partial void OnMade13Changing(string value);
+    partial void OnMade13Changed();
+    partial void OnMade14Changing(string value);
+    partial void OnMade14Changed();
+    partial void OnMade15Changing(string value);
+    partial void OnMade15Changed();
+    #endregion
+		
+		public frm_MatnQarardad()
+		{
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Id", DbType="Int NOT NULL", IsPrimaryKey=true)]
+		public int Id
+		{
+			get
+			{
+				return this._Id;
+			}
+			set
+			{
+				if ((this._Id != value))
+				{
+					this.OnIdChanging(value);
+					this.SendPropertyChanging();
+					this._Id = value;
+					this.SendPropertyChanged("Id");
+					this.OnIdChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Made1", DbType="NVarChar(MAX)")]
+		public string Made1
+		{
+			get
+			{
+				return this._Made1;
+			}
+			set
+			{
+				if ((this._Made1 != value))
+				{
+					this.OnMade1Changing(value);
+					this.SendPropertyChanging();
+					this._Made1 = value;
+					this.SendPropertyChanged("Made1");
+					this.OnMade1Changed();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Made2", DbType="NVarChar(MAX)")]
+		public string Made2
+		{
+			get
+			{
+				return this._Made2;
+			}
+			set
+			{
+				if ((this._Made2 != value))
+				{
+					this.OnMade2Changing(value);
+					this.SendPropertyChanging();
+					this._Made2 = value;
+					this.SendPropertyChanged("Made2");
+					this.OnMade2Changed();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Made3", DbType="NVarChar(MAX)")]
+		public string Made3
+		{
+			get
+			{
+				return this._Made3;
+			}
+			set
+			{
+				if ((this._Made3 != value))
+				{
+					this.OnMade3Changing(value);
+					this.SendPropertyChanging();
+					this._Made3 = value;
+					this.SendPropertyChanged("Made3");
+					this.OnMade3Changed();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Made4", DbType="NVarChar(MAX)")]
+		public string Made4
+		{
+			get
+			{
+				return this._Made4;
+			}
+			set
+			{
+				if ((this._Made4 != value))
+				{
+					this.OnMade4Changing(value);
+					this.SendPropertyChanging();
+					this._Made4 = value;
+					this.SendPropertyChanged("Made4");
+					this.OnMade4Changed();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Made5", DbType="NVarChar(MAX)")]
+		public string Made5
+		{
+			get
+			{
+				return this._Made5;
+			}
+			set
+			{
+				if ((this._Made5 != value))
+				{
+					this.OnMade5Changing(value);
+					this.SendPropertyChanging();
+					this._Made5 = value;
+					this.SendPropertyChanged("Made5");
+					this.OnMade5Changed();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Made6", DbType="NVarChar(MAX)")]
+		public string Made6
+		{
+			get
+			{
+				return this._Made6;
+			}
+			set
+			{
+				if ((this._Made6 != value))
+				{
+					this.OnMade6Changing(value);
+					this.SendPropertyChanging();
+					this._Made6 = value;
+					this.SendPropertyChanged("Made6");
+					this.OnMade6Changed();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Made7", DbType="NVarChar(MAX)")]
+		public string Made7
+		{
+			get
+			{
+				return this._Made7;
+			}
+			set
+			{
+				if ((this._Made7 != value))
+				{
+					this.OnMade7Changing(value);
+					this.SendPropertyChanging();
+					this._Made7 = value;
+					this.SendPropertyChanged("Made7");
+					this.OnMade7Changed();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Made8", DbType="NVarChar(MAX)")]
+		public string Made8
+		{
+			get
+			{
+				return this._Made8;
+			}
+			set
+			{
+				if ((this._Made8 != value))
+				{
+					this.OnMade8Changing(value);
+					this.SendPropertyChanging();
+					this._Made8 = value;
+					this.SendPropertyChanged("Made8");
+					this.OnMade8Changed();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Made9", DbType="NVarChar(MAX)")]
+		public string Made9
+		{
+			get
+			{
+				return this._Made9;
+			}
+			set
+			{
+				if ((this._Made9 != value))
+				{
+					this.OnMade9Changing(value);
+					this.SendPropertyChanging();
+					this._Made9 = value;
+					this.SendPropertyChanged("Made9");
+					this.OnMade9Changed();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Made10", DbType="NVarChar(MAX)")]
+		public string Made10
+		{
+			get
+			{
+				return this._Made10;
+			}
+			set
+			{
+				if ((this._Made10 != value))
+				{
+					this.OnMade10Changing(value);
+					this.SendPropertyChanging();
+					this._Made10 = value;
+					this.SendPropertyChanged("Made10");
+					this.OnMade10Changed();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Made11", DbType="NVarChar(MAX)")]
+		public string Made11
+		{
+			get
+			{
+				return this._Made11;
+			}
+			set
+			{
+				if ((this._Made11 != value))
+				{
+					this.OnMade11Changing(value);
+					this.SendPropertyChanging();
+					this._Made11 = value;
+					this.SendPropertyChanged("Made11");
+					this.OnMade11Changed();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Made12", DbType="NVarChar(MAX)")]
+		public string Made12
+		{
+			get
+			{
+				return this._Made12;
+			}
+			set
+			{
+				if ((this._Made12 != value))
+				{
+					this.OnMade12Changing(value);
+					this.SendPropertyChanging();
+					this._Made12 = value;
+					this.SendPropertyChanged("Made12");
+					this.OnMade12Changed();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Made13", DbType="NVarChar(MAX)")]
+		public string Made13
+		{
+			get
+			{
+				return this._Made13;
+			}
+			set
+			{
+				if ((this._Made13 != value))
+				{
+					this.OnMade13Changing(value);
+					this.SendPropertyChanging();
+					this._Made13 = value;
+					this.SendPropertyChanged("Made13");
+					this.OnMade13Changed();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Made14", DbType="NVarChar(MAX)")]
+		public string Made14
+		{
+			get
+			{
+				return this._Made14;
+			}
+			set
+			{
+				if ((this._Made14 != value))
+				{
+					this.OnMade14Changing(value);
+					this.SendPropertyChanging();
+					this._Made14 = value;
+					this.SendPropertyChanged("Made14");
+					this.OnMade14Changed();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Made15", DbType="NVarChar(MAX)")]
+		public string Made15
+		{
+			get
+			{
+				return this._Made15;
+			}
+			set
+			{
+				if ((this._Made15 != value))
+				{
+					this.OnMade15Changing(value);
+					this.SendPropertyChanging();
+					this._Made15 = value;
+					this.SendPropertyChanged("Made15");
+					this.OnMade15Changed();
 				}
 			}
 		}
@@ -1363,6 +3235,2648 @@ namespace Botiya
 				if ((this._SherkatName != value))
 				{
 					this._SherkatName = value;
+				}
+			}
+		}
+	}
+	
+	public partial class FillPrdouctByNameResult
+	{
+		
+		private int _Id;
+		
+		private string _CodeId;
+		
+		private string _Name;
+		
+		private System.Nullable<int> _Vahed;
+		
+		private System.Nullable<long> _PriceKala1;
+		
+		private System.Nullable<long> _PriceDastMozd1;
+		
+		private System.Nullable<long> _PricKala2;
+		
+		private System.Nullable<long> _PriceDastMozd2;
+		
+		public FillPrdouctByNameResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Id", DbType="Int NOT NULL")]
+		public int Id
+		{
+			get
+			{
+				return this._Id;
+			}
+			set
+			{
+				if ((this._Id != value))
+				{
+					this._Id = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CodeId", DbType="NChar(100)")]
+		public string CodeId
+		{
+			get
+			{
+				return this._CodeId;
+			}
+			set
+			{
+				if ((this._CodeId != value))
+				{
+					this._CodeId = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Name", DbType="NVarChar(MAX)")]
+		public string Name
+		{
+			get
+			{
+				return this._Name;
+			}
+			set
+			{
+				if ((this._Name != value))
+				{
+					this._Name = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Vahed", DbType="Int")]
+		public System.Nullable<int> Vahed
+		{
+			get
+			{
+				return this._Vahed;
+			}
+			set
+			{
+				if ((this._Vahed != value))
+				{
+					this._Vahed = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PriceKala1", DbType="BigInt")]
+		public System.Nullable<long> PriceKala1
+		{
+			get
+			{
+				return this._PriceKala1;
+			}
+			set
+			{
+				if ((this._PriceKala1 != value))
+				{
+					this._PriceKala1 = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PriceDastMozd1", DbType="BigInt")]
+		public System.Nullable<long> PriceDastMozd1
+		{
+			get
+			{
+				return this._PriceDastMozd1;
+			}
+			set
+			{
+				if ((this._PriceDastMozd1 != value))
+				{
+					this._PriceDastMozd1 = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PricKala2", DbType="BigInt")]
+		public System.Nullable<long> PricKala2
+		{
+			get
+			{
+				return this._PricKala2;
+			}
+			set
+			{
+				if ((this._PricKala2 != value))
+				{
+					this._PricKala2 = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PriceDastMozd2", DbType="BigInt")]
+		public System.Nullable<long> PriceDastMozd2
+		{
+			get
+			{
+				return this._PriceDastMozd2;
+			}
+			set
+			{
+				if ((this._PriceDastMozd2 != value))
+				{
+					this._PriceDastMozd2 = value;
+				}
+			}
+		}
+	}
+	
+	public partial class FillProductsResult
+	{
+		
+		private int _Id;
+		
+		private string _CodeId;
+		
+		private string _Name;
+		
+		private System.Nullable<int> _Vahed;
+		
+		private System.Nullable<long> _PriceKala1;
+		
+		private System.Nullable<long> _PriceDastMozd1;
+		
+		private System.Nullable<long> _PricKala2;
+		
+		private System.Nullable<long> _PriceDastMozd2;
+		
+		public FillProductsResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Id", DbType="Int NOT NULL")]
+		public int Id
+		{
+			get
+			{
+				return this._Id;
+			}
+			set
+			{
+				if ((this._Id != value))
+				{
+					this._Id = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CodeId", DbType="NChar(100)")]
+		public string CodeId
+		{
+			get
+			{
+				return this._CodeId;
+			}
+			set
+			{
+				if ((this._CodeId != value))
+				{
+					this._CodeId = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Name", DbType="NVarChar(MAX)")]
+		public string Name
+		{
+			get
+			{
+				return this._Name;
+			}
+			set
+			{
+				if ((this._Name != value))
+				{
+					this._Name = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Vahed", DbType="Int")]
+		public System.Nullable<int> Vahed
+		{
+			get
+			{
+				return this._Vahed;
+			}
+			set
+			{
+				if ((this._Vahed != value))
+				{
+					this._Vahed = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PriceKala1", DbType="BigInt")]
+		public System.Nullable<long> PriceKala1
+		{
+			get
+			{
+				return this._PriceKala1;
+			}
+			set
+			{
+				if ((this._PriceKala1 != value))
+				{
+					this._PriceKala1 = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PriceDastMozd1", DbType="BigInt")]
+		public System.Nullable<long> PriceDastMozd1
+		{
+			get
+			{
+				return this._PriceDastMozd1;
+			}
+			set
+			{
+				if ((this._PriceDastMozd1 != value))
+				{
+					this._PriceDastMozd1 = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PricKala2", DbType="BigInt")]
+		public System.Nullable<long> PricKala2
+		{
+			get
+			{
+				return this._PricKala2;
+			}
+			set
+			{
+				if ((this._PricKala2 != value))
+				{
+					this._PricKala2 = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PriceDastMozd2", DbType="BigInt")]
+		public System.Nullable<long> PriceDastMozd2
+		{
+			get
+			{
+				return this._PriceDastMozd2;
+			}
+			set
+			{
+				if ((this._PriceDastMozd2 != value))
+				{
+					this._PriceDastMozd2 = value;
+				}
+			}
+		}
+	}
+	
+	public partial class FillProductByIdResult
+	{
+		
+		private int _Id;
+		
+		private string _CodeId;
+		
+		private string _Name;
+		
+		private System.Nullable<int> _Vahed;
+		
+		private System.Nullable<long> _PriceKala1;
+		
+		private System.Nullable<long> _PriceDastMozd1;
+		
+		private System.Nullable<long> _PricKala2;
+		
+		private System.Nullable<long> _PriceDastMozd2;
+		
+		public FillProductByIdResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Id", DbType="Int NOT NULL")]
+		public int Id
+		{
+			get
+			{
+				return this._Id;
+			}
+			set
+			{
+				if ((this._Id != value))
+				{
+					this._Id = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CodeId", DbType="NChar(100)")]
+		public string CodeId
+		{
+			get
+			{
+				return this._CodeId;
+			}
+			set
+			{
+				if ((this._CodeId != value))
+				{
+					this._CodeId = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Name", DbType="NVarChar(MAX)")]
+		public string Name
+		{
+			get
+			{
+				return this._Name;
+			}
+			set
+			{
+				if ((this._Name != value))
+				{
+					this._Name = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Vahed", DbType="Int")]
+		public System.Nullable<int> Vahed
+		{
+			get
+			{
+				return this._Vahed;
+			}
+			set
+			{
+				if ((this._Vahed != value))
+				{
+					this._Vahed = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PriceKala1", DbType="BigInt")]
+		public System.Nullable<long> PriceKala1
+		{
+			get
+			{
+				return this._PriceKala1;
+			}
+			set
+			{
+				if ((this._PriceKala1 != value))
+				{
+					this._PriceKala1 = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PriceDastMozd1", DbType="BigInt")]
+		public System.Nullable<long> PriceDastMozd1
+		{
+			get
+			{
+				return this._PriceDastMozd1;
+			}
+			set
+			{
+				if ((this._PriceDastMozd1 != value))
+				{
+					this._PriceDastMozd1 = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PricKala2", DbType="BigInt")]
+		public System.Nullable<long> PricKala2
+		{
+			get
+			{
+				return this._PricKala2;
+			}
+			set
+			{
+				if ((this._PricKala2 != value))
+				{
+					this._PricKala2 = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PriceDastMozd2", DbType="BigInt")]
+		public System.Nullable<long> PriceDastMozd2
+		{
+			get
+			{
+				return this._PriceDastMozd2;
+			}
+			set
+			{
+				if ((this._PriceDastMozd2 != value))
+				{
+					this._PriceDastMozd2 = value;
+				}
+			}
+		}
+	}
+	
+	public partial class FillPersonByCodeMelliResult
+	{
+		
+		private int _Id;
+		
+		private string _FName;
+		
+		private string _LName;
+		
+		private string _FatherName;
+		
+		private string _CodeMelli;
+		
+		private string _Phone;
+		
+		private string _Mobile;
+		
+		private string _Address;
+		
+		private System.Nullable<int> _Hoqoqi;
+		
+		private string _SherkatName;
+		
+		public FillPersonByCodeMelliResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Id", DbType="Int NOT NULL")]
+		public int Id
+		{
+			get
+			{
+				return this._Id;
+			}
+			set
+			{
+				if ((this._Id != value))
+				{
+					this._Id = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_FName", DbType="NVarChar(100)")]
+		public string FName
+		{
+			get
+			{
+				return this._FName;
+			}
+			set
+			{
+				if ((this._FName != value))
+				{
+					this._FName = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_LName", DbType="NVarChar(100)")]
+		public string LName
+		{
+			get
+			{
+				return this._LName;
+			}
+			set
+			{
+				if ((this._LName != value))
+				{
+					this._LName = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_FatherName", DbType="NVarChar(100)")]
+		public string FatherName
+		{
+			get
+			{
+				return this._FatherName;
+			}
+			set
+			{
+				if ((this._FatherName != value))
+				{
+					this._FatherName = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CodeMelli", DbType="NVarChar(10)")]
+		public string CodeMelli
+		{
+			get
+			{
+				return this._CodeMelli;
+			}
+			set
+			{
+				if ((this._CodeMelli != value))
+				{
+					this._CodeMelli = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Phone", DbType="NVarChar(11)")]
+		public string Phone
+		{
+			get
+			{
+				return this._Phone;
+			}
+			set
+			{
+				if ((this._Phone != value))
+				{
+					this._Phone = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Mobile", DbType="NVarChar(11)")]
+		public string Mobile
+		{
+			get
+			{
+				return this._Mobile;
+			}
+			set
+			{
+				if ((this._Mobile != value))
+				{
+					this._Mobile = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Address", DbType="NVarChar(MAX)")]
+		public string Address
+		{
+			get
+			{
+				return this._Address;
+			}
+			set
+			{
+				if ((this._Address != value))
+				{
+					this._Address = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Hoqoqi", DbType="Int")]
+		public System.Nullable<int> Hoqoqi
+		{
+			get
+			{
+				return this._Hoqoqi;
+			}
+			set
+			{
+				if ((this._Hoqoqi != value))
+				{
+					this._Hoqoqi = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SherkatName", DbType="NVarChar(150)")]
+		public string SherkatName
+		{
+			get
+			{
+				return this._SherkatName;
+			}
+			set
+			{
+				if ((this._SherkatName != value))
+				{
+					this._SherkatName = value;
+				}
+			}
+		}
+	}
+	
+	public partial class FillPrdouctByCodeResult
+	{
+		
+		private int _Id;
+		
+		private string _CodeId;
+		
+		private string _Name;
+		
+		private System.Nullable<int> _Vahed;
+		
+		private System.Nullable<long> _PriceKala1;
+		
+		private System.Nullable<long> _PriceDastMozd1;
+		
+		private System.Nullable<long> _PricKala2;
+		
+		private System.Nullable<long> _PriceDastMozd2;
+		
+		public FillPrdouctByCodeResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Id", DbType="Int NOT NULL")]
+		public int Id
+		{
+			get
+			{
+				return this._Id;
+			}
+			set
+			{
+				if ((this._Id != value))
+				{
+					this._Id = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CodeId", DbType="NVarChar(100)")]
+		public string CodeId
+		{
+			get
+			{
+				return this._CodeId;
+			}
+			set
+			{
+				if ((this._CodeId != value))
+				{
+					this._CodeId = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Name", DbType="NVarChar(MAX)")]
+		public string Name
+		{
+			get
+			{
+				return this._Name;
+			}
+			set
+			{
+				if ((this._Name != value))
+				{
+					this._Name = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Vahed", DbType="Int")]
+		public System.Nullable<int> Vahed
+		{
+			get
+			{
+				return this._Vahed;
+			}
+			set
+			{
+				if ((this._Vahed != value))
+				{
+					this._Vahed = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PriceKala1", DbType="BigInt")]
+		public System.Nullable<long> PriceKala1
+		{
+			get
+			{
+				return this._PriceKala1;
+			}
+			set
+			{
+				if ((this._PriceKala1 != value))
+				{
+					this._PriceKala1 = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PriceDastMozd1", DbType="BigInt")]
+		public System.Nullable<long> PriceDastMozd1
+		{
+			get
+			{
+				return this._PriceDastMozd1;
+			}
+			set
+			{
+				if ((this._PriceDastMozd1 != value))
+				{
+					this._PriceDastMozd1 = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PricKala2", DbType="BigInt")]
+		public System.Nullable<long> PricKala2
+		{
+			get
+			{
+				return this._PricKala2;
+			}
+			set
+			{
+				if ((this._PricKala2 != value))
+				{
+					this._PricKala2 = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PriceDastMozd2", DbType="BigInt")]
+		public System.Nullable<long> PriceDastMozd2
+		{
+			get
+			{
+				return this._PriceDastMozd2;
+			}
+			set
+			{
+				if ((this._PriceDastMozd2 != value))
+				{
+					this._PriceDastMozd2 = value;
+				}
+			}
+		}
+	}
+	
+	public partial class FillViewFatcorProductResult
+	{
+		
+		private int _Id;
+		
+		private int _IdQarardad;
+		
+		private System.Nullable<int> _IdProduct;
+		
+		private string _CodeId;
+		
+		private string _Name;
+		
+		private System.Nullable<double> _Tedad;
+		
+		private System.Nullable<double> _PriceVahed;
+		
+		private System.Nullable<double> _PriceKol;
+		
+		public FillViewFatcorProductResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Id", DbType="Int NOT NULL")]
+		public int Id
+		{
+			get
+			{
+				return this._Id;
+			}
+			set
+			{
+				if ((this._Id != value))
+				{
+					this._Id = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_IdQarardad", DbType="Int NOT NULL")]
+		public int IdQarardad
+		{
+			get
+			{
+				return this._IdQarardad;
+			}
+			set
+			{
+				if ((this._IdQarardad != value))
+				{
+					this._IdQarardad = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_IdProduct", DbType="Int")]
+		public System.Nullable<int> IdProduct
+		{
+			get
+			{
+				return this._IdProduct;
+			}
+			set
+			{
+				if ((this._IdProduct != value))
+				{
+					this._IdProduct = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CodeId", DbType="NVarChar(100)")]
+		public string CodeId
+		{
+			get
+			{
+				return this._CodeId;
+			}
+			set
+			{
+				if ((this._CodeId != value))
+				{
+					this._CodeId = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Name", DbType="NVarChar(MAX)")]
+		public string Name
+		{
+			get
+			{
+				return this._Name;
+			}
+			set
+			{
+				if ((this._Name != value))
+				{
+					this._Name = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Tedad", DbType="Float")]
+		public System.Nullable<double> Tedad
+		{
+			get
+			{
+				return this._Tedad;
+			}
+			set
+			{
+				if ((this._Tedad != value))
+				{
+					this._Tedad = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PriceVahed", DbType="Float")]
+		public System.Nullable<double> PriceVahed
+		{
+			get
+			{
+				return this._PriceVahed;
+			}
+			set
+			{
+				if ((this._PriceVahed != value))
+				{
+					this._PriceVahed = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PriceKol", DbType="Float")]
+		public System.Nullable<double> PriceKol
+		{
+			get
+			{
+				return this._PriceKol;
+			}
+			set
+			{
+				if ((this._PriceKol != value))
+				{
+					this._PriceKol = value;
+				}
+			}
+		}
+	}
+	
+	public partial class FillViewQarardadPersonResult
+	{
+		
+		private int _Id;
+		
+		private System.Nullable<int> _IdPerson;
+		
+		private string _FName;
+		
+		private string _LName;
+		
+		private string _CodeMelli;
+		
+		private string _SherkatName;
+		
+		private string _Date;
+		
+		private System.Nullable<double> _PriceHaml;
+		
+		private string _IdQarardad;
+		
+		private string _MozoQarardad;
+		
+		private string _ModatQarardad;
+		
+		private string _ShomareEnsheab;
+		
+		private string _DateEnsheab;
+		
+		private string _DoreTazmin;
+		
+		private string _ModatRafeNaghz;
+		
+		private System.Nullable<double> _PriceJarimeTakhir;
+		
+		public FillViewQarardadPersonResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Id", DbType="Int NOT NULL")]
+		public int Id
+		{
+			get
+			{
+				return this._Id;
+			}
+			set
+			{
+				if ((this._Id != value))
+				{
+					this._Id = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_IdPerson", DbType="Int")]
+		public System.Nullable<int> IdPerson
+		{
+			get
+			{
+				return this._IdPerson;
+			}
+			set
+			{
+				if ((this._IdPerson != value))
+				{
+					this._IdPerson = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_FName", DbType="NVarChar(100)")]
+		public string FName
+		{
+			get
+			{
+				return this._FName;
+			}
+			set
+			{
+				if ((this._FName != value))
+				{
+					this._FName = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_LName", DbType="NVarChar(100)")]
+		public string LName
+		{
+			get
+			{
+				return this._LName;
+			}
+			set
+			{
+				if ((this._LName != value))
+				{
+					this._LName = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CodeMelli", DbType="NVarChar(10)")]
+		public string CodeMelli
+		{
+			get
+			{
+				return this._CodeMelli;
+			}
+			set
+			{
+				if ((this._CodeMelli != value))
+				{
+					this._CodeMelli = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SherkatName", DbType="NVarChar(150)")]
+		public string SherkatName
+		{
+			get
+			{
+				return this._SherkatName;
+			}
+			set
+			{
+				if ((this._SherkatName != value))
+				{
+					this._SherkatName = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Date", DbType="NVarChar(10)")]
+		public string Date
+		{
+			get
+			{
+				return this._Date;
+			}
+			set
+			{
+				if ((this._Date != value))
+				{
+					this._Date = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PriceHaml", DbType="Float")]
+		public System.Nullable<double> PriceHaml
+		{
+			get
+			{
+				return this._PriceHaml;
+			}
+			set
+			{
+				if ((this._PriceHaml != value))
+				{
+					this._PriceHaml = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_IdQarardad", DbType="NVarChar(100)")]
+		public string IdQarardad
+		{
+			get
+			{
+				return this._IdQarardad;
+			}
+			set
+			{
+				if ((this._IdQarardad != value))
+				{
+					this._IdQarardad = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MozoQarardad", DbType="NVarChar(MAX)")]
+		public string MozoQarardad
+		{
+			get
+			{
+				return this._MozoQarardad;
+			}
+			set
+			{
+				if ((this._MozoQarardad != value))
+				{
+					this._MozoQarardad = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ModatQarardad", DbType="NVarChar(30)")]
+		public string ModatQarardad
+		{
+			get
+			{
+				return this._ModatQarardad;
+			}
+			set
+			{
+				if ((this._ModatQarardad != value))
+				{
+					this._ModatQarardad = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ShomareEnsheab", DbType="NVarChar(100)")]
+		public string ShomareEnsheab
+		{
+			get
+			{
+				return this._ShomareEnsheab;
+			}
+			set
+			{
+				if ((this._ShomareEnsheab != value))
+				{
+					this._ShomareEnsheab = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DateEnsheab", DbType="NVarChar(10)")]
+		public string DateEnsheab
+		{
+			get
+			{
+				return this._DateEnsheab;
+			}
+			set
+			{
+				if ((this._DateEnsheab != value))
+				{
+					this._DateEnsheab = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DoreTazmin", DbType="NVarChar(30)")]
+		public string DoreTazmin
+		{
+			get
+			{
+				return this._DoreTazmin;
+			}
+			set
+			{
+				if ((this._DoreTazmin != value))
+				{
+					this._DoreTazmin = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ModatRafeNaghz", DbType="NVarChar(50)")]
+		public string ModatRafeNaghz
+		{
+			get
+			{
+				return this._ModatRafeNaghz;
+			}
+			set
+			{
+				if ((this._ModatRafeNaghz != value))
+				{
+					this._ModatRafeNaghz = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PriceJarimeTakhir", DbType="Float")]
+		public System.Nullable<double> PriceJarimeTakhir
+		{
+			get
+			{
+				return this._PriceJarimeTakhir;
+			}
+			set
+			{
+				if ((this._PriceJarimeTakhir != value))
+				{
+					this._PriceJarimeTakhir = value;
+				}
+			}
+		}
+	}
+	
+	public partial class FillViewQarardadPersonByNameResult
+	{
+		
+		private int _Id;
+		
+		private System.Nullable<int> _IdPerson;
+		
+		private string _FName;
+		
+		private string _LName;
+		
+		private string _CodeMelli;
+		
+		private string _SherkatName;
+		
+		private string _Date;
+		
+		private System.Nullable<double> _PriceHaml;
+		
+		private string _IdQarardad;
+		
+		private string _MozoQarardad;
+		
+		private string _ModatQarardad;
+		
+		private string _ShomareEnsheab;
+		
+		private string _DateEnsheab;
+		
+		private string _DoreTazmin;
+		
+		private string _ModatRafeNaghz;
+		
+		private System.Nullable<double> _PriceJarimeTakhir;
+		
+		public FillViewQarardadPersonByNameResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Id", DbType="Int NOT NULL")]
+		public int Id
+		{
+			get
+			{
+				return this._Id;
+			}
+			set
+			{
+				if ((this._Id != value))
+				{
+					this._Id = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_IdPerson", DbType="Int")]
+		public System.Nullable<int> IdPerson
+		{
+			get
+			{
+				return this._IdPerson;
+			}
+			set
+			{
+				if ((this._IdPerson != value))
+				{
+					this._IdPerson = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_FName", DbType="NVarChar(100)")]
+		public string FName
+		{
+			get
+			{
+				return this._FName;
+			}
+			set
+			{
+				if ((this._FName != value))
+				{
+					this._FName = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_LName", DbType="NVarChar(100)")]
+		public string LName
+		{
+			get
+			{
+				return this._LName;
+			}
+			set
+			{
+				if ((this._LName != value))
+				{
+					this._LName = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CodeMelli", DbType="NVarChar(10)")]
+		public string CodeMelli
+		{
+			get
+			{
+				return this._CodeMelli;
+			}
+			set
+			{
+				if ((this._CodeMelli != value))
+				{
+					this._CodeMelli = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SherkatName", DbType="NVarChar(150)")]
+		public string SherkatName
+		{
+			get
+			{
+				return this._SherkatName;
+			}
+			set
+			{
+				if ((this._SherkatName != value))
+				{
+					this._SherkatName = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Date", DbType="NVarChar(10)")]
+		public string Date
+		{
+			get
+			{
+				return this._Date;
+			}
+			set
+			{
+				if ((this._Date != value))
+				{
+					this._Date = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PriceHaml", DbType="Float")]
+		public System.Nullable<double> PriceHaml
+		{
+			get
+			{
+				return this._PriceHaml;
+			}
+			set
+			{
+				if ((this._PriceHaml != value))
+				{
+					this._PriceHaml = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_IdQarardad", DbType="NVarChar(100)")]
+		public string IdQarardad
+		{
+			get
+			{
+				return this._IdQarardad;
+			}
+			set
+			{
+				if ((this._IdQarardad != value))
+				{
+					this._IdQarardad = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MozoQarardad", DbType="NVarChar(MAX)")]
+		public string MozoQarardad
+		{
+			get
+			{
+				return this._MozoQarardad;
+			}
+			set
+			{
+				if ((this._MozoQarardad != value))
+				{
+					this._MozoQarardad = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ModatQarardad", DbType="NVarChar(30)")]
+		public string ModatQarardad
+		{
+			get
+			{
+				return this._ModatQarardad;
+			}
+			set
+			{
+				if ((this._ModatQarardad != value))
+				{
+					this._ModatQarardad = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ShomareEnsheab", DbType="NVarChar(100)")]
+		public string ShomareEnsheab
+		{
+			get
+			{
+				return this._ShomareEnsheab;
+			}
+			set
+			{
+				if ((this._ShomareEnsheab != value))
+				{
+					this._ShomareEnsheab = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DateEnsheab", DbType="NVarChar(10)")]
+		public string DateEnsheab
+		{
+			get
+			{
+				return this._DateEnsheab;
+			}
+			set
+			{
+				if ((this._DateEnsheab != value))
+				{
+					this._DateEnsheab = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DoreTazmin", DbType="NVarChar(30)")]
+		public string DoreTazmin
+		{
+			get
+			{
+				return this._DoreTazmin;
+			}
+			set
+			{
+				if ((this._DoreTazmin != value))
+				{
+					this._DoreTazmin = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ModatRafeNaghz", DbType="NVarChar(50)")]
+		public string ModatRafeNaghz
+		{
+			get
+			{
+				return this._ModatRafeNaghz;
+			}
+			set
+			{
+				if ((this._ModatRafeNaghz != value))
+				{
+					this._ModatRafeNaghz = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PriceJarimeTakhir", DbType="Float")]
+		public System.Nullable<double> PriceJarimeTakhir
+		{
+			get
+			{
+				return this._PriceJarimeTakhir;
+			}
+			set
+			{
+				if ((this._PriceJarimeTakhir != value))
+				{
+					this._PriceJarimeTakhir = value;
+				}
+			}
+		}
+	}
+	
+	public partial class FillViewQarardadPersonByIdResult
+	{
+		
+		private int _Id;
+		
+		private System.Nullable<int> _IdPerson;
+		
+		private string _FName;
+		
+		private string _LName;
+		
+		private string _CodeMelli;
+		
+		private string _SherkatName;
+		
+		private string _Date;
+		
+		private System.Nullable<double> _PriceHaml;
+		
+		private string _IdQarardad;
+		
+		private string _MozoQarardad;
+		
+		private string _ModatQarardad;
+		
+		private string _ShomareEnsheab;
+		
+		private string _DateEnsheab;
+		
+		private string _DoreTazmin;
+		
+		private string _ModatRafeNaghz;
+		
+		private System.Nullable<double> _PriceJarimeTakhir;
+		
+		public FillViewQarardadPersonByIdResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Id", DbType="Int NOT NULL")]
+		public int Id
+		{
+			get
+			{
+				return this._Id;
+			}
+			set
+			{
+				if ((this._Id != value))
+				{
+					this._Id = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_IdPerson", DbType="Int")]
+		public System.Nullable<int> IdPerson
+		{
+			get
+			{
+				return this._IdPerson;
+			}
+			set
+			{
+				if ((this._IdPerson != value))
+				{
+					this._IdPerson = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_FName", DbType="NVarChar(100)")]
+		public string FName
+		{
+			get
+			{
+				return this._FName;
+			}
+			set
+			{
+				if ((this._FName != value))
+				{
+					this._FName = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_LName", DbType="NVarChar(100)")]
+		public string LName
+		{
+			get
+			{
+				return this._LName;
+			}
+			set
+			{
+				if ((this._LName != value))
+				{
+					this._LName = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CodeMelli", DbType="NVarChar(10)")]
+		public string CodeMelli
+		{
+			get
+			{
+				return this._CodeMelli;
+			}
+			set
+			{
+				if ((this._CodeMelli != value))
+				{
+					this._CodeMelli = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SherkatName", DbType="NVarChar(150)")]
+		public string SherkatName
+		{
+			get
+			{
+				return this._SherkatName;
+			}
+			set
+			{
+				if ((this._SherkatName != value))
+				{
+					this._SherkatName = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Date", DbType="NVarChar(10)")]
+		public string Date
+		{
+			get
+			{
+				return this._Date;
+			}
+			set
+			{
+				if ((this._Date != value))
+				{
+					this._Date = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PriceHaml", DbType="Float")]
+		public System.Nullable<double> PriceHaml
+		{
+			get
+			{
+				return this._PriceHaml;
+			}
+			set
+			{
+				if ((this._PriceHaml != value))
+				{
+					this._PriceHaml = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_IdQarardad", DbType="NVarChar(100)")]
+		public string IdQarardad
+		{
+			get
+			{
+				return this._IdQarardad;
+			}
+			set
+			{
+				if ((this._IdQarardad != value))
+				{
+					this._IdQarardad = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MozoQarardad", DbType="NVarChar(MAX)")]
+		public string MozoQarardad
+		{
+			get
+			{
+				return this._MozoQarardad;
+			}
+			set
+			{
+				if ((this._MozoQarardad != value))
+				{
+					this._MozoQarardad = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ModatQarardad", DbType="NVarChar(30)")]
+		public string ModatQarardad
+		{
+			get
+			{
+				return this._ModatQarardad;
+			}
+			set
+			{
+				if ((this._ModatQarardad != value))
+				{
+					this._ModatQarardad = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ShomareEnsheab", DbType="NVarChar(100)")]
+		public string ShomareEnsheab
+		{
+			get
+			{
+				return this._ShomareEnsheab;
+			}
+			set
+			{
+				if ((this._ShomareEnsheab != value))
+				{
+					this._ShomareEnsheab = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DateEnsheab", DbType="NVarChar(10)")]
+		public string DateEnsheab
+		{
+			get
+			{
+				return this._DateEnsheab;
+			}
+			set
+			{
+				if ((this._DateEnsheab != value))
+				{
+					this._DateEnsheab = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DoreTazmin", DbType="NVarChar(30)")]
+		public string DoreTazmin
+		{
+			get
+			{
+				return this._DoreTazmin;
+			}
+			set
+			{
+				if ((this._DoreTazmin != value))
+				{
+					this._DoreTazmin = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ModatRafeNaghz", DbType="NVarChar(50)")]
+		public string ModatRafeNaghz
+		{
+			get
+			{
+				return this._ModatRafeNaghz;
+			}
+			set
+			{
+				if ((this._ModatRafeNaghz != value))
+				{
+					this._ModatRafeNaghz = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PriceJarimeTakhir", DbType="Float")]
+		public System.Nullable<double> PriceJarimeTakhir
+		{
+			get
+			{
+				return this._PriceJarimeTakhir;
+			}
+			set
+			{
+				if ((this._PriceJarimeTakhir != value))
+				{
+					this._PriceJarimeTakhir = value;
+				}
+			}
+		}
+	}
+	
+	public partial class FillViewPrdouctByCodeResult
+	{
+		
+		private int _Id;
+		
+		private string _CodeId;
+		
+		private string _Name;
+		
+		private System.Nullable<int> _Vahed;
+		
+		private System.Nullable<double> _PriceKala1;
+		
+		private System.Nullable<double> _PriceDastMozd1;
+		
+		private System.Nullable<double> _PricKala2;
+		
+		private System.Nullable<double> _PriceDastMozd2;
+		
+		private string _VahedName;
+		
+		public FillViewPrdouctByCodeResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Id", DbType="Int NOT NULL")]
+		public int Id
+		{
+			get
+			{
+				return this._Id;
+			}
+			set
+			{
+				if ((this._Id != value))
+				{
+					this._Id = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CodeId", DbType="NVarChar(100)")]
+		public string CodeId
+		{
+			get
+			{
+				return this._CodeId;
+			}
+			set
+			{
+				if ((this._CodeId != value))
+				{
+					this._CodeId = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Name", DbType="NVarChar(MAX)")]
+		public string Name
+		{
+			get
+			{
+				return this._Name;
+			}
+			set
+			{
+				if ((this._Name != value))
+				{
+					this._Name = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Vahed", DbType="Int")]
+		public System.Nullable<int> Vahed
+		{
+			get
+			{
+				return this._Vahed;
+			}
+			set
+			{
+				if ((this._Vahed != value))
+				{
+					this._Vahed = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PriceKala1", DbType="Float")]
+		public System.Nullable<double> PriceKala1
+		{
+			get
+			{
+				return this._PriceKala1;
+			}
+			set
+			{
+				if ((this._PriceKala1 != value))
+				{
+					this._PriceKala1 = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PriceDastMozd1", DbType="Float")]
+		public System.Nullable<double> PriceDastMozd1
+		{
+			get
+			{
+				return this._PriceDastMozd1;
+			}
+			set
+			{
+				if ((this._PriceDastMozd1 != value))
+				{
+					this._PriceDastMozd1 = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PricKala2", DbType="Float")]
+		public System.Nullable<double> PricKala2
+		{
+			get
+			{
+				return this._PricKala2;
+			}
+			set
+			{
+				if ((this._PricKala2 != value))
+				{
+					this._PricKala2 = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PriceDastMozd2", DbType="Float")]
+		public System.Nullable<double> PriceDastMozd2
+		{
+			get
+			{
+				return this._PriceDastMozd2;
+			}
+			set
+			{
+				if ((this._PriceDastMozd2 != value))
+				{
+					this._PriceDastMozd2 = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_VahedName", DbType="NVarChar(200)")]
+		public string VahedName
+		{
+			get
+			{
+				return this._VahedName;
+			}
+			set
+			{
+				if ((this._VahedName != value))
+				{
+					this._VahedName = value;
+				}
+			}
+		}
+	}
+	
+	public partial class FillViewPrdouctByNameResult1
+	{
+		
+		private int _Id;
+		
+		private string _CodeId;
+		
+		private string _Name;
+		
+		private System.Nullable<int> _Vahed;
+		
+		private System.Nullable<double> _PriceKala1;
+		
+		private System.Nullable<double> _PriceDastMozd1;
+		
+		private System.Nullable<double> _PricKala2;
+		
+		private System.Nullable<double> _PriceDastMozd2;
+		
+		private string _VahedName;
+		
+		public FillViewPrdouctByNameResult1()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Id", DbType="Int NOT NULL")]
+		public int Id
+		{
+			get
+			{
+				return this._Id;
+			}
+			set
+			{
+				if ((this._Id != value))
+				{
+					this._Id = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CodeId", DbType="NVarChar(100)")]
+		public string CodeId
+		{
+			get
+			{
+				return this._CodeId;
+			}
+			set
+			{
+				if ((this._CodeId != value))
+				{
+					this._CodeId = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Name", DbType="NVarChar(MAX)")]
+		public string Name
+		{
+			get
+			{
+				return this._Name;
+			}
+			set
+			{
+				if ((this._Name != value))
+				{
+					this._Name = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Vahed", DbType="Int")]
+		public System.Nullable<int> Vahed
+		{
+			get
+			{
+				return this._Vahed;
+			}
+			set
+			{
+				if ((this._Vahed != value))
+				{
+					this._Vahed = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PriceKala1", DbType="Float")]
+		public System.Nullable<double> PriceKala1
+		{
+			get
+			{
+				return this._PriceKala1;
+			}
+			set
+			{
+				if ((this._PriceKala1 != value))
+				{
+					this._PriceKala1 = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PriceDastMozd1", DbType="Float")]
+		public System.Nullable<double> PriceDastMozd1
+		{
+			get
+			{
+				return this._PriceDastMozd1;
+			}
+			set
+			{
+				if ((this._PriceDastMozd1 != value))
+				{
+					this._PriceDastMozd1 = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PricKala2", DbType="Float")]
+		public System.Nullable<double> PricKala2
+		{
+			get
+			{
+				return this._PricKala2;
+			}
+			set
+			{
+				if ((this._PricKala2 != value))
+				{
+					this._PricKala2 = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PriceDastMozd2", DbType="Float")]
+		public System.Nullable<double> PriceDastMozd2
+		{
+			get
+			{
+				return this._PriceDastMozd2;
+			}
+			set
+			{
+				if ((this._PriceDastMozd2 != value))
+				{
+					this._PriceDastMozd2 = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_VahedName", DbType="NVarChar(200)")]
+		public string VahedName
+		{
+			get
+			{
+				return this._VahedName;
+			}
+			set
+			{
+				if ((this._VahedName != value))
+				{
+					this._VahedName = value;
+				}
+			}
+		}
+	}
+	
+	public partial class FillViewProductVahedResult
+	{
+		
+		private int _Id;
+		
+		private string _CodeId;
+		
+		private string _Name;
+		
+		private System.Nullable<int> _Vahed;
+		
+		private System.Nullable<double> _PriceKala1;
+		
+		private System.Nullable<double> _PriceDastMozd1;
+		
+		private System.Nullable<double> _PricKala2;
+		
+		private System.Nullable<double> _PriceDastMozd2;
+		
+		private string _VahedName;
+		
+		public FillViewProductVahedResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Id", DbType="Int NOT NULL")]
+		public int Id
+		{
+			get
+			{
+				return this._Id;
+			}
+			set
+			{
+				if ((this._Id != value))
+				{
+					this._Id = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CodeId", DbType="NVarChar(100)")]
+		public string CodeId
+		{
+			get
+			{
+				return this._CodeId;
+			}
+			set
+			{
+				if ((this._CodeId != value))
+				{
+					this._CodeId = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Name", DbType="NVarChar(MAX)")]
+		public string Name
+		{
+			get
+			{
+				return this._Name;
+			}
+			set
+			{
+				if ((this._Name != value))
+				{
+					this._Name = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Vahed", DbType="Int")]
+		public System.Nullable<int> Vahed
+		{
+			get
+			{
+				return this._Vahed;
+			}
+			set
+			{
+				if ((this._Vahed != value))
+				{
+					this._Vahed = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PriceKala1", DbType="Float")]
+		public System.Nullable<double> PriceKala1
+		{
+			get
+			{
+				return this._PriceKala1;
+			}
+			set
+			{
+				if ((this._PriceKala1 != value))
+				{
+					this._PriceKala1 = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PriceDastMozd1", DbType="Float")]
+		public System.Nullable<double> PriceDastMozd1
+		{
+			get
+			{
+				return this._PriceDastMozd1;
+			}
+			set
+			{
+				if ((this._PriceDastMozd1 != value))
+				{
+					this._PriceDastMozd1 = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PricKala2", DbType="Float")]
+		public System.Nullable<double> PricKala2
+		{
+			get
+			{
+				return this._PricKala2;
+			}
+			set
+			{
+				if ((this._PricKala2 != value))
+				{
+					this._PricKala2 = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PriceDastMozd2", DbType="Float")]
+		public System.Nullable<double> PriceDastMozd2
+		{
+			get
+			{
+				return this._PriceDastMozd2;
+			}
+			set
+			{
+				if ((this._PriceDastMozd2 != value))
+				{
+					this._PriceDastMozd2 = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_VahedName", DbType="NVarChar(200)")]
+		public string VahedName
+		{
+			get
+			{
+				return this._VahedName;
+			}
+			set
+			{
+				if ((this._VahedName != value))
+				{
+					this._VahedName = value;
+				}
+			}
+		}
+	}
+	
+	public partial class FillMatnQarardadResult
+	{
+		
+		private int _Id;
+		
+		private string _Made1;
+		
+		private string _Made2;
+		
+		private string _Made3;
+		
+		private string _Made4;
+		
+		private string _Made5;
+		
+		private string _Made6;
+		
+		private string _Made7;
+		
+		private string _Made8;
+		
+		private string _Made9;
+		
+		private string _Made10;
+		
+		private string _Made11;
+		
+		private string _Made12;
+		
+		private string _Made13;
+		
+		private string _Made14;
+		
+		private string _Made15;
+		
+		public FillMatnQarardadResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Id", DbType="Int NOT NULL")]
+		public int Id
+		{
+			get
+			{
+				return this._Id;
+			}
+			set
+			{
+				if ((this._Id != value))
+				{
+					this._Id = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Made1", DbType="NVarChar(MAX)")]
+		public string Made1
+		{
+			get
+			{
+				return this._Made1;
+			}
+			set
+			{
+				if ((this._Made1 != value))
+				{
+					this._Made1 = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Made2", DbType="NVarChar(MAX)")]
+		public string Made2
+		{
+			get
+			{
+				return this._Made2;
+			}
+			set
+			{
+				if ((this._Made2 != value))
+				{
+					this._Made2 = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Made3", DbType="NVarChar(MAX)")]
+		public string Made3
+		{
+			get
+			{
+				return this._Made3;
+			}
+			set
+			{
+				if ((this._Made3 != value))
+				{
+					this._Made3 = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Made4", DbType="NVarChar(MAX)")]
+		public string Made4
+		{
+			get
+			{
+				return this._Made4;
+			}
+			set
+			{
+				if ((this._Made4 != value))
+				{
+					this._Made4 = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Made5", DbType="NVarChar(MAX)")]
+		public string Made5
+		{
+			get
+			{
+				return this._Made5;
+			}
+			set
+			{
+				if ((this._Made5 != value))
+				{
+					this._Made5 = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Made6", DbType="NVarChar(MAX)")]
+		public string Made6
+		{
+			get
+			{
+				return this._Made6;
+			}
+			set
+			{
+				if ((this._Made6 != value))
+				{
+					this._Made6 = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Made7", DbType="NVarChar(MAX)")]
+		public string Made7
+		{
+			get
+			{
+				return this._Made7;
+			}
+			set
+			{
+				if ((this._Made7 != value))
+				{
+					this._Made7 = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Made8", DbType="NVarChar(MAX)")]
+		public string Made8
+		{
+			get
+			{
+				return this._Made8;
+			}
+			set
+			{
+				if ((this._Made8 != value))
+				{
+					this._Made8 = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Made9", DbType="NVarChar(MAX)")]
+		public string Made9
+		{
+			get
+			{
+				return this._Made9;
+			}
+			set
+			{
+				if ((this._Made9 != value))
+				{
+					this._Made9 = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Made10", DbType="NVarChar(MAX)")]
+		public string Made10
+		{
+			get
+			{
+				return this._Made10;
+			}
+			set
+			{
+				if ((this._Made10 != value))
+				{
+					this._Made10 = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Made11", DbType="NVarChar(MAX)")]
+		public string Made11
+		{
+			get
+			{
+				return this._Made11;
+			}
+			set
+			{
+				if ((this._Made11 != value))
+				{
+					this._Made11 = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Made12", DbType="NVarChar(MAX)")]
+		public string Made12
+		{
+			get
+			{
+				return this._Made12;
+			}
+			set
+			{
+				if ((this._Made12 != value))
+				{
+					this._Made12 = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Made13", DbType="NVarChar(MAX)")]
+		public string Made13
+		{
+			get
+			{
+				return this._Made13;
+			}
+			set
+			{
+				if ((this._Made13 != value))
+				{
+					this._Made13 = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Made14", DbType="NVarChar(MAX)")]
+		public string Made14
+		{
+			get
+			{
+				return this._Made14;
+			}
+			set
+			{
+				if ((this._Made14 != value))
+				{
+					this._Made14 = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Made15", DbType="NVarChar(MAX)")]
+		public string Made15
+		{
+			get
+			{
+				return this._Made15;
+			}
+			set
+			{
+				if ((this._Made15 != value))
+				{
+					this._Made15 = value;
 				}
 			}
 		}

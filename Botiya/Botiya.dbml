@@ -14,21 +14,113 @@
       <Column Name="SherkatName" Type="System.String" DbType="NVarChar(150)" CanBeNull="true" />
     </Type>
   </Table>
+  <Table Name="dbo.Vaheds" Member="Vaheds">
+    <Type Name="Vahed">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+    </Type>
+  </Table>
   <Table Name="dbo.Products" Member="Products">
     <Type Name="Product">
       <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
       <Column Name="CodeId" Type="System.String" DbType="NChar(10)" CanBeNull="true" />
       <Column Name="Name" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
       <Column Name="Vahed" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="PriceKala" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
-      <Column Name="PriceDastMozd" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
-      <Column Name="SumPrice" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="PriceKala1" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="PriceDastMozd1" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="PricKala2" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="PriceDastMozd2" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
     </Type>
   </Table>
-  <Table Name="dbo.Vaheds" Member="Vaheds">
-    <Type Name="Vahed">
+  <Table Name="dbo.ViewProductsVahed" Member="ViewProductsVaheds">
+    <Type Name="ViewProductsVahed">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="CodeId" Type="System.String" DbType="NChar(100)" CanBeNull="true" />
+      <Column Name="Name" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="Vahed" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="PriceKala1" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="PriceDastMozd1" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="PricKala2" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="PriceDastMozd2" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="VahedName" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Qarardad" Member="Qarardads">
+    <Type Name="Qarardad">
       <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="Name" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="IdPerson" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Date" Type="System.String" DbType="NVarChar(10)" CanBeNull="true" />
+      <Column Name="PriceHaml" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="IdQarardad" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="MozoQarardad" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="ModatQarardad" Type="System.String" DbType="NVarChar(30)" CanBeNull="true" />
+      <Column Name="ShomareEnsheab" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="DateEnsheab" Type="System.String" DbType="NVarChar(10)" CanBeNull="true" />
+      <Column Name="DoreTazmin" Type="System.String" DbType="NVarChar(30)" CanBeNull="true" />
+      <Column Name="ModatRafeNaghz" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="PriceJarimeTakhir" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Factor" Member="Factors">
+    <Type Name="Factor">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="IdQarardad" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="IdProduct" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Tedad" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="PriceVahed" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="PriceKol" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ViewFactorProduct" Member="ViewFactorProducts">
+    <Type Name="ViewFactorProduct">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="IdQarardad" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="IdProduct" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="CodeId" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="Name" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="Tedad" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="PriceVahed" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="PriceKol" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ViewQarardadPerson" Member="ViewQarardadPersons">
+    <Type Name="ViewQarardadPerson">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="IdPerson" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="FName" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="LName" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="CodeMelli" Type="System.String" DbType="NVarChar(10)" CanBeNull="true" />
+      <Column Name="SherkatName" Type="System.String" DbType="NVarChar(150)" CanBeNull="true" />
+      <Column Name="Date" Type="System.String" DbType="NVarChar(10)" CanBeNull="true" />
+      <Column Name="PriceHaml" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="IdQarardad" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="MozoQarardad" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="ModatQarardad" Type="System.String" DbType="NVarChar(30)" CanBeNull="true" />
+      <Column Name="ShomareEnsheab" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="DateEnsheab" Type="System.String" DbType="NVarChar(10)" CanBeNull="true" />
+      <Column Name="DoreTazmin" Type="System.String" DbType="NVarChar(30)" CanBeNull="true" />
+      <Column Name="ModatRafeNaghz" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="PriceJarimeTakhir" Type="System.Double" DbType="Float" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.MatnQarardad" Member="MatnQarardads">
+    <Type Name="MatnQarardad">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Made1" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="Made2" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="Made3" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="Made4" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="Made5" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="Made6" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="Made7" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="Made8" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="Made9" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="Made10" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="Made11" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="Made12" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="Made13" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="Made14" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="Made15" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
     </Type>
   </Table>
   <Function Name="dbo.InsertPersons" Method="InsertPersons">
@@ -140,5 +232,351 @@
       <Column Name="Hoqoqi" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="SherkatName" Type="System.String" DbType="NVarChar(150)" CanBeNull="true" />
     </ElementType>
+  </Function>
+  <Function Name="dbo.DeleteProducts" Method="DeleteProducts">
+    <Parameter Name="Id" Parameter="id" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.FillPrdouctByName" Method="FillPrdouctByName">
+    <Parameter Name="Name" Parameter="name" Type="System.String" DbType="NVarChar(MAX)" />
+    <ElementType Name="FillPrdouctByNameResult">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="CodeId" Type="System.String" DbType="NChar(100)" CanBeNull="true" />
+      <Column Name="Name" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="Vahed" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="PriceKala1" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="PriceDastMozd1" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="PricKala2" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="PriceDastMozd2" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.FillProducts" Method="FillProducts">
+    <ElementType Name="FillProductsResult">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="CodeId" Type="System.String" DbType="NChar(100)" CanBeNull="true" />
+      <Column Name="Name" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="Vahed" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="PriceKala1" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="PriceDastMozd1" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="PricKala2" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="PriceDastMozd2" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.FillProductById" Method="FillProductById">
+    <Parameter Name="Id" Parameter="id" Type="System.Int32" DbType="Int" />
+    <ElementType Name="FillProductByIdResult">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="CodeId" Type="System.String" DbType="NChar(100)" CanBeNull="true" />
+      <Column Name="Name" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="Vahed" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="PriceKala1" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="PriceDastMozd1" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="PricKala2" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="PriceDastMozd2" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.FillPersonByCodeMelli" Method="FillPersonByCodeMelli">
+    <Parameter Name="CodeMelli" Parameter="codeMelli" Type="System.String" DbType="NVarChar(10)" />
+    <ElementType Name="FillPersonByCodeMelliResult">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="FName" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="LName" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="FatherName" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="CodeMelli" Type="System.String" DbType="NVarChar(10)" CanBeNull="true" />
+      <Column Name="Phone" Type="System.String" DbType="NVarChar(11)" CanBeNull="true" />
+      <Column Name="Mobile" Type="System.String" DbType="NVarChar(11)" CanBeNull="true" />
+      <Column Name="Address" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="Hoqoqi" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="SherkatName" Type="System.String" DbType="NVarChar(150)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.FillPrdouctByCode" Method="FillPrdouctByCode">
+    <Parameter Name="Code" Parameter="code" Type="System.String" DbType="NVarChar(100)" />
+    <ElementType Name="FillPrdouctByCodeResult">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="CodeId" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="Name" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="Vahed" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="PriceKala1" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="PriceDastMozd1" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="PricKala2" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="PriceDastMozd2" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.InsertQarardad" Method="InsertQarardad">
+    <Parameter Name="IdQardad" Parameter="idQardad" Type="System.Int32" DbType="Int" Direction="InOut" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.GetProductsByCodeId" Method="GetProductsByCodeId">
+    <Parameter Name="CodeIdIn" Parameter="codeIdIn" Type="System.String" DbType="NVarChar(100)" />
+    <Parameter Name="CodeIdOut" Parameter="codeIdOut" Type="System.String" DbType="NVarChar(100)" Direction="InOut" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.GetPersonByCodeMelli" Method="GetPersonByCodeMelli">
+    <Parameter Name="CodeMelliIn" Parameter="codeMelliIn" Type="System.String" DbType="NVarChar(10)" />
+    <Parameter Name="CodeMelliOut" Parameter="codeMelliOut" Type="System.String" DbType="NVarChar(10)" Direction="InOut" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.GetVahedByName" Method="GetVahedByName">
+    <Parameter Name="NameIn" Parameter="nameIn" Type="System.String" DbType="NVarChar(200)" />
+    <Parameter Name="NameOut" Parameter="nameOut" Type="System.String" DbType="NVarChar(200)" Direction="InOut" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.DeleteFactor" Method="DeleteFactor">
+    <Parameter Name="Id" Parameter="id" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.GetProducts" Method="GetProducts">
+    <Parameter Name="Id" Parameter="id" Type="System.Int32" DbType="Int" />
+    <Parameter Name="CodeId" Parameter="codeId" Type="System.String" DbType="NVarChar(100)" Direction="InOut" />
+    <Parameter Name="Name" Parameter="name" Type="System.String" DbType="NVarChar(MAX)" Direction="InOut" />
+    <Parameter Name="Vahed" Parameter="vahed" Type="System.Int32" DbType="Int" Direction="InOut" />
+    <Parameter Name="PriceKala1" Parameter="priceKala1" Type="System.Double" DbType="Float" Direction="InOut" />
+    <Parameter Name="PriceDastMozd1" Parameter="priceDastMozd1" Type="System.Double" DbType="Float" Direction="InOut" />
+    <Parameter Name="PriceKala2" Parameter="priceKala2" Type="System.Double" DbType="Float" Direction="InOut" />
+    <Parameter Name="PriceDastMozd2" Parameter="priceDastMozd2" Type="System.Double" DbType="Float" Direction="InOut" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.GetProductByCode" Method="GetProductByCode">
+    <Parameter Name="Id" Parameter="id" Type="System.Int32" DbType="Int" Direction="InOut" />
+    <Parameter Name="CodeId" Parameter="codeId" Type="System.String" DbType="NVarChar(100)" />
+    <Parameter Name="Name" Parameter="name" Type="System.String" DbType="NVarChar(MAX)" Direction="InOut" />
+    <Parameter Name="Vahed" Parameter="vahed" Type="System.Int32" DbType="Int" Direction="InOut" />
+    <Parameter Name="PriceKala1" Parameter="priceKala1" Type="System.Double" DbType="Float" Direction="InOut" />
+    <Parameter Name="PriceDastMozd1" Parameter="priceDastMozd1" Type="System.Double" DbType="Float" Direction="InOut" />
+    <Parameter Name="PriceKala2" Parameter="priceKala2" Type="System.Double" DbType="Float" Direction="InOut" />
+    <Parameter Name="PriceDastMozd2" Parameter="priceDastMozd2" Type="System.Double" DbType="Float" Direction="InOut" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.GetFactorById" Method="GetFactorById">
+    <Parameter Name="Id" Parameter="id" Type="System.Int32" DbType="Int" />
+    <Parameter Name="IdKala" Parameter="idKala" Type="System.Int32" DbType="Int" Direction="InOut" />
+    <Parameter Name="CodeId" Parameter="codeId" Type="System.String" DbType="NVarChar(100)" Direction="InOut" />
+    <Parameter Name="Name" Parameter="name" Type="System.String" DbType="NVarChar(MAX)" Direction="InOut" />
+    <Parameter Name="Tedad" Parameter="tedad" Type="System.Double" DbType="Float" Direction="InOut" />
+    <Parameter Name="PriceVahed" Parameter="priceVahed" Type="System.Double" DbType="Float" Direction="InOut" />
+    <Parameter Name="PriceKol" Parameter="priceKol" Type="System.Double" DbType="Float" Direction="InOut" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.UpdateQarardad" Method="UpdateQarardad">
+    <Parameter Name="Id" Parameter="id" Type="System.Int32" DbType="Int" />
+    <Parameter Name="IdPerson" Parameter="idPerson" Type="System.Int32" DbType="Int" />
+    <Parameter Name="Date" Parameter="date" Type="System.String" DbType="NVarChar(10)" />
+    <Parameter Name="PriceHaml" Parameter="priceHaml" Type="System.Double" DbType="Float" />
+    <Parameter Name="IdQarardad" Parameter="idQarardad" Type="System.String" DbType="NVarChar(100)" />
+    <Parameter Name="MozoQarardad" Parameter="mozoQarardad" Type="System.String" DbType="NVarChar(MAX)" />
+    <Parameter Name="ModatQarardad" Parameter="modatQarardad" Type="System.String" DbType="NVarChar(30)" />
+    <Parameter Name="ShomareEnsheab" Parameter="shomareEnsheab" Type="System.String" DbType="NVarChar(100)" />
+    <Parameter Name="DateEnsheab" Parameter="dateEnsheab" Type="System.String" DbType="NVarChar(10)" />
+    <Parameter Name="DoreTazmin" Parameter="doreTazmin" Type="System.String" DbType="NVarChar(30)" />
+    <Parameter Name="ModatRageNaghz" Parameter="modatRageNaghz" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="PriceJarimeTakhir" Parameter="priceJarimeTakhir" Type="System.Double" DbType="Float" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.UpdateProduct" Method="UpdateProduct">
+    <Parameter Name="Id" Parameter="id" Type="System.Int32" DbType="Int" />
+    <Parameter Name="CodeId" Parameter="codeId" Type="System.String" DbType="NVarChar(100)" />
+    <Parameter Name="Name" Parameter="name" Type="System.String" DbType="NVarChar(MAX)" />
+    <Parameter Name="Vahed" Parameter="vahed" Type="System.Int32" DbType="Int" />
+    <Parameter Name="PriceKala1" Parameter="priceKala1" Type="System.Double" DbType="Float" />
+    <Parameter Name="PriceDastMozd1" Parameter="priceDastMozd1" Type="System.Double" DbType="Float" />
+    <Parameter Name="PriceKala2" Parameter="priceKala2" Type="System.Double" DbType="Float" />
+    <Parameter Name="PriceDastMozd2" Parameter="priceDastMozd2" Type="System.Double" DbType="Float" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.UpdateFactor" Method="UpdateFactor">
+    <Parameter Name="Id" Parameter="id" Type="System.Int32" DbType="Int" />
+    <Parameter Name="IdProduct" Parameter="idProduct" Type="System.Int32" DbType="Int" />
+    <Parameter Name="Tedad" Parameter="tedad" Type="System.Double" DbType="Float" />
+    <Parameter Name="PriceVahed" Parameter="priceVahed" Type="System.Double" DbType="Float" />
+    <Parameter Name="PriceKol" Parameter="priceKol" Type="System.Double" DbType="Float" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.InsertProducts" Method="InsertProducts">
+    <Parameter Name="CodeId" Parameter="codeId" Type="System.String" DbType="NVarChar(100)" />
+    <Parameter Name="Name" Parameter="name" Type="System.String" DbType="NVarChar(MAX)" />
+    <Parameter Name="Vahed" Parameter="vahed" Type="System.Int32" DbType="Int" />
+    <Parameter Name="PriceKala1" Parameter="priceKala1" Type="System.Double" DbType="Float" />
+    <Parameter Name="PriceDastMozd1" Parameter="priceDastMozd1" Type="System.Double" DbType="Float" />
+    <Parameter Name="PriceKala2" Parameter="priceKala2" Type="System.Double" DbType="Float" />
+    <Parameter Name="PriceDastMozd2" Parameter="priceDastMozd2" Type="System.Double" DbType="Float" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.InsertFactor" Method="InsertFactor">
+    <Parameter Name="IdQarardad" Parameter="idQarardad" Type="System.Int32" DbType="Int" />
+    <Parameter Name="IdProduct" Parameter="idProduct" Type="System.Int32" DbType="Int" />
+    <Parameter Name="Tedad" Parameter="tedad" Type="System.Double" DbType="Float" />
+    <Parameter Name="PriceVahed" Parameter="priceVahed" Type="System.Double" DbType="Float" />
+    <Parameter Name="PriceKol" Parameter="priceKol" Type="System.Double" DbType="Float" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.GetFactorByIdKala" Method="GetFactorByIdKala">
+    <Parameter Name="Id" Parameter="id" Type="System.Int32" DbType="Int" Direction="InOut" />
+    <Parameter Name="IdQarardad" Parameter="idQarardad" Type="System.Int32" DbType="Int" />
+    <Parameter Name="IdKala" Parameter="idKala" Type="System.Int32" DbType="Int" />
+    <Parameter Name="CodeId" Parameter="codeId" Type="System.String" DbType="NVarChar(100)" Direction="InOut" />
+    <Parameter Name="Name" Parameter="name" Type="System.String" DbType="NVarChar(MAX)" Direction="InOut" />
+    <Parameter Name="Tedad" Parameter="tedad" Type="System.Double" DbType="Float" Direction="InOut" />
+    <Parameter Name="PriceVahed" Parameter="priceVahed" Type="System.Double" DbType="Float" Direction="InOut" />
+    <Parameter Name="PriceKol" Parameter="priceKol" Type="System.Double" DbType="Float" Direction="InOut" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.FillViewFatcorProduct" Method="FillViewFatcorProduct">
+    <Parameter Name="IdQarardad" Parameter="idQarardad" Type="System.Int32" DbType="Int" />
+    <ElementType Name="FillViewFatcorProductResult">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="IdQarardad" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="IdProduct" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="CodeId" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="Name" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="Tedad" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="PriceVahed" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="PriceKol" Type="System.Double" DbType="Float" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.FillViewQarardadPerson" Method="FillViewQarardadPerson">
+    <ElementType Name="FillViewQarardadPersonResult">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="IdPerson" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="FName" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="LName" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="CodeMelli" Type="System.String" DbType="NVarChar(10)" CanBeNull="true" />
+      <Column Name="SherkatName" Type="System.String" DbType="NVarChar(150)" CanBeNull="true" />
+      <Column Name="Date" Type="System.String" DbType="NVarChar(10)" CanBeNull="true" />
+      <Column Name="PriceHaml" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="IdQarardad" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="MozoQarardad" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="ModatQarardad" Type="System.String" DbType="NVarChar(30)" CanBeNull="true" />
+      <Column Name="ShomareEnsheab" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="DateEnsheab" Type="System.String" DbType="NVarChar(10)" CanBeNull="true" />
+      <Column Name="DoreTazmin" Type="System.String" DbType="NVarChar(30)" CanBeNull="true" />
+      <Column Name="ModatRafeNaghz" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="PriceJarimeTakhir" Type="System.Double" DbType="Float" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.FillViewQarardadPersonByName" Method="FillViewQarardadPersonByName">
+    <Parameter Name="Name" Parameter="name" Type="System.String" DbType="NVarChar(150)" />
+    <ElementType Name="FillViewQarardadPersonByNameResult">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="IdPerson" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="FName" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="LName" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="CodeMelli" Type="System.String" DbType="NVarChar(10)" CanBeNull="true" />
+      <Column Name="SherkatName" Type="System.String" DbType="NVarChar(150)" CanBeNull="true" />
+      <Column Name="Date" Type="System.String" DbType="NVarChar(10)" CanBeNull="true" />
+      <Column Name="PriceHaml" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="IdQarardad" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="MozoQarardad" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="ModatQarardad" Type="System.String" DbType="NVarChar(30)" CanBeNull="true" />
+      <Column Name="ShomareEnsheab" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="DateEnsheab" Type="System.String" DbType="NVarChar(10)" CanBeNull="true" />
+      <Column Name="DoreTazmin" Type="System.String" DbType="NVarChar(30)" CanBeNull="true" />
+      <Column Name="ModatRafeNaghz" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="PriceJarimeTakhir" Type="System.Double" DbType="Float" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.DeleteQarardad" Method="DeleteQarardad">
+    <Parameter Name="Id" Parameter="id" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.FillViewQarardadPersonById" Method="FillViewQarardadPersonById">
+    <Parameter Name="Id" Parameter="id" Type="System.Int32" DbType="Int" />
+    <ElementType Name="FillViewQarardadPersonByIdResult">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="IdPerson" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="FName" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="LName" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="CodeMelli" Type="System.String" DbType="NVarChar(10)" CanBeNull="true" />
+      <Column Name="SherkatName" Type="System.String" DbType="NVarChar(150)" CanBeNull="true" />
+      <Column Name="Date" Type="System.String" DbType="NVarChar(10)" CanBeNull="true" />
+      <Column Name="PriceHaml" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="IdQarardad" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="MozoQarardad" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="ModatQarardad" Type="System.String" DbType="NVarChar(30)" CanBeNull="true" />
+      <Column Name="ShomareEnsheab" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="DateEnsheab" Type="System.String" DbType="NVarChar(10)" CanBeNull="true" />
+      <Column Name="DoreTazmin" Type="System.String" DbType="NVarChar(30)" CanBeNull="true" />
+      <Column Name="ModatRafeNaghz" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="PriceJarimeTakhir" Type="System.Double" DbType="Float" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.FillViewPrdouctByCode" Method="FillViewPrdouctByCode">
+    <Parameter Name="Code" Parameter="code" Type="System.String" DbType="NVarChar(100)" />
+    <ElementType Name="FillViewPrdouctByCodeResult">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="CodeId" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="Name" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="Vahed" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="PriceKala1" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="PriceDastMozd1" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="PricKala2" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="PriceDastMozd2" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="VahedName" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.FillViewPrdouctByName" Method="FillViewPrdouctByName">
+    <Parameter Name="Name" Parameter="name" Type="System.String" DbType="NVarChar(MAX)" />
+    <ElementType Name="FillViewPrdouctByNameResult1">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="CodeId" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="Name" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="Vahed" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="PriceKala1" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="PriceDastMozd1" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="PricKala2" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="PriceDastMozd2" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="VahedName" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.FillViewProductVahed" Method="FillViewProductVahed">
+    <ElementType Name="FillViewProductVahedResult">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="CodeId" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="Name" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="Vahed" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="PriceKala1" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="PriceDastMozd1" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="PricKala2" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="PriceDastMozd2" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="VahedName" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.FillMatnQarardad" Method="FillMatnQarardad">
+    <ElementType Name="FillMatnQarardadResult">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Made1" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="Made2" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="Made3" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="Made4" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="Made5" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="Made6" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="Made7" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="Made8" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="Made9" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="Made10" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="Made11" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="Made12" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="Made13" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="Made14" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="Made15" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.UpdateMatnQarardad" Method="UpdateMatnQarardad">
+    <Parameter Name="Made1" Parameter="made1" Type="System.String" DbType="NVarChar(MAX)" />
+    <Parameter Name="Made2" Parameter="made2" Type="System.String" DbType="NVarChar(MAX)" />
+    <Parameter Name="Made3" Parameter="made3" Type="System.String" DbType="NVarChar(MAX)" />
+    <Parameter Name="Made4" Parameter="made4" Type="System.String" DbType="NVarChar(MAX)" />
+    <Parameter Name="Made5" Parameter="made5" Type="System.String" DbType="NVarChar(MAX)" />
+    <Parameter Name="Made6" Parameter="made6" Type="System.String" DbType="NVarChar(MAX)" />
+    <Parameter Name="Made7" Parameter="made7" Type="System.String" DbType="NVarChar(MAX)" />
+    <Parameter Name="Made8" Parameter="made8" Type="System.String" DbType="NVarChar(MAX)" />
+    <Parameter Name="Made9" Parameter="made9" Type="System.String" DbType="NVarChar(MAX)" />
+    <Parameter Name="Made10" Parameter="made10" Type="System.String" DbType="NVarChar(MAX)" />
+    <Parameter Name="Made11" Parameter="made11" Type="System.String" DbType="NVarChar(MAX)" />
+    <Parameter Name="Made12" Parameter="made12" Type="System.String" DbType="NVarChar(MAX)" />
+    <Parameter Name="Made13" Parameter="made13" Type="System.String" DbType="NVarChar(MAX)" />
+    <Parameter Name="Made14" Parameter="made14" Type="System.String" DbType="NVarChar(MAX)" />
+    <Parameter Name="Made15" Parameter="made15" Type="System.String" DbType="NVarChar(MAX)" />
+    <Return Type="System.Int32" />
   </Function>
 </Database>

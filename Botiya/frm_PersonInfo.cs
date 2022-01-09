@@ -24,6 +24,7 @@ namespace Botiya
         string? mobile = "";
         string? address = "";
         string? sherkatName = "";
+        string? CodeMelliCheck = string.Empty;
         int? hoqoqi = 0;
         public frm_PersonInfo()
         {
@@ -40,6 +41,7 @@ namespace Botiya
             txtMobile.Texts = String.Empty;
             txtPhone.Texts = String.Empty;
             txtSherkatName.Texts = String.Empty;
+            CodeMelliCheck = string.Empty;
             txtfName.Focus();
         }
 
@@ -71,12 +73,20 @@ namespace Botiya
         {
             try
             {
+                db.GetPersonByCodeMelli(txtCodeMelli.Texts,  ref CodeMelliCheck);
                 if (txtLName.Texts == String.Empty)
                 {
+                    errorProvider1.Clear();
                     errorProvider1.SetError(txtLName, "ورود مقدار الزامی است");
                 }else if (TgbHoghoghi.Checked && txtSherkatName.Texts==String.Empty)
                 {
+                    errorProvider1.Clear();
                     errorProvider1.SetError(txtSherkatName, "ورود مقدار الزامی است");
+                }
+                else if (CodeMelliCheck != string.Empty)
+                {
+                    errorProvider1.Clear();
+                    errorProvider1.SetError(txtCodeMelli, "کد ملی تکراری است");
                 }
                 else
                 {
@@ -108,6 +118,36 @@ namespace Botiya
         {
             
             this.Close();
+        }
+
+        private void txtCodeMelli_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) &&
+                (e.KeyChar != '.'))
+            {
+                e.Handled = true;
+            }
+
+        }
+
+        private void txtMobile_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) &&
+                (e.KeyChar != '.'))
+            {
+                e.Handled = true;
+            }
+
+        }
+
+        private void txtPhone_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) &&
+                (e.KeyChar != '.'))
+            {
+                e.Handled = true;
+            }
+
         }
     }
 }
