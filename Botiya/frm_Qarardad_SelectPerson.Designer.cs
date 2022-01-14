@@ -31,16 +31,6 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frm_Qarardad_SelectPerson));
             this.dgvPerson = new System.Windows.Forms.DataGridView();
-            this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.fNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.lNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.fatherNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.codeMelliDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.phoneDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.mobileDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.addressDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.hoqoqiDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.sherkatNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.bsPerson = new System.Windows.Forms.BindingSource(this.components);
             this.label1 = new System.Windows.Forms.Label();
             this.rdbName = new System.Windows.Forms.RadioButton();
@@ -49,6 +39,16 @@
             this.txtSearchName = new CustomControls.RJControls.RJTextBox();
             this.BtnOk = new CustomControls.RJControls.RJButton();
             this.btnCancel = new CustomControls.RJControls.RJButton();
+            this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.fNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.lNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.fatherNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.codeMelliDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.phoneDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.mobileDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.addressDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.hoqoqiDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.sherkatNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPerson)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bsPerson)).BeginInit();
             this.SuspendLayout();
@@ -72,6 +72,7 @@
             this.hoqoqiDataGridViewTextBoxColumn,
             this.sherkatNameDataGridViewTextBoxColumn});
             this.dgvPerson.DataSource = this.bsPerson;
+            this.dgvPerson.GridColor = System.Drawing.Color.Chocolate;
             this.dgvPerson.Location = new System.Drawing.Point(12, 82);
             this.dgvPerson.MultiSelect = false;
             this.dgvPerson.Name = "dgvPerson";
@@ -79,76 +80,6 @@
             this.dgvPerson.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvPerson.Size = new System.Drawing.Size(774, 396);
             this.dgvPerson.TabIndex = 15;
-            // 
-            // idDataGridViewTextBoxColumn
-            // 
-            this.idDataGridViewTextBoxColumn.DataPropertyName = "Id";
-            this.idDataGridViewTextBoxColumn.HeaderText = "Id";
-            this.idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
-            this.idDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // fNameDataGridViewTextBoxColumn
-            // 
-            this.fNameDataGridViewTextBoxColumn.DataPropertyName = "FName";
-            this.fNameDataGridViewTextBoxColumn.HeaderText = "FName";
-            this.fNameDataGridViewTextBoxColumn.Name = "fNameDataGridViewTextBoxColumn";
-            this.fNameDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // lNameDataGridViewTextBoxColumn
-            // 
-            this.lNameDataGridViewTextBoxColumn.DataPropertyName = "LName";
-            this.lNameDataGridViewTextBoxColumn.HeaderText = "LName";
-            this.lNameDataGridViewTextBoxColumn.Name = "lNameDataGridViewTextBoxColumn";
-            this.lNameDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // fatherNameDataGridViewTextBoxColumn
-            // 
-            this.fatherNameDataGridViewTextBoxColumn.DataPropertyName = "FatherName";
-            this.fatherNameDataGridViewTextBoxColumn.HeaderText = "FatherName";
-            this.fatherNameDataGridViewTextBoxColumn.Name = "fatherNameDataGridViewTextBoxColumn";
-            this.fatherNameDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // codeMelliDataGridViewTextBoxColumn
-            // 
-            this.codeMelliDataGridViewTextBoxColumn.DataPropertyName = "CodeMelli";
-            this.codeMelliDataGridViewTextBoxColumn.HeaderText = "CodeMelli";
-            this.codeMelliDataGridViewTextBoxColumn.Name = "codeMelliDataGridViewTextBoxColumn";
-            this.codeMelliDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // phoneDataGridViewTextBoxColumn
-            // 
-            this.phoneDataGridViewTextBoxColumn.DataPropertyName = "Phone";
-            this.phoneDataGridViewTextBoxColumn.HeaderText = "Phone";
-            this.phoneDataGridViewTextBoxColumn.Name = "phoneDataGridViewTextBoxColumn";
-            this.phoneDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // mobileDataGridViewTextBoxColumn
-            // 
-            this.mobileDataGridViewTextBoxColumn.DataPropertyName = "Mobile";
-            this.mobileDataGridViewTextBoxColumn.HeaderText = "Mobile";
-            this.mobileDataGridViewTextBoxColumn.Name = "mobileDataGridViewTextBoxColumn";
-            this.mobileDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // addressDataGridViewTextBoxColumn
-            // 
-            this.addressDataGridViewTextBoxColumn.DataPropertyName = "Address";
-            this.addressDataGridViewTextBoxColumn.HeaderText = "Address";
-            this.addressDataGridViewTextBoxColumn.Name = "addressDataGridViewTextBoxColumn";
-            this.addressDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // hoqoqiDataGridViewTextBoxColumn
-            // 
-            this.hoqoqiDataGridViewTextBoxColumn.DataPropertyName = "Hoqoqi";
-            this.hoqoqiDataGridViewTextBoxColumn.HeaderText = "Hoqoqi";
-            this.hoqoqiDataGridViewTextBoxColumn.Name = "hoqoqiDataGridViewTextBoxColumn";
-            this.hoqoqiDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // sherkatNameDataGridViewTextBoxColumn
-            // 
-            this.sherkatNameDataGridViewTextBoxColumn.DataPropertyName = "SherkatName";
-            this.sherkatNameDataGridViewTextBoxColumn.HeaderText = "SherkatName";
-            this.sherkatNameDataGridViewTextBoxColumn.Name = "sherkatNameDataGridViewTextBoxColumn";
-            this.sherkatNameDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // bsPerson
             // 
@@ -286,6 +217,79 @@
             this.btnCancel.UseVisualStyleBackColor = false;
             this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
+            // idDataGridViewTextBoxColumn
+            // 
+            this.idDataGridViewTextBoxColumn.DataPropertyName = "Id";
+            this.idDataGridViewTextBoxColumn.HeaderText = "Id";
+            this.idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
+            this.idDataGridViewTextBoxColumn.ReadOnly = true;
+            this.idDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // fNameDataGridViewTextBoxColumn
+            // 
+            this.fNameDataGridViewTextBoxColumn.DataPropertyName = "FName";
+            this.fNameDataGridViewTextBoxColumn.HeaderText = "نام";
+            this.fNameDataGridViewTextBoxColumn.Name = "fNameDataGridViewTextBoxColumn";
+            this.fNameDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // lNameDataGridViewTextBoxColumn
+            // 
+            this.lNameDataGridViewTextBoxColumn.DataPropertyName = "LName";
+            this.lNameDataGridViewTextBoxColumn.HeaderText = "نام خانوادگی";
+            this.lNameDataGridViewTextBoxColumn.Name = "lNameDataGridViewTextBoxColumn";
+            this.lNameDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // fatherNameDataGridViewTextBoxColumn
+            // 
+            this.fatherNameDataGridViewTextBoxColumn.DataPropertyName = "FatherName";
+            this.fatherNameDataGridViewTextBoxColumn.HeaderText = "نام پدر";
+            this.fatherNameDataGridViewTextBoxColumn.Name = "fatherNameDataGridViewTextBoxColumn";
+            this.fatherNameDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // codeMelliDataGridViewTextBoxColumn
+            // 
+            this.codeMelliDataGridViewTextBoxColumn.DataPropertyName = "CodeMelli";
+            this.codeMelliDataGridViewTextBoxColumn.HeaderText = "کدملی";
+            this.codeMelliDataGridViewTextBoxColumn.Name = "codeMelliDataGridViewTextBoxColumn";
+            this.codeMelliDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // phoneDataGridViewTextBoxColumn
+            // 
+            this.phoneDataGridViewTextBoxColumn.DataPropertyName = "Phone";
+            this.phoneDataGridViewTextBoxColumn.HeaderText = "تلفن";
+            this.phoneDataGridViewTextBoxColumn.Name = "phoneDataGridViewTextBoxColumn";
+            this.phoneDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // mobileDataGridViewTextBoxColumn
+            // 
+            this.mobileDataGridViewTextBoxColumn.DataPropertyName = "Mobile";
+            this.mobileDataGridViewTextBoxColumn.HeaderText = "موبایل";
+            this.mobileDataGridViewTextBoxColumn.Name = "mobileDataGridViewTextBoxColumn";
+            this.mobileDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // addressDataGridViewTextBoxColumn
+            // 
+            this.addressDataGridViewTextBoxColumn.DataPropertyName = "Address";
+            this.addressDataGridViewTextBoxColumn.HeaderText = "آدرس";
+            this.addressDataGridViewTextBoxColumn.Name = "addressDataGridViewTextBoxColumn";
+            this.addressDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // hoqoqiDataGridViewTextBoxColumn
+            // 
+            this.hoqoqiDataGridViewTextBoxColumn.DataPropertyName = "Hoqoqi";
+            this.hoqoqiDataGridViewTextBoxColumn.HeaderText = "حقوقی";
+            this.hoqoqiDataGridViewTextBoxColumn.Name = "hoqoqiDataGridViewTextBoxColumn";
+            this.hoqoqiDataGridViewTextBoxColumn.ReadOnly = true;
+            this.hoqoqiDataGridViewTextBoxColumn.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.hoqoqiDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            // 
+            // sherkatNameDataGridViewTextBoxColumn
+            // 
+            this.sherkatNameDataGridViewTextBoxColumn.DataPropertyName = "SherkatName";
+            this.sherkatNameDataGridViewTextBoxColumn.HeaderText = "نام شرکت";
+            this.sherkatNameDataGridViewTextBoxColumn.Name = "sherkatNameDataGridViewTextBoxColumn";
+            this.sherkatNameDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
             // frm_Qarardad_SelectPerson
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 23F);
@@ -325,6 +329,9 @@
         private CustomControls.RJControls.RJTextBox txtSearchName;
         private System.Windows.Forms.Label label1;
         private CustomControls.RJControls.RJTextBox txtSerachCodeMelli;
+        private System.Windows.Forms.BindingSource bsPerson;
+        private System.Windows.Forms.RadioButton rdbName;
+        private System.Windows.Forms.RadioButton rdbCodeMelli;
         private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn fNameDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn lNameDataGridViewTextBoxColumn;
@@ -333,10 +340,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn phoneDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn mobileDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn addressDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn hoqoqiDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn hoqoqiDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn sherkatNameDataGridViewTextBoxColumn;
-        private System.Windows.Forms.BindingSource bsPerson;
-        private System.Windows.Forms.RadioButton rdbName;
-        private System.Windows.Forms.RadioButton rdbCodeMelli;
     }
 }

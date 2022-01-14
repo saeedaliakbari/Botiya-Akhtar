@@ -31,6 +31,7 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frm_Matn));
             this.txtMade15 = new CustomControls.RJControls.RJTextBox();
+            this.bsMatnQarardad = new System.Windows.Forms.BindingSource(this.components);
             this.txtMade14 = new CustomControls.RJControls.RJTextBox();
             this.txtMade13 = new CustomControls.RJControls.RJTextBox();
             this.txtMade12 = new CustomControls.RJControls.RJTextBox();
@@ -64,7 +65,7 @@
             this.tabPage13 = new System.Windows.Forms.TabPage();
             this.tabPage14 = new System.Windows.Forms.TabPage();
             this.tabPage15 = new System.Windows.Forms.TabPage();
-            this.bsMatnQarardad = new System.Windows.Forms.BindingSource(this.components);
+            ((System.ComponentModel.ISupportInitialize)(this.bsMatnQarardad)).BeginInit();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
             this.tabPage3.SuspendLayout();
@@ -81,7 +82,6 @@
             this.tabPage13.SuspendLayout();
             this.tabPage14.SuspendLayout();
             this.tabPage15.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.bsMatnQarardad)).BeginInit();
             this.SuspendLayout();
             // 
             // txtMade15
@@ -91,7 +91,7 @@
             this.txtMade15.BorderFocusColor = System.Drawing.Color.Chocolate;
             this.txtMade15.BorderRadius = 5;
             this.txtMade15.BorderSize = 2;
-            this.txtMade15.DataBindings.Add(new System.Windows.Forms.Binding("Texts", this.bsMatnQarardad, "Made13", true));
+            this.txtMade15.DataBindings.Add(new System.Windows.Forms.Binding("Texts", this.bsMatnQarardad, "Made15", true));
             this.txtMade15.Font = new System.Drawing.Font("B Yekan", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
             this.txtMade15.ForeColor = System.Drawing.Color.SteelBlue;
             this.txtMade15.Location = new System.Drawing.Point(7, 8);
@@ -106,6 +106,10 @@
             this.txtMade15.TabIndex = 12;
             this.txtMade15.Texts = "";
             this.txtMade15.UnderlinedStyle = false;
+            // 
+            // bsMatnQarardad
+            // 
+            this.bsMatnQarardad.DataSource = typeof(Botiya.MatnQarardad);
             // 
             // txtMade14
             // 
@@ -682,10 +686,6 @@
             this.tabPage15.Text = "ماده 15";
             this.tabPage15.UseVisualStyleBackColor = true;
             // 
-            // bsMatnQarardad
-            // 
-            this.bsMatnQarardad.DataSource = typeof(Botiya.frm_MatnQarardad);
-            // 
             // frm_Matn
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 23F);
@@ -703,6 +703,7 @@
             this.Name = "frm_Matn";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Load += new System.EventHandler(this.frm_Matn_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.bsMatnQarardad)).EndInit();
             this.tabPage1.ResumeLayout(false);
             this.tabPage2.ResumeLayout(false);
             this.tabPage3.ResumeLayout(false);
@@ -719,7 +720,6 @@
             this.tabPage13.ResumeLayout(false);
             this.tabPage14.ResumeLayout(false);
             this.tabPage15.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.bsMatnQarardad)).EndInit();
             this.ResumeLayout(false);
 
         }

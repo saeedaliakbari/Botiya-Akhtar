@@ -58,7 +58,19 @@
             this.label16 = new System.Windows.Forms.Label();
             this.label17 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.label18 = new System.Windows.Forms.Label();
+            this.label19 = new System.Windows.Forms.Label();
+            this.label20 = new System.Windows.Forms.Label();
+            this.label21 = new System.Windows.Forms.Label();
+            this.label22 = new System.Windows.Forms.Label();
+            this.label23 = new System.Windows.Forms.Label();
             this.bsQarardadPerson = new System.Windows.Forms.BindingSource(this.components);
+            this.txtZaribPeyman = new CustomControls.RJControls.RJTextBox();
+            this.txtTakhfif = new CustomControls.RJControls.RJTextBox();
+            this.txtPriceNahayi = new CustomControls.RJControls.RJTextBox();
+            this.txtMaliyat = new CustomControls.RJControls.RJTextBox();
+            this.txtPricePishnahadi = new CustomControls.RJControls.RJTextBox();
+            this.txtPaye = new CustomControls.RJControls.RJTextBox();
             this.BtnOk = new CustomControls.RJControls.RJButton();
             this.btnCancel = new CustomControls.RJControls.RJButton();
             this.BtnDelete = new CustomControls.RJControls.RJButton();
@@ -106,7 +118,7 @@
             this.priceKolDataGridViewTextBoxColumn});
             this.dgvFactor.DataSource = this.bsViewFacotrProduct;
             this.dgvFactor.GridColor = System.Drawing.Color.Chocolate;
-            this.dgvFactor.Location = new System.Drawing.Point(14, 391);
+            this.dgvFactor.Location = new System.Drawing.Point(14, 481);
             this.dgvFactor.MultiSelect = false;
             this.dgvFactor.Name = "dgvFactor";
             this.dgvFactor.ReadOnly = true;
@@ -365,7 +377,7 @@
             this.label17.AutoSize = true;
             this.label17.BackColor = System.Drawing.Color.Transparent;
             this.label17.ForeColor = System.Drawing.Color.SteelBlue;
-            this.label17.Location = new System.Drawing.Point(305, 199);
+            this.label17.Location = new System.Drawing.Point(272, 199);
             this.label17.Name = "label17";
             this.label17.Size = new System.Drawing.Size(103, 23);
             this.label17.TabIndex = 55;
@@ -389,16 +401,230 @@
             this.groupBox1.Controls.Add(this.label6);
             this.groupBox1.Controls.Add(this.txtPriceKol);
             this.groupBox1.ForeColor = System.Drawing.Color.SteelBlue;
-            this.groupBox1.Location = new System.Drawing.Point(12, 225);
+            this.groupBox1.Location = new System.Drawing.Point(12, 315);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(780, 160);
-            this.groupBox1.TabIndex = 11;
+            this.groupBox1.TabIndex = 17;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "افزودن کالا به قرارداد";
+            // 
+            // label18
+            // 
+            this.label18.AutoSize = true;
+            this.label18.BackColor = System.Drawing.Color.Transparent;
+            this.label18.ForeColor = System.Drawing.Color.SteelBlue;
+            this.label18.Location = new System.Drawing.Point(533, 199);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(105, 23);
+            this.label18.TabIndex = 57;
+            this.label18.Text = "مبلغ برآوری(پایه)";
+            // 
+            // label19
+            // 
+            this.label19.AutoSize = true;
+            this.label19.BackColor = System.Drawing.Color.Transparent;
+            this.label19.ForeColor = System.Drawing.Color.SteelBlue;
+            this.label19.Location = new System.Drawing.Point(10, 247);
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(106, 23);
+            this.label19.TabIndex = 59;
+            this.label19.Text = "مبلغ کل پیشنهادی";
+            // 
+            // label20
+            // 
+            this.label20.AutoSize = true;
+            this.label20.BackColor = System.Drawing.Color.Transparent;
+            this.label20.ForeColor = System.Drawing.Color.SteelBlue;
+            this.label20.Location = new System.Drawing.Point(241, 289);
+            this.label20.Name = "label20";
+            this.label20.Size = new System.Drawing.Size(134, 23);
+            this.label20.TabIndex = 61;
+            this.label20.Text = "مالیات بر ارزش افزوده";
+            // 
+            // label21
+            // 
+            this.label21.AutoSize = true;
+            this.label21.BackColor = System.Drawing.Color.Transparent;
+            this.label21.ForeColor = System.Drawing.Color.SteelBlue;
+            this.label21.Location = new System.Drawing.Point(570, 287);
+            this.label21.Name = "label21";
+            this.label21.Size = new System.Drawing.Size(66, 23);
+            this.label21.TabIndex = 65;
+            this.label21.Text = "جمع نهایی ";
+            // 
+            // label22
+            // 
+            this.label22.AutoSize = true;
+            this.label22.BackColor = System.Drawing.Color.Transparent;
+            this.label22.ForeColor = System.Drawing.Color.SteelBlue;
+            this.label22.Location = new System.Drawing.Point(590, 247);
+            this.label22.Name = "label22";
+            this.label22.Size = new System.Drawing.Size(46, 23);
+            this.label22.TabIndex = 67;
+            this.label22.Text = "تخفیف";
+            // 
+            // label23
+            // 
+            this.label23.AutoSize = true;
+            this.label23.BackColor = System.Drawing.Color.Transparent;
+            this.label23.ForeColor = System.Drawing.Color.SteelBlue;
+            this.label23.Location = new System.Drawing.Point(296, 247);
+            this.label23.Name = "label23";
+            this.label23.Size = new System.Drawing.Size(79, 23);
+            this.label23.TabIndex = 69;
+            this.label23.Text = "ضریب پیمان";
             // 
             // bsQarardadPerson
             // 
             this.bsQarardadPerson.DataSource = typeof(Botiya.ViewQarardadPerson);
+            // 
+            // txtZaribPeyman
+            // 
+            this.txtZaribPeyman.BackColor = System.Drawing.SystemColors.Window;
+            this.txtZaribPeyman.BorderColor = System.Drawing.Color.SteelBlue;
+            this.txtZaribPeyman.BorderFocusColor = System.Drawing.Color.Chocolate;
+            this.txtZaribPeyman.BorderRadius = 5;
+            this.txtZaribPeyman.BorderSize = 2;
+            this.txtZaribPeyman.Enabled = false;
+            this.txtZaribPeyman.Font = new System.Drawing.Font("B Yekan", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
+            this.txtZaribPeyman.ForeColor = System.Drawing.Color.SteelBlue;
+            this.txtZaribPeyman.Location = new System.Drawing.Point(382, 235);
+            this.txtZaribPeyman.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.txtZaribPeyman.Multiline = false;
+            this.txtZaribPeyman.Name = "txtZaribPeyman";
+            this.txtZaribPeyman.Padding = new System.Windows.Forms.Padding(7);
+            this.txtZaribPeyman.PasswordChar = false;
+            this.txtZaribPeyman.PlaceholderColor = System.Drawing.Color.DarkGray;
+            this.txtZaribPeyman.PlaceholderText = "";
+            this.txtZaribPeyman.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.txtZaribPeyman.Size = new System.Drawing.Size(116, 35);
+            this.txtZaribPeyman.TabIndex = 13;
+            this.txtZaribPeyman.Texts = "0";
+            this.txtZaribPeyman.UnderlinedStyle = true;
+            // 
+            // txtTakhfif
+            // 
+            this.txtTakhfif.BackColor = System.Drawing.SystemColors.Window;
+            this.txtTakhfif.BorderColor = System.Drawing.Color.SteelBlue;
+            this.txtTakhfif.BorderFocusColor = System.Drawing.Color.Chocolate;
+            this.txtTakhfif.BorderRadius = 5;
+            this.txtTakhfif.BorderSize = 2;
+            this.txtTakhfif.DataBindings.Add(new System.Windows.Forms.Binding("Texts", this.bsQarardadPerson, "PriceTakhfif", true));
+            this.txtTakhfif.Font = new System.Drawing.Font("B Yekan", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
+            this.txtTakhfif.ForeColor = System.Drawing.Color.SteelBlue;
+            this.txtTakhfif.Location = new System.Drawing.Point(643, 232);
+            this.txtTakhfif.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.txtTakhfif.Multiline = false;
+            this.txtTakhfif.Name = "txtTakhfif";
+            this.txtTakhfif.Padding = new System.Windows.Forms.Padding(7);
+            this.txtTakhfif.PasswordChar = false;
+            this.txtTakhfif.PlaceholderColor = System.Drawing.Color.DarkGray;
+            this.txtTakhfif.PlaceholderText = "";
+            this.txtTakhfif.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.txtTakhfif.Size = new System.Drawing.Size(140, 35);
+            this.txtTakhfif.TabIndex = 14;
+            this.txtTakhfif.Texts = "0";
+            this.txtTakhfif.UnderlinedStyle = true;
+            this.txtTakhfif.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtTakhfif_KeyPress);
+            this.txtTakhfif.Leave += new System.EventHandler(this.txtTakhfif_Leave);
+            // 
+            // txtPriceNahayi
+            // 
+            this.txtPriceNahayi.BackColor = System.Drawing.SystemColors.Window;
+            this.txtPriceNahayi.BorderColor = System.Drawing.Color.SteelBlue;
+            this.txtPriceNahayi.BorderFocusColor = System.Drawing.Color.Chocolate;
+            this.txtPriceNahayi.BorderRadius = 5;
+            this.txtPriceNahayi.BorderSize = 2;
+            this.txtPriceNahayi.Enabled = false;
+            this.txtPriceNahayi.Font = new System.Drawing.Font("B Yekan", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
+            this.txtPriceNahayi.ForeColor = System.Drawing.Color.SteelBlue;
+            this.txtPriceNahayi.Location = new System.Drawing.Point(643, 272);
+            this.txtPriceNahayi.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.txtPriceNahayi.Multiline = false;
+            this.txtPriceNahayi.Name = "txtPriceNahayi";
+            this.txtPriceNahayi.Padding = new System.Windows.Forms.Padding(7);
+            this.txtPriceNahayi.PasswordChar = false;
+            this.txtPriceNahayi.PlaceholderColor = System.Drawing.Color.DarkGray;
+            this.txtPriceNahayi.PlaceholderText = "";
+            this.txtPriceNahayi.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.txtPriceNahayi.Size = new System.Drawing.Size(140, 35);
+            this.txtPriceNahayi.TabIndex = 16;
+            this.txtPriceNahayi.Texts = "0";
+            this.txtPriceNahayi.UnderlinedStyle = true;
+            // 
+            // txtMaliyat
+            // 
+            this.txtMaliyat.BackColor = System.Drawing.SystemColors.Window;
+            this.txtMaliyat.BorderColor = System.Drawing.Color.SteelBlue;
+            this.txtMaliyat.BorderFocusColor = System.Drawing.Color.Chocolate;
+            this.txtMaliyat.BorderRadius = 5;
+            this.txtMaliyat.BorderSize = 2;
+            this.txtMaliyat.Enabled = false;
+            this.txtMaliyat.Font = new System.Drawing.Font("B Yekan", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
+            this.txtMaliyat.ForeColor = System.Drawing.Color.SteelBlue;
+            this.txtMaliyat.Location = new System.Drawing.Point(382, 275);
+            this.txtMaliyat.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.txtMaliyat.Multiline = false;
+            this.txtMaliyat.Name = "txtMaliyat";
+            this.txtMaliyat.Padding = new System.Windows.Forms.Padding(7);
+            this.txtMaliyat.PasswordChar = false;
+            this.txtMaliyat.PlaceholderColor = System.Drawing.Color.DarkGray;
+            this.txtMaliyat.PlaceholderText = "";
+            this.txtMaliyat.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.txtMaliyat.Size = new System.Drawing.Size(161, 35);
+            this.txtMaliyat.TabIndex = 15;
+            this.txtMaliyat.Texts = "0";
+            this.txtMaliyat.UnderlinedStyle = true;
+            // 
+            // txtPricePishnahadi
+            // 
+            this.txtPricePishnahadi.BackColor = System.Drawing.SystemColors.Window;
+            this.txtPricePishnahadi.BorderColor = System.Drawing.Color.SteelBlue;
+            this.txtPricePishnahadi.BorderFocusColor = System.Drawing.Color.Chocolate;
+            this.txtPricePishnahadi.BorderRadius = 5;
+            this.txtPricePishnahadi.BorderSize = 2;
+            this.txtPricePishnahadi.Enabled = false;
+            this.txtPricePishnahadi.Font = new System.Drawing.Font("B Yekan", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
+            this.txtPricePishnahadi.ForeColor = System.Drawing.Color.SteelBlue;
+            this.txtPricePishnahadi.Location = new System.Drawing.Point(120, 235);
+            this.txtPricePishnahadi.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.txtPricePishnahadi.Multiline = false;
+            this.txtPricePishnahadi.Name = "txtPricePishnahadi";
+            this.txtPricePishnahadi.Padding = new System.Windows.Forms.Padding(7);
+            this.txtPricePishnahadi.PasswordChar = false;
+            this.txtPricePishnahadi.PlaceholderColor = System.Drawing.Color.DarkGray;
+            this.txtPricePishnahadi.PlaceholderText = "";
+            this.txtPricePishnahadi.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.txtPricePishnahadi.Size = new System.Drawing.Size(140, 35);
+            this.txtPricePishnahadi.TabIndex = 12;
+            this.txtPricePishnahadi.Texts = "0";
+            this.txtPricePishnahadi.UnderlinedStyle = true;
+            // 
+            // txtPaye
+            // 
+            this.txtPaye.BackColor = System.Drawing.SystemColors.Window;
+            this.txtPaye.BorderColor = System.Drawing.Color.SteelBlue;
+            this.txtPaye.BorderFocusColor = System.Drawing.Color.Chocolate;
+            this.txtPaye.BorderRadius = 5;
+            this.txtPaye.BorderSize = 2;
+            this.txtPaye.DataBindings.Add(new System.Windows.Forms.Binding("Texts", this.bsQarardadPerson, "PricePaye", true));
+            this.txtPaye.Font = new System.Drawing.Font("B Yekan", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
+            this.txtPaye.ForeColor = System.Drawing.Color.SteelBlue;
+            this.txtPaye.Location = new System.Drawing.Point(643, 187);
+            this.txtPaye.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.txtPaye.Multiline = false;
+            this.txtPaye.Name = "txtPaye";
+            this.txtPaye.Padding = new System.Windows.Forms.Padding(7);
+            this.txtPaye.PasswordChar = false;
+            this.txtPaye.PlaceholderColor = System.Drawing.Color.DarkGray;
+            this.txtPaye.PlaceholderText = "";
+            this.txtPaye.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.txtPaye.Size = new System.Drawing.Size(140, 35);
+            this.txtPaye.TabIndex = 11;
+            this.txtPaye.Texts = "0";
+            this.txtPaye.UnderlinedStyle = true;
+            this.txtPaye.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPaye_KeyPress);
+            this.txtPaye.Leave += new System.EventHandler(this.txtPaye_Leave);
             // 
             // BtnOk
             // 
@@ -588,6 +814,7 @@
             this.txtTedad.PasswordChar = false;
             this.txtTedad.PlaceholderColor = System.Drawing.Color.DarkGray;
             this.txtTedad.PlaceholderText = "";
+            this.txtTedad.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.txtTedad.Size = new System.Drawing.Size(92, 35);
             this.txtTedad.TabIndex = 2;
             this.txtTedad.Texts = "0";
@@ -612,6 +839,7 @@
             this.txtPriceVahed.PasswordChar = false;
             this.txtPriceVahed.PlaceholderColor = System.Drawing.Color.DarkGray;
             this.txtPriceVahed.PlaceholderText = "";
+            this.txtPriceVahed.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.txtPriceVahed.Size = new System.Drawing.Size(137, 35);
             this.txtPriceVahed.TabIndex = 3;
             this.txtPriceVahed.Texts = "0";
@@ -637,6 +865,7 @@
             this.txtPriceKol.PasswordChar = false;
             this.txtPriceKol.PlaceholderColor = System.Drawing.Color.DarkGray;
             this.txtPriceKol.PlaceholderText = "";
+            this.txtPriceKol.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.txtPriceKol.Size = new System.Drawing.Size(163, 35);
             this.txtPriceKol.TabIndex = 4;
             this.txtPriceKol.Texts = "";
@@ -652,7 +881,7 @@
             this.txtPriceHaml.DataBindings.Add(new System.Windows.Forms.Binding("Texts", this.bsQarardadPerson, "PriceHaml", true));
             this.txtPriceHaml.Font = new System.Drawing.Font("B Yekan", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
             this.txtPriceHaml.ForeColor = System.Drawing.Color.SteelBlue;
-            this.txtPriceHaml.Location = new System.Drawing.Point(415, 187);
+            this.txtPriceHaml.Location = new System.Drawing.Point(382, 187);
             this.txtPriceHaml.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtPriceHaml.Multiline = false;
             this.txtPriceHaml.Name = "txtPriceHaml";
@@ -660,11 +889,13 @@
             this.txtPriceHaml.PasswordChar = false;
             this.txtPriceHaml.PlaceholderColor = System.Drawing.Color.DarkGray;
             this.txtPriceHaml.PlaceholderText = "";
-            this.txtPriceHaml.Size = new System.Drawing.Size(163, 35);
+            this.txtPriceHaml.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.txtPriceHaml.Size = new System.Drawing.Size(116, 35);
             this.txtPriceHaml.TabIndex = 10;
             this.txtPriceHaml.Texts = "0";
             this.txtPriceHaml.UnderlinedStyle = true;
             this.txtPriceHaml.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPriceHaml_KeyPress);
+            this.txtPriceHaml.Leave += new System.EventHandler(this.txtPriceHaml_Leave);
             // 
             // txtPriceJarime
             // 
@@ -684,7 +915,8 @@
             this.txtPriceJarime.PasswordChar = false;
             this.txtPriceJarime.PlaceholderColor = System.Drawing.Color.DarkGray;
             this.txtPriceJarime.PlaceholderText = "";
-            this.txtPriceJarime.Size = new System.Drawing.Size(163, 35);
+            this.txtPriceJarime.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.txtPriceJarime.Size = new System.Drawing.Size(116, 35);
             this.txtPriceJarime.TabIndex = 9;
             this.txtPriceJarime.Texts = "0";
             this.txtPriceJarime.UnderlinedStyle = true;
@@ -754,6 +986,7 @@
             this.txtDateEnsheab.PasswordChar = false;
             this.txtDateEnsheab.PlaceholderColor = System.Drawing.Color.DarkGray;
             this.txtDateEnsheab.PlaceholderText = "1400/01/01";
+            this.txtDateEnsheab.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.txtDateEnsheab.Size = new System.Drawing.Size(92, 35);
             this.txtDateEnsheab.TabIndex = 6;
             this.txtDateEnsheab.Texts = "";
@@ -846,6 +1079,7 @@
             this.txtShomareQarardad.PasswordChar = false;
             this.txtShomareQarardad.PlaceholderColor = System.Drawing.Color.DarkGray;
             this.txtShomareQarardad.PlaceholderText = "";
+            this.txtShomareQarardad.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.txtShomareQarardad.Size = new System.Drawing.Size(92, 35);
             this.txtShomareQarardad.TabIndex = 1;
             this.txtShomareQarardad.Texts = "";
@@ -892,7 +1126,7 @@
             this.txtDate.PasswordChar = false;
             this.txtDate.PlaceholderColor = System.Drawing.Color.DarkGray;
             this.txtDate.PlaceholderText = "1400/01/01";
-            this.txtDate.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.txtDate.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.txtDate.Size = new System.Drawing.Size(121, 35);
             this.txtDate.TabIndex = 2;
             this.txtDate.Texts = "";
@@ -912,11 +1146,11 @@
             this.BtnBack.ForeColor = System.Drawing.Color.SteelBlue;
             this.BtnBack.Image = ((System.Drawing.Image)(resources.GetObject("BtnBack.Image")));
             this.BtnBack.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.BtnBack.Location = new System.Drawing.Point(648, 594);
+            this.BtnBack.Location = new System.Drawing.Point(648, 684);
             this.BtnBack.Name = "BtnBack";
             this.BtnBack.Padding = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.BtnBack.Size = new System.Drawing.Size(140, 42);
-            this.BtnBack.TabIndex = 13;
+            this.BtnBack.TabIndex = 19;
             this.BtnBack.Text = "بازگشت";
             this.BtnBack.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.BtnBack.TextColor = System.Drawing.Color.SteelBlue;
@@ -936,11 +1170,11 @@
             this.BtnSave.ForeColor = System.Drawing.Color.SteelBlue;
             this.BtnSave.Image = ((System.Drawing.Image)(resources.GetObject("BtnSave.Image")));
             this.BtnSave.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.BtnSave.Location = new System.Drawing.Point(14, 594);
+            this.BtnSave.Location = new System.Drawing.Point(14, 684);
             this.BtnSave.Name = "BtnSave";
             this.BtnSave.Padding = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.BtnSave.Size = new System.Drawing.Size(140, 42);
-            this.BtnSave.TabIndex = 12;
+            this.BtnSave.TabIndex = 18;
             this.BtnSave.Text = "ذخیره";
             this.BtnSave.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.BtnSave.TextColor = System.Drawing.Color.SteelBlue;
@@ -952,8 +1186,20 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 23F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(798, 643);
+            this.ClientSize = new System.Drawing.Size(798, 738);
             this.ControlBox = false;
+            this.Controls.Add(this.txtZaribPeyman);
+            this.Controls.Add(this.label23);
+            this.Controls.Add(this.txtTakhfif);
+            this.Controls.Add(this.label22);
+            this.Controls.Add(this.txtPriceNahayi);
+            this.Controls.Add(this.label21);
+            this.Controls.Add(this.txtMaliyat);
+            this.Controls.Add(this.label20);
+            this.Controls.Add(this.txtPricePishnahadi);
+            this.Controls.Add(this.label19);
+            this.Controls.Add(this.txtPaye);
+            this.Controls.Add(this.label18);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.txtPriceHaml);
             this.Controls.Add(this.label17);
@@ -1054,5 +1300,17 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn priceVahedDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn priceKolDataGridViewTextBoxColumn;
         private System.Windows.Forms.BindingSource bsQarardadPerson;
+        private CustomControls.RJControls.RJTextBox txtPaye;
+        private System.Windows.Forms.Label label18;
+        private CustomControls.RJControls.RJTextBox txtPricePishnahadi;
+        private System.Windows.Forms.Label label19;
+        private CustomControls.RJControls.RJTextBox txtMaliyat;
+        private System.Windows.Forms.Label label20;
+        private CustomControls.RJControls.RJTextBox txtPriceNahayi;
+        private System.Windows.Forms.Label label21;
+        private CustomControls.RJControls.RJTextBox txtTakhfif;
+        private System.Windows.Forms.Label label22;
+        private CustomControls.RJControls.RJTextBox txtZaribPeyman;
+        private System.Windows.Forms.Label label23;
     }
 }

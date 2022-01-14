@@ -1,8 +1,10 @@
-﻿using System;
+﻿using BehComponents;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
@@ -11,6 +13,10 @@ namespace Botiya
 {
     public partial class frm_Main : Form
     {
+        BotiyaDataContext db = new BotiyaDataContext();
+        PersianCalendar pc = new PersianCalendar();
+        string strtoday = "";
+        public static int idUser = -1;
         public frm_Main()
         {
             InitializeComponent();
@@ -74,7 +80,8 @@ namespace Botiya
 
         private void خروجToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Application.Exit();
+            if (MessageBoxFarsi.Show("از خروج مطمئنید؟", "خروج از برنامه", MessageBoxFarsiButtons.YesNo, MessageBoxFarsiIcon.Stop, MessageBoxFarsiDefaultButton.Button1) == DialogResult.Yes)
+                Application.Exit();
         }
 
         private void rjTextBox1__TextChanged(object sender, EventArgs e)
@@ -83,8 +90,17 @@ namespace Botiya
 
         private void frm_Main_Load(object sender, EventArgs e)
         {
-            
-           
+            strtoday = pc.GetYear(DateTime.Now).ToString("0000") + "/" + pc.GetMonth(DateTime.Now).ToString("00") + "/" + pc.GetDayOfMonth(DateTime.Now).ToString("00");
+            try
+            {
+                bsUser.DataSource = db.FillUsersById(idUser);
+                lblMain.Text = "تاریخ امروز: " + strtoday;
+            }
+            catch
+            {
+                MessageBoxFarsi.Show("ارتباط با پایگاه داده قطع است", "اخطار", MessageBoxFarsiButtons.OK, MessageBoxFarsiIcon.Error, MessageBoxFarsiDefaultButton.Button1, true, false);
+            }
+
         }
 
         private void واحدToolStripMenuItem_Click(object sender, EventArgs e)
@@ -110,6 +126,86 @@ namespace Botiya
         private void متنقراردادToolStripMenuItem_Click(object sender, EventArgs e)
         {
             new frm_Matn().ShowDialog();
+        }
+
+        private void نرخارزشافزودهToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            new frm_Settings().ShowDialog();
+        }
+
+        private void بانکToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            new frm_Banks().ShowDialog();
+        }
+
+        private void ذخیرهسازیToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            SaveFileDialog sfd = new SaveFileDialog();
+            string str_filename = string.Empty;
+            sfd.FileName = "backup_BeratAj_" + strtoday.Replace("/", "_");
+            sfd.Filter = @"backup files(*.bak)|*.bak|all files(*.*)|*.*";
+            sfd.FilterIndex = 1;
+            sfd.OverwritePrompt = true;
+            sfd.Title = "***ذخیره سازی پشتیبان***";
+            if (sfd.ShowDialog() == DialogResult.OK)
+            {
+                str_filename = sfd.FileName;
+                backup(str_filename);
+            }
+        }
+        private void backup(string str_filename)
+        {
+            try
+            {
+                this.Cursor = Cursors.WaitCursor;
+                db.ExecuteCommand(@"BACKUP DATABASE " + db.Mapping.DatabaseName + " to DISK='" + str_filename + "'");
+                this.Cursor = Cursors.Default;
+                MessageBox.Show("عملیات ذخیره سازی موفقیت آمیز بود");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("عملیات ذخیره سازی موفقیت آمیز نبود |" + ex.Message);
+            }
+        }
+
+        private void بازیابیToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog sfd = new OpenFileDialog();
+            string str_filename = string.Empty;
+
+            sfd.Filter = @"backup files(*.bak)|*.bak|all files(*.*)|*.*";
+            sfd.FilterIndex = 1;
+
+            sfd.Title = "***بازیابی پشتیبان***";
+            if (sfd.ShowDialog() == DialogResult.OK)
+            {
+                str_filename = sfd.FileName;
+                restore(str_filename);
+
+
+            }
+        }
+        private void restore(string str_filename)
+        {
+
+            try
+            {
+                this.Cursor = Cursors.WaitCursor;
+                db.ExecuteCommand(@"ALTER DATABASE " + db.Mapping.DatabaseName + "  SET SINGLE_USER with ROLLBACK IMMEDIATE "
+               + " USE MASTER " +
+               "  RESTORE DATABASE " + db.Mapping.DatabaseName + " from DISK='" + str_filename + "' with REPLACE");
+                this.Cursor = Cursors.Default;
+                MessageBox.Show("عملیات بازیابی پشتیبان موفقیت آمیز بود");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("عملیات بازیابی پشتیبان موفقیت آمیز نبود|" + ex.Message);
+            }
+        }
+
+        private void کاربرانToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            new frm_Users().ShowDialog();
         }
     }
 }

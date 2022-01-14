@@ -38,6 +38,54 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>bin\Debug\BehComponents.dll</HintPath>
     </Reference>
+    <Reference Include="JntNum2Text, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\JntNum2Text.dll</HintPath>
+    </Reference>
+    <Reference Include="Stimulsoft.Base, Version=2012.2.1304.0, Culture=neutral, PublicKeyToken=ebe6666cba19647a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\Stimulsoft.Base.dll</HintPath>
+    </Reference>
+    <Reference Include="Stimulsoft.Controls, Version=2012.2.1304.0, Culture=neutral, PublicKeyToken=ebe6666cba19647a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\Stimulsoft.Controls.dll</HintPath>
+    </Reference>
+    <Reference Include="Stimulsoft.Controls.Win, Version=2012.2.1304.0, Culture=neutral, PublicKeyToken=ebe6666cba19647a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\Stimulsoft.Controls.Win.dll</HintPath>
+    </Reference>
+    <Reference Include="Stimulsoft.Database, Version=2012.2.1304.0, Culture=neutral, PublicKeyToken=ebe6666cba19647a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\Stimulsoft.Database.dll</HintPath>
+    </Reference>
+    <Reference Include="Stimulsoft.Design, Version=2012.2.1304.0, Culture=neutral, PublicKeyToken=ebe6666cba19647a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\Stimulsoft.Design.dll</HintPath>
+    </Reference>
+    <Reference Include="Stimulsoft.Editor, Version=2012.2.1304.0, Culture=neutral, PublicKeyToken=ebe6666cba19647a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\Stimulsoft.Editor.dll</HintPath>
+    </Reference>
+    <Reference Include="Stimulsoft.Report, Version=2012.2.1304.0, Culture=neutral, PublicKeyToken=ebe6666cba19647a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\Stimulsoft.Report.dll</HintPath>
+    </Reference>
+    <Reference Include="Stimulsoft.Report.Check, Version=2012.2.1304.0, Culture=neutral, PublicKeyToken=ebe6666cba19647a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\Stimulsoft.Report.Check.dll</HintPath>
+    </Reference>
+    <Reference Include="Stimulsoft.Report.Design, Version=2012.2.1304.0, Culture=neutral, PublicKeyToken=ebe6666cba19647a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\Stimulsoft.Report.Design.dll</HintPath>
+    </Reference>
+    <Reference Include="Stimulsoft.Report.Helper, Version=2012.2.1304.0, Culture=neutral, PublicKeyToken=ebe6666cba19647a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\Stimulsoft.Report.Helper.dll</HintPath>
+    </Reference>
+    <Reference Include="Stimulsoft.Report.Win, Version=2012.2.1304.0, Culture=neutral, PublicKeyToken=ebe6666cba19647a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\Stimulsoft.Report.Win.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Data.Linq" />
@@ -61,6 +109,30 @@
     </Compile>
     <Compile Include="frm_AddQarardad.Designer.cs">
       <DependentUpon>frm_AddQarardad.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frm_Attach.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_Attach.Designer.cs">
+      <DependentUpon>frm_Attach.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frm_Banks.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_Banks.Designer.cs">
+      <DependentUpon>frm_Banks.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frm_Daryaftha.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_Daryaftha.Designer.cs">
+      <DependentUpon>frm_Daryaftha.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frm_Login.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_Login.Designer.cs">
+      <DependentUpon>frm_Login.cs</DependentUpon>
     </Compile>
     <Compile Include="frm_Main.cs">
       <SubType>Form</SubType>
@@ -122,6 +194,18 @@
     <Compile Include="frm_Qarardad_SelectProduct.Designer.cs">
       <DependentUpon>frm_Qarardad_SelectProduct.cs</DependentUpon>
     </Compile>
+    <Compile Include="frm_Settings.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_Settings.Designer.cs">
+      <DependentUpon>frm_Settings.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frm_Users.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_Users.Designer.cs">
+      <DependentUpon>frm_Users.cs</DependentUpon>
+    </Compile>
     <Compile Include="frm_Vaheds.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -147,6 +231,18 @@
     </Compile>
     <EmbeddedResource Include="frm_AddQarardad.resx">
       <DependentUpon>frm_AddQarardad.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_Attach.resx">
+      <DependentUpon>frm_Attach.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_Banks.resx">
+      <DependentUpon>frm_Banks.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_Daryaftha.resx">
+      <DependentUpon>frm_Daryaftha.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_Login.resx">
+      <DependentUpon>frm_Login.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frm_Main.resx">
       <DependentUpon>frm_Main.cs</DependentUpon>
@@ -178,6 +274,12 @@
     <EmbeddedResource Include="frm_Qarardad_SelectProduct.resx">
       <DependentUpon>frm_Qarardad_SelectProduct.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frm_Settings.resx">
+      <DependentUpon>frm_Settings.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_Users.resx">
+      <DependentUpon>frm_Users.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frm_Vaheds.resx">
       <DependentUpon>frm_Vaheds.cs</DependentUpon>
     </EmbeddedResource>
@@ -208,7 +310,12 @@
     <None Include="Properties\DataSources\Person.datasource" />
     <None Include="Properties\DataSources\Product.datasource" />
     <None Include="Properties\DataSources\Qarardad.datasource" />
+    <None Include="Properties\DataSources\tblBank.datasource" />
+    <None Include="Properties\DataSources\tblFileAttach.datasource" />
+    <None Include="Properties\DataSources\tblSetting.datasource" />
+    <None Include="Properties\DataSources\tblUser.datasource" />
     <None Include="Properties\DataSources\Vahed.datasource" />
+    <None Include="Properties\DataSources\ViewDaryaftiBank.datasource" />
     <None Include="Properties\DataSources\ViewFactorProduct.datasource" />
     <None Include="Properties\DataSources\ViewProductsVahed.datasource" />
     <None Include="Properties\DataSources\ViewQarardadPerson.datasource" />

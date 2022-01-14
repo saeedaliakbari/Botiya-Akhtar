@@ -101,6 +101,7 @@ namespace Botiya
         private void UpdateDb()
         {
             bsViewFacotrProduct.DataSource = db.FillViewFatcorProduct(idQarardad);
+            calculatePrice();
             if (dgvFactor.Rows.Count == 0)
             {
                 BtnDelete.Enabled = false;
@@ -182,13 +183,24 @@ namespace Botiya
         {
             try
             {
-                db.UpdateQarardad(idQarardad, idPerson, txtDate.Texts, Convert.ToDouble(txtPriceHaml.Texts), txtShomareQarardad.Texts, txtMozoQarardad.Texts, txtModatQarardad.Texts, txtShomareEnsheab.Texts, txtDateEnsheab.Texts, txtDoreTazmin.Texts, txtModatRafeNaghz.Texts, Convert.ToDouble(txtPriceJarime.Texts));
-                frm_Qarardadha.UpdateDb();
-                MessageBoxFarsi.Show("قرارداد ثبت شد", "عملیات موفق", MessageBoxFarsiButtons.OK, MessageBoxFarsiIcon.Information, MessageBoxFarsiDefaultButton.Button1);
+                string? ShomareQarardad = null;
+                db.CheckShomareQarardad(txtShomareQarardad.Texts, ref ShomareQarardad);
+                if (ShomareQarardad == null)
+                {
+                    db.UpdateQarardad(idQarardad, idPerson, txtDate.Texts, Convert.ToDouble(txtPriceHaml.Texts), txtShomareQarardad.Texts, txtMozoQarardad.Texts, txtModatQarardad.Texts, txtShomareEnsheab.Texts, txtDateEnsheab.Texts, txtDoreTazmin.Texts, txtModatRafeNaghz.Texts, Convert.ToDouble(txtPriceJarime.Texts), Convert.ToDouble(txtPaye.Texts), Convert.ToDouble(txtPricePishnahadi.Texts), Convert.ToDouble(txtZaribPeyman.Texts), Convert.ToDouble(txtTakhfif.Texts), Convert.ToDouble(txtMaliyat.Texts), Convert.ToDouble(txtPriceNahayi.Texts));
+                    frm_Qarardadha.UpdateDb();
+                    MessageBoxFarsi.Show("قرارداد ثبت شد", "عملیات موفق", MessageBoxFarsiButtons.OK, MessageBoxFarsiIcon.Information, MessageBoxFarsiDefaultButton.Button1);
+                }
+                else
+                {
+                    MessageBoxFarsi.Show("شماره قرارداد تکراری است و امکان ثبت قرارداد با شماره یکسان وجود ندارد", "اخطار", MessageBoxFarsiButtons.OK, MessageBoxFarsiIcon.Error, MessageBoxFarsiDefaultButton.Button1);
+
+                }
             }
             catch
             {
                 MessageBoxFarsi.Show("ارتباط با پایگاه داده قطع است", "اخطار", MessageBoxFarsiButtons.OK, MessageBoxFarsiIcon.Error, MessageBoxFarsiDefaultButton.Button1);
+
             }
         }
 
@@ -363,6 +375,55 @@ namespace Botiya
             {
                 MessageBoxFarsi.Show("ارتباط با پایگاه داده قطع است", "اخطار", MessageBoxFarsiButtons.OK, MessageBoxFarsiIcon.Error, MessageBoxFarsiDefaultButton.Button1);
             }
+        }
+
+        private void calculatePrice()
+        {
+            double pricePishnahadi = 0;
+            double priceMaliyat = 0;
+            double? sumFactor= 0;
+            double? zaribMaliyat = 0;
+            try
+            {
+                db.GetSumFactor(idQarardad, ref sumFactor);// get sum factor
+                db.GetZaribMaliyat(ref zaribMaliyat);//get zarib maliyat
+                pricePishnahadi = double.Parse(txtPriceHaml.Texts) - double.Parse(txtTakhfif.Texts) + double.Parse(sumFactor.ToString());
+                priceMaliyat = Math.Round(double.Parse(zaribMaliyat.ToString()) * pricePishnahadi / 100);
+                txtZaribPeyman.Texts = Math.Round(pricePishnahadi / double.Parse(txtPaye.Texts),2).ToString();
+                txtPricePishnahadi.Texts = pricePishnahadi.ToString();
+                txtMaliyat.Texts = priceMaliyat.ToString();
+                txtPriceNahayi.Texts = (pricePishnahadi + priceMaliyat).ToString();
+            }
+            catch
+            {
+                MessageBoxFarsi.Show("ارتباط با پایگاه داده قطع است", "اخطار", MessageBoxFarsiButtons.OK, MessageBoxFarsiIcon.Error, MessageBoxFarsiDefaultButton.Button1);
+            }
+            
+        }
+
+        private void txtPriceHaml_Leave(object sender, EventArgs e)
+        {
+            calculatePrice();
+        }
+
+        private void txtPaye_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            OnlyNumeric(sender, e);
+        }
+
+        private void txtTakhfif_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            OnlyNumeric(sender, e);
+        }
+
+        private void txtPaye_Leave(object sender, EventArgs e)
+        {
+            calculatePrice();
+        }
+
+        private void txtTakhfif_Leave(object sender, EventArgs e)
+        {
+            calculatePrice();
         }
     }
 }

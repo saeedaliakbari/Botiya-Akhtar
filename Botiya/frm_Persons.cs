@@ -75,10 +75,20 @@ namespace Botiya
         {
             try
             {
+                
                 if (MessageBoxFarsi.Show("آیا مشتری  با مشخصات زیر حذف گردد؟" + "\n" + " " + dgvPesons.CurrentRow.Cells[1].Value + " " + dgvPesons.CurrentRow.Cells[2].Value + " نام پدر : " + dgvPesons.CurrentRow.Cells[3].Value, "حذف", MessageBoxFarsiButtons.YesNo, MessageBoxFarsiIcon.Delete, MessageBoxFarsiDefaultButton.Button1) == DialogResult.Yes)
                 {
-                    db.DeletePerson((int)dgvPesons.CurrentRow.Cells[0].Value);
-                    UpdateDb();
+                    int? resultIdPerson = null;
+                    db.CheckDeletePerson((int)dgvPesons.CurrentRow.Cells[0].Value, ref resultIdPerson);
+                    if (resultIdPerson == null)
+                    {
+                        db.DeletePerson((int)dgvPesons.CurrentRow.Cells[0].Value);
+                        UpdateDb();
+                    }
+                    else
+                    {
+                        MessageBoxFarsi.Show("امکان حذف این مشتری بدلیل داشتن قرارداد وجود ندارد", "اخطار", MessageBoxFarsiButtons.OK, MessageBoxFarsiIcon.Error, MessageBoxFarsiDefaultButton.Button1);
+                    }
                 }
             }
             catch

@@ -34,6 +34,11 @@
             this.label1 = new System.Windows.Forms.Label();
             this.txtSerachNameKala = new CustomControls.RJControls.RJTextBox();
             this.dgvProducts = new System.Windows.Forms.DataGridView();
+            this.bsViewProduct = new System.Windows.Forms.BindingSource(this.components);
+            this.BtnOk = new CustomControls.RJControls.RJButton();
+            this.btnCancel = new CustomControls.RJControls.RJButton();
+            this.rdbName = new System.Windows.Forms.RadioButton();
+            this.rdbCode = new System.Windows.Forms.RadioButton();
             this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.codeIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -43,11 +48,6 @@
             this.pricKala2DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.priceDastMozd2DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.vahedNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.bsViewProduct = new System.Windows.Forms.BindingSource(this.components);
-            this.BtnOk = new CustomControls.RJControls.RJButton();
-            this.btnCancel = new CustomControls.RJControls.RJButton();
-            this.rdbName = new System.Windows.Forms.RadioButton();
-            this.rdbCode = new System.Windows.Forms.RadioButton();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProducts)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bsViewProduct)).BeginInit();
             this.SuspendLayout();
@@ -138,69 +138,6 @@
             this.dgvProducts.Size = new System.Drawing.Size(774, 396);
             this.dgvProducts.TabIndex = 21;
             // 
-            // idDataGridViewTextBoxColumn
-            // 
-            this.idDataGridViewTextBoxColumn.DataPropertyName = "Id";
-            this.idDataGridViewTextBoxColumn.HeaderText = "Id";
-            this.idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
-            this.idDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // codeIdDataGridViewTextBoxColumn
-            // 
-            this.codeIdDataGridViewTextBoxColumn.DataPropertyName = "CodeId";
-            this.codeIdDataGridViewTextBoxColumn.HeaderText = "CodeId";
-            this.codeIdDataGridViewTextBoxColumn.Name = "codeIdDataGridViewTextBoxColumn";
-            this.codeIdDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // nameDataGridViewTextBoxColumn
-            // 
-            this.nameDataGridViewTextBoxColumn.DataPropertyName = "Name";
-            this.nameDataGridViewTextBoxColumn.HeaderText = "Name";
-            this.nameDataGridViewTextBoxColumn.Name = "nameDataGridViewTextBoxColumn";
-            this.nameDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // vahedDataGridViewTextBoxColumn
-            // 
-            this.vahedDataGridViewTextBoxColumn.DataPropertyName = "Vahed";
-            this.vahedDataGridViewTextBoxColumn.HeaderText = "Vahed";
-            this.vahedDataGridViewTextBoxColumn.Name = "vahedDataGridViewTextBoxColumn";
-            this.vahedDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // priceKala1DataGridViewTextBoxColumn
-            // 
-            this.priceKala1DataGridViewTextBoxColumn.DataPropertyName = "PriceKala1";
-            this.priceKala1DataGridViewTextBoxColumn.HeaderText = "PriceKala1";
-            this.priceKala1DataGridViewTextBoxColumn.Name = "priceKala1DataGridViewTextBoxColumn";
-            this.priceKala1DataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // priceDastMozd1DataGridViewTextBoxColumn
-            // 
-            this.priceDastMozd1DataGridViewTextBoxColumn.DataPropertyName = "PriceDastMozd1";
-            this.priceDastMozd1DataGridViewTextBoxColumn.HeaderText = "PriceDastMozd1";
-            this.priceDastMozd1DataGridViewTextBoxColumn.Name = "priceDastMozd1DataGridViewTextBoxColumn";
-            this.priceDastMozd1DataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // pricKala2DataGridViewTextBoxColumn
-            // 
-            this.pricKala2DataGridViewTextBoxColumn.DataPropertyName = "PricKala2";
-            this.pricKala2DataGridViewTextBoxColumn.HeaderText = "PricKala2";
-            this.pricKala2DataGridViewTextBoxColumn.Name = "pricKala2DataGridViewTextBoxColumn";
-            this.pricKala2DataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // priceDastMozd2DataGridViewTextBoxColumn
-            // 
-            this.priceDastMozd2DataGridViewTextBoxColumn.DataPropertyName = "PriceDastMozd2";
-            this.priceDastMozd2DataGridViewTextBoxColumn.HeaderText = "PriceDastMozd2";
-            this.priceDastMozd2DataGridViewTextBoxColumn.Name = "priceDastMozd2DataGridViewTextBoxColumn";
-            this.priceDastMozd2DataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // vahedNameDataGridViewTextBoxColumn
-            // 
-            this.vahedNameDataGridViewTextBoxColumn.DataPropertyName = "VahedName";
-            this.vahedNameDataGridViewTextBoxColumn.HeaderText = "VahedName";
-            this.vahedNameDataGridViewTextBoxColumn.Name = "vahedNameDataGridViewTextBoxColumn";
-            this.vahedNameDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
             // bsViewProduct
             // 
             this.bsViewProduct.DataSource = typeof(Botiya.ViewProductsVahed);
@@ -275,6 +212,71 @@
             this.rdbCode.UseVisualStyleBackColor = true;
             this.rdbCode.CheckedChanged += new System.EventHandler(this.rdbCode_CheckedChanged);
             // 
+            // idDataGridViewTextBoxColumn
+            // 
+            this.idDataGridViewTextBoxColumn.DataPropertyName = "Id";
+            this.idDataGridViewTextBoxColumn.HeaderText = "Id";
+            this.idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
+            this.idDataGridViewTextBoxColumn.ReadOnly = true;
+            this.idDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // codeIdDataGridViewTextBoxColumn
+            // 
+            this.codeIdDataGridViewTextBoxColumn.DataPropertyName = "CodeId";
+            this.codeIdDataGridViewTextBoxColumn.HeaderText = "کد کالا";
+            this.codeIdDataGridViewTextBoxColumn.Name = "codeIdDataGridViewTextBoxColumn";
+            this.codeIdDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // nameDataGridViewTextBoxColumn
+            // 
+            this.nameDataGridViewTextBoxColumn.DataPropertyName = "Name";
+            this.nameDataGridViewTextBoxColumn.HeaderText = "نام کالا";
+            this.nameDataGridViewTextBoxColumn.Name = "nameDataGridViewTextBoxColumn";
+            this.nameDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // vahedDataGridViewTextBoxColumn
+            // 
+            this.vahedDataGridViewTextBoxColumn.DataPropertyName = "Vahed";
+            this.vahedDataGridViewTextBoxColumn.HeaderText = "واحد کد";
+            this.vahedDataGridViewTextBoxColumn.Name = "vahedDataGridViewTextBoxColumn";
+            this.vahedDataGridViewTextBoxColumn.ReadOnly = true;
+            this.vahedDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // priceKala1DataGridViewTextBoxColumn
+            // 
+            this.priceKala1DataGridViewTextBoxColumn.DataPropertyName = "PriceKala1";
+            this.priceKala1DataGridViewTextBoxColumn.HeaderText = "قیمت کالا1";
+            this.priceKala1DataGridViewTextBoxColumn.Name = "priceKala1DataGridViewTextBoxColumn";
+            this.priceKala1DataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // priceDastMozd1DataGridViewTextBoxColumn
+            // 
+            this.priceDastMozd1DataGridViewTextBoxColumn.DataPropertyName = "PriceDastMozd1";
+            this.priceDastMozd1DataGridViewTextBoxColumn.HeaderText = "قیمت دستمزد 1";
+            this.priceDastMozd1DataGridViewTextBoxColumn.Name = "priceDastMozd1DataGridViewTextBoxColumn";
+            this.priceDastMozd1DataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // pricKala2DataGridViewTextBoxColumn
+            // 
+            this.pricKala2DataGridViewTextBoxColumn.DataPropertyName = "PricKala2";
+            this.pricKala2DataGridViewTextBoxColumn.HeaderText = "قیمت 2";
+            this.pricKala2DataGridViewTextBoxColumn.Name = "pricKala2DataGridViewTextBoxColumn";
+            this.pricKala2DataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // priceDastMozd2DataGridViewTextBoxColumn
+            // 
+            this.priceDastMozd2DataGridViewTextBoxColumn.DataPropertyName = "PriceDastMozd2";
+            this.priceDastMozd2DataGridViewTextBoxColumn.HeaderText = "قیمت دستمزد 2";
+            this.priceDastMozd2DataGridViewTextBoxColumn.Name = "priceDastMozd2DataGridViewTextBoxColumn";
+            this.priceDastMozd2DataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // vahedNameDataGridViewTextBoxColumn
+            // 
+            this.vahedNameDataGridViewTextBoxColumn.DataPropertyName = "VahedName";
+            this.vahedNameDataGridViewTextBoxColumn.HeaderText = "واحد";
+            this.vahedNameDataGridViewTextBoxColumn.Name = "vahedNameDataGridViewTextBoxColumn";
+            this.vahedNameDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
             // frm_Qarardad_SelectProduct
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 23F);
@@ -291,6 +293,7 @@
             this.Controls.Add(this.BtnOk);
             this.Controls.Add(this.btnCancel);
             this.Font = new System.Drawing.Font("B Yekan", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
+            this.ForeColor = System.Drawing.Color.Chocolate;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "frm_Qarardad_SelectProduct";
@@ -315,6 +318,8 @@
         private CustomControls.RJControls.RJButton BtnOk;
         private CustomControls.RJControls.RJButton btnCancel;
         private System.Windows.Forms.BindingSource bsViewProduct;
+        private System.Windows.Forms.RadioButton rdbName;
+        private System.Windows.Forms.RadioButton rdbCode;
         private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn codeIdDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn nameDataGridViewTextBoxColumn;
@@ -324,7 +329,5 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn pricKala2DataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn priceDastMozd2DataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn vahedNameDataGridViewTextBoxColumn;
-        private System.Windows.Forms.RadioButton rdbName;
-        private System.Windows.Forms.RadioButton rdbCode;
     }
 }

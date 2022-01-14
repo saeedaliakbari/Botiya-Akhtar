@@ -35,7 +35,6 @@
             this.BtnAdd = new CustomControls.RJControls.RJButton();
             this.BtnBack = new CustomControls.RJControls.RJButton();
             this.txtVahedName = new CustomControls.RJControls.RJTextBox();
-            this.bsVaheds = new System.Windows.Forms.BindingSource(this.components);
             this.dgvVaheds = new System.Windows.Forms.DataGridView();
             this.label1 = new System.Windows.Forms.Label();
             this.BtnOk = new CustomControls.RJControls.RJButton();
@@ -43,9 +42,10 @@
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            ((System.ComponentModel.ISupportInitialize)(this.bsVaheds)).BeginInit();
+            this.bsVaheds = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.dgvVaheds)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bsVaheds)).BeginInit();
             this.SuspendLayout();
             // 
             // BtnDelete
@@ -166,10 +166,6 @@
             this.txtVahedName.Texts = "";
             this.txtVahedName.UnderlinedStyle = true;
             // 
-            // bsVaheds
-            // 
-            this.bsVaheds.DataSource = typeof(Botiya.Vahed);
-            // 
             // dgvVaheds
             // 
             this.dgvVaheds.AllowUserToAddRows = false;
@@ -273,6 +269,10 @@
             this.nameDataGridViewTextBoxColumn.Name = "nameDataGridViewTextBoxColumn";
             this.nameDataGridViewTextBoxColumn.ReadOnly = true;
             // 
+            // bsVaheds
+            // 
+            this.bsVaheds.DataSource = typeof(Botiya.Vahed);
+            // 
             // frm_Vaheds
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 23F);
@@ -297,9 +297,9 @@
             this.RightToLeftLayout = true;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Load += new System.EventHandler(this.frm_Vaheds_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.bsVaheds)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvVaheds)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bsVaheds)).EndInit();
             this.ResumeLayout(false);
 
         }

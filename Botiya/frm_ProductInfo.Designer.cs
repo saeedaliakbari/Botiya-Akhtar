@@ -31,7 +31,6 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frm_ProductInfo));
             this.label1 = new System.Windows.Forms.Label();
-            this.bsProducts = new System.Windows.Forms.BindingSource(this.components);
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -40,7 +39,6 @@
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.cmbVahedAsli = new System.Windows.Forms.ComboBox();
-            this.bsVaheds = new System.Windows.Forms.BindingSource(this.components);
             this.txtPriceKol2 = new CustomControls.RJControls.RJTextBox();
             this.txtPriceKol1 = new CustomControls.RJControls.RJTextBox();
             this.txtPriceDastmozd2 = new CustomControls.RJControls.RJTextBox();
@@ -52,9 +50,11 @@
             this.txtCodeKala = new CustomControls.RJControls.RJTextBox();
             this.BtnBack = new CustomControls.RJControls.RJButton();
             this.BtnSave = new CustomControls.RJControls.RJButton();
-            ((System.ComponentModel.ISupportInitialize)(this.bsProducts)).BeginInit();
+            this.bsVaheds = new System.Windows.Forms.BindingSource(this.components);
+            this.bsProducts = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bsVaheds)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bsProducts)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -143,9 +143,9 @@
             // 
             // cmbVahedAsli
             // 
+            this.cmbVahedAsli.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.bsProducts, "Vahed", true));
             this.cmbVahedAsli.DataSource = this.bsVaheds;
             this.cmbVahedAsli.DisplayMember = "Name";
-            this.cmbVahedAsli.Enabled = false;
             this.cmbVahedAsli.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.cmbVahedAsli.FormattingEnabled = true;
             this.cmbVahedAsli.Location = new System.Drawing.Point(280, 101);
@@ -156,10 +156,6 @@
             this.cmbVahedAsli.TabIndex = 26;
             this.cmbVahedAsli.ValueMember = "Id";
             this.cmbVahedAsli.Visible = false;
-            // 
-            // bsVaheds
-            // 
-            this.bsVaheds.DataSource = typeof(Botiya.Vahed);
             // 
             // txtPriceKol2
             // 
@@ -214,6 +210,7 @@
             this.txtPriceDastmozd2.BorderFocusColor = System.Drawing.Color.Chocolate;
             this.txtPriceDastmozd2.BorderRadius = 5;
             this.txtPriceDastmozd2.BorderSize = 2;
+            this.txtPriceDastmozd2.DataBindings.Add(new System.Windows.Forms.Binding("Texts", this.bsProducts, "PriceDastMozd2", true));
             this.txtPriceDastmozd2.Font = new System.Drawing.Font("B Yekan", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
             this.txtPriceDastmozd2.ForeColor = System.Drawing.Color.SteelBlue;
             this.txtPriceDastmozd2.Location = new System.Drawing.Point(111, 317);
@@ -238,6 +235,7 @@
             this.txtPrice2.BorderFocusColor = System.Drawing.Color.Chocolate;
             this.txtPrice2.BorderRadius = 5;
             this.txtPrice2.BorderSize = 2;
+            this.txtPrice2.DataBindings.Add(new System.Windows.Forms.Binding("Texts", this.bsProducts, "PricKala2", true));
             this.txtPrice2.Font = new System.Drawing.Font("B Yekan", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
             this.txtPrice2.ForeColor = System.Drawing.Color.SteelBlue;
             this.txtPrice2.Location = new System.Drawing.Point(111, 272);
@@ -262,6 +260,7 @@
             this.txtPriceDastmozd1.BorderFocusColor = System.Drawing.Color.Chocolate;
             this.txtPriceDastmozd1.BorderRadius = 5;
             this.txtPriceDastmozd1.BorderSize = 2;
+            this.txtPriceDastmozd1.DataBindings.Add(new System.Windows.Forms.Binding("Texts", this.bsProducts, "PriceDastMozd1", true));
             this.txtPriceDastmozd1.Font = new System.Drawing.Font("B Yekan", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
             this.txtPriceDastmozd1.ForeColor = System.Drawing.Color.SteelBlue;
             this.txtPriceDastmozd1.Location = new System.Drawing.Point(111, 215);
@@ -308,6 +307,7 @@
             this.txtPriceKala1.BorderFocusColor = System.Drawing.Color.Chocolate;
             this.txtPriceKala1.BorderRadius = 5;
             this.txtPriceKala1.BorderSize = 2;
+            this.txtPriceKala1.DataBindings.Add(new System.Windows.Forms.Binding("Texts", this.bsProducts, "PriceKala1", true));
             this.txtPriceKala1.Font = new System.Drawing.Font("B Yekan", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
             this.txtPriceKala1.ForeColor = System.Drawing.Color.SteelBlue;
             this.txtPriceKala1.Location = new System.Drawing.Point(111, 170);
@@ -332,6 +332,7 @@
             this.txtNameKala.BorderFocusColor = System.Drawing.Color.Chocolate;
             this.txtNameKala.BorderRadius = 5;
             this.txtNameKala.BorderSize = 2;
+            this.txtNameKala.DataBindings.Add(new System.Windows.Forms.Binding("Texts", this.bsProducts, "Name", true));
             this.txtNameKala.Font = new System.Drawing.Font("B Yekan", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
             this.txtNameKala.ForeColor = System.Drawing.Color.SteelBlue;
             this.txtNameKala.Location = new System.Drawing.Point(13, 108);
@@ -354,6 +355,7 @@
             this.txtCodeKala.BorderFocusColor = System.Drawing.Color.Chocolate;
             this.txtCodeKala.BorderRadius = 5;
             this.txtCodeKala.BorderSize = 2;
+            this.txtCodeKala.DataBindings.Add(new System.Windows.Forms.Binding("Texts", this.bsProducts, "CodeId", true));
             this.txtCodeKala.Font = new System.Drawing.Font("B Yekan", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
             this.txtCodeKala.ForeColor = System.Drawing.Color.SteelBlue;
             this.txtCodeKala.Location = new System.Drawing.Point(13, 51);
@@ -418,6 +420,14 @@
             this.BtnSave.UseVisualStyleBackColor = false;
             this.BtnSave.Click += new System.EventHandler(this.BtnSave_Click);
             // 
+            // bsVaheds
+            // 
+            this.bsVaheds.DataSource = typeof(Botiya.Vahed);
+            // 
+            // bsProducts
+            // 
+            this.bsProducts.DataSource = typeof(Botiya.Product);
+            // 
             // frm_ProductInfo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 23F);
@@ -452,9 +462,9 @@
             this.RightToLeftLayout = true;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Load += new System.EventHandler(this.frm_ProductInfo_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.bsProducts)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bsVaheds)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bsProducts)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

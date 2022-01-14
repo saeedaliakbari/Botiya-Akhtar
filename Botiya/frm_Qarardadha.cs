@@ -1,4 +1,6 @@
 ﻿using BehComponents;
+using JntNum2Text;
+using Stimulsoft.Report;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -119,6 +121,56 @@ namespace Botiya
             {
                 MessageBoxFarsi.Show("ارتباط با پایگاه داده قطع است", "اخطار", MessageBoxFarsiButtons.OK, MessageBoxFarsiIcon.Error, MessageBoxFarsiDefaultButton.Button1);
             }
+        }
+
+        private void btnPrint_Click(object sender, EventArgs e)
+        {
+            StiReport Report = new StiReport();
+
+            Report.Load("rpt_Qarardad.mrt");
+            Report.Compile();
+           
+            Report["IdQarardad"] = (int)dgvQarardad.CurrentRow.Cells[0].Value;
+            Report["MadeFive"] = SetMadeFive(); 
+            Report.ShowWithRibbonGUI();
+
+        }
+
+        private string SetMadeFive()
+        {
+            string outStr= string.Empty;
+            bsDaryaftha.DataSource = db.FillViewDaryafti((int)dgvQarardad.CurrentRow.Cells[0].Value);
+            for (int i = 0; i < dgvDaryafti.RowCount; i++)
+            {
+                //MessageBox.Show("قسط" + (i + 1) + " به مبلغ " + dgvDaryafti.Rows[i].Cells[5].Value + "  طی چک شماره " + dgvDaryafti.Rows[i].Cells[4].Value + " بانک " + dgvDaryafti.Rows[i].Cells[6].Value + " به تاریخ سررسید " + dgvDaryafti.Rows[i].Cells[3].Value);
+                outStr +="ب5-"+(i+1)+"-قسط " + Num2Text.ToFarsi(i + 1) + " به مبلغ " + dgvDaryafti.Rows[i].Cells[5].Value + "  طی چک شماره " + dgvDaryafti.Rows[i].Cells[4].Value + " بانک " + dgvDaryafti.Rows[i].Cells[6].Value + " به تاریخ سررسید " + dgvDaryafti.Rows[i].Cells[3].Value + "\n";
+        }
+            return outStr;
+        }
+
+        private void btnAttach_Click(object sender, EventArgs e)
+        {
+            frm_Attach.idQararad = (int)dgvQarardad.CurrentRow.Cells[0].Value;
+            frm_Attach.ShomareQarardad = (string)dgvQarardad.CurrentRow.Cells[7].Value;
+            new frm_Attach().ShowDialog();
+        }
+
+        private void btnDaryafty_Click(object sender, EventArgs e)
+        {
+            frm_Daryaftha.idQarardad = (int)dgvQarardad.CurrentRow.Cells[0].Value;
+            frm_Daryaftha.ShomareQarardad = (string)dgvQarardad.CurrentRow.Cells[7].Value;
+            new frm_Daryaftha().ShowDialog();
+        }
+
+        private void btnPrintFactor_Click(object sender, EventArgs e)
+        {
+            StiReport Report = new StiReport();
+
+            Report.Load("rpt_Factor.mrt");
+            Report.Compile();
+
+            Report["IdQarardad"] = (int)dgvQarardad.CurrentRow.Cells[0].Value;
+            Report.ShowWithRibbonGUI();
         }
     }
 }

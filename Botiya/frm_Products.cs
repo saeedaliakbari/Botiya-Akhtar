@@ -38,10 +38,23 @@ namespace Botiya
         {
             try
             {
-                if (MessageBoxFarsi.Show("آیا محصول  با مشخصات زیر حذف گردد؟" + "\n" + " کد: " + dgvProducts.CurrentRow.Cells[1].Value + " /n نام کالا: " + dgvProducts.CurrentRow.Cells[2].Value, "حذف", MessageBoxFarsiButtons.YesNo, MessageBoxFarsiIcon.Delete, MessageBoxFarsiDefaultButton.Button1) == DialogResult.Yes)
+                if (MessageBoxFarsi.Show("آیا محصول  با مشخصات زیر حذف گردد؟" + "\n" + " کد: " + dgvProducts.CurrentRow.Cells[1].Value + " \n نام کالا: " + dgvProducts.CurrentRow.Cells[2].Value, "حذف", MessageBoxFarsiButtons.YesNo, MessageBoxFarsiIcon.Delete, MessageBoxFarsiDefaultButton.Button1) == DialogResult.Yes)
                 {
-                    db.DeleteProducts((int)dgvProducts.CurrentRow.Cells[0].Value);
-                    UpdateDb();
+                    int? resultProduct = null;
+                    db.CheckDeleteProduct((int)dgvProducts.CurrentRow.Cells[0].Value, ref resultProduct);
+                    if (resultProduct is null)
+                    {
+                        db.DeleteProducts((int)dgvProducts.CurrentRow.Cells[0].Value);
+                        UpdateDb();
+                    }
+                    else
+                    {
+                        MessageBoxFarsi.Show("محصول انتخاب شده در فاکتور قرارداد استفاده شده است و امکان حذف آن وجود ندارد", "اخطار", MessageBoxFarsiButtons.OK, MessageBoxFarsiIcon.Error, MessageBoxFarsiDefaultButton.Button1, true, false);
+                    }
+
+
+
+                   
                 }
             }
             catch
@@ -52,8 +65,8 @@ namespace Botiya
         }
         public void UpdateDb()
         {
-            //try
-            //{
+            try
+            {
                 bsViewProductVahed.DataSource = db.FillViewProductVahed();
                 if (dgvProducts.Rows.Count == 0)
                 {
@@ -66,12 +79,12 @@ namespace Botiya
                     BtnEdit.Enabled = true;
 
                 }
-            //}
-            //catch
-            //{
+            }
+            catch
+            {
 
-            //    MessageBoxFarsi.Show("ارتباط با پایگاه داده قطع است", "اخطار", MessageBoxFarsiButtons.OK, MessageBoxFarsiIcon.Error, MessageBoxFarsiDefaultButton.Button1);
-            //}
+                MessageBoxFarsi.Show("ارتباط با پایگاه داده قطع است", "اخطار", MessageBoxFarsiButtons.OK, MessageBoxFarsiIcon.Error, MessageBoxFarsiDefaultButton.Button1);
+            }
 
         }
 

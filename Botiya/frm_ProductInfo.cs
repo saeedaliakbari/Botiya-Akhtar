@@ -51,13 +51,14 @@ namespace Botiya
                 errorProvider1.Clear();
                 errorProvider1.SetError(txtNameKala, "ورود مقدار الزامی است");
                 }
-                else if (CodeIdForCheck != null)
+                else if (CodeIdForCheck != null && codeId!=txtCodeKala.Texts)
                 {
                     errorProvider1.Clear();
                     errorProvider1.SetError(txtCodeKala, "کد کالا تکراری است");
                 }
                 else
                 {
+                    //MessageBox.Show("SelectedValue :"+cmbVahedAsli.SelectedValue + " > " + cmbVahedAsli.SelectedText);
                     errorProvider1.Clear();
                     if (editMode)
                     {
@@ -83,18 +84,12 @@ namespace Botiya
         private void frm_ProductInfo_Load(object sender, EventArgs e)
         {
             bsVaheds.DataSource = db.FillVaheds();
+            cmbVahedAsli.SelectedIndex = 3;
             if (editMode)
             {
                 bsProducts.DataSource = db.FillProductById(idProduct);
                 db.GetProducts(idProduct, ref codeId, ref name, ref vahed, ref priceKala1, ref priceDastmozd1, ref priceKala2, ref priceDastmozd2);
-                      
-                txtCodeKala.Texts = codeId;
-                txtNameKala.Texts = name;
-                cmbVahedAsli.SelectedValue= (int)vahed;
-                txtPriceKala1.Texts = priceKala1.ToString() ;
-                txtPriceDastmozd1.Texts = priceDastmozd1.ToString();
-                txtPrice2.Texts = priceKala2.ToString();
-                txtPriceDastmozd2.Texts = priceDastmozd2.ToString();
+                cmbVahedAsli.SelectedValue = (int)vahed;
                 CalculatePriceKol();
             }
             else

@@ -9,8 +9,43 @@
         <Name>Botiya</Name>
       </Botiya>
     </Databases>
-    <DataSources isList="true" count="2">
-      <FillMatnQarardad Ref="3" type="Stimulsoft.Report.Dictionary.StiSqlSource" isKey="true">
+    <DataSources isList="true" count="3">
+      <FillViewQarardadPersonById Ref="3" type="Stimulsoft.Report.Dictionary.StiSqlSource" isKey="true">
+        <Alias>FillViewQarardadPersonById</Alias>
+        <Columns isList="true" count="22">
+          <value>Id,System.Int32</value>
+          <value>IdPerson,System.Int32</value>
+          <value>FName,System.String</value>
+          <value>LName,System.String</value>
+          <value>CodeMelli,System.String</value>
+          <value>SherkatName,System.String</value>
+          <value>Date,System.String</value>
+          <value>PriceHaml,System.Double</value>
+          <value>IdQarardad,System.String</value>
+          <value>MozoQarardad,System.String</value>
+          <value>ModatQarardad,System.String</value>
+          <value>ShomareEnsheab,System.String</value>
+          <value>DateEnsheab,System.String</value>
+          <value>DoreTazmin,System.String</value>
+          <value>ModatRafeNaghz,System.String</value>
+          <value>PriceJarimeTakhir,System.Double</value>
+          <value>PricePaye,System.Int64</value>
+          <value>PricePishnahadi,System.Int64</value>
+          <value>ZaribPeyman,System.Double</value>
+          <value>PriceTakhfif,System.Int64</value>
+          <value>PriceNahayi,System.Int64</value>
+          <value>PriceMaliyat,System.Int64</value>
+        </Columns>
+        <CommandTimeout>30</CommandTimeout>
+        <Dictionary isRef="1" />
+        <Name>FillViewQarardadPersonById</Name>
+        <NameInSource>Botiya</NameInSource>
+        <Parameters isList="true" count="1">
+          <value>IdQarardad,IdQarardad,8,0</value>
+        </Parameters>
+        <SqlCommand>execute FillViewQarardadPersonById @IdQarardad</SqlCommand>
+      </FillViewQarardadPersonById>
+      <FillMatnQarardad Ref="4" type="Stimulsoft.Report.Dictionary.StiSqlSource" isKey="true">
         <Alias>FillMatnQarardad</Alias>
         <Columns isList="true" count="16">
           <value>Id,System.Int32</value>
@@ -37,155 +72,252 @@
         <Parameters isList="true" count="0" />
         <SqlCommand>execute FillMatnQarardad</SqlCommand>
       </FillMatnQarardad>
-      <FillPersons Ref="4" type="Stimulsoft.Report.Dictionary.StiSqlSource" isKey="true">
-        <Alias>FillPersons</Alias>
-        <Columns isList="true" count="10">
+      <FilltblSetting Ref="5" type="Stimulsoft.Report.Dictionary.StiSqlSource" isKey="true">
+        <Alias>FilltblSetting</Alias>
+        <Columns isList="true" count="11">
           <value>Id,System.Int32</value>
-          <value>FName,System.String</value>
-          <value>LName,System.String</value>
-          <value>FatherName,System.String</value>
-          <value>CodeMelli,System.String</value>
-          <value>Phone,System.String</value>
-          <value>Mobile,System.String</value>
+          <value>Name,System.String</value>
+          <value>ShomareSabt,System.String</value>
+          <value>CodeEqtesadi,System.String</value>
+          <value>NameNamayande,System.String</value>
+          <value>FamilyNamyande,System.String</value>
+          <value>CodeMelliNamayande,System.String</value>
+          <value>SematNamayande,System.String</value>
+          <value>CodePosti,System.String</value>
           <value>Address,System.String</value>
-          <value>Hoqoqi,System.Int32</value>
-          <value>SherkatName,System.String</value>
+          <value>Maliyat,System.Int64</value>
         </Columns>
         <CommandTimeout>30</CommandTimeout>
         <Dictionary isRef="1" />
-        <Name>FillPersons</Name>
+        <Name>FilltblSetting</Name>
         <NameInSource>Botiya</NameInSource>
         <Parameters isList="true" count="0" />
-        <SqlCommand>execute FillPersons</SqlCommand>
-      </FillPersons>
+        <SqlCommand>execute FilltblSetting</SqlCommand>
+      </FilltblSetting>
     </DataSources>
     <Relations isList="true" count="0" />
     <Report isRef="0" />
-    <Variables isList="true" count="8">
-      <value>,MotorkhaneId,MotorkhaneId,System.Int32,,False,False</value>
-      <value>,DateToday,DateToday,System.String,,False,False</value>
-      <value>,PrintNum,PrintNum,System.Int32,,False,False</value>
-      <value>,SumMalek,SumMalek,System.Int32,,False,False</value>
-      <value>,PriceKol,PriceKol,System.Int64,,False,False</value>
-      <value>,Min,Min,System.String,,False,False</value>
-      <value>,Sec,Sec,System.String,,False,False</value>
-      <value>,BeratId,BeratId,System.Int32,,False,False</value>
+    <Variables isList="true" count="2">
+      <value>,IdQarardad,IdQarardad,System.Int32,_x0034_8,False,False</value>
+      <value>,MadeFive,MadeFive,System.String,,False,False</value>
     </Variables>
   </Dictionary>
   <EngineVersion>EngineV2</EngineVersion>
   <GlobalizationStrings isList="true" count="0" />
   <MetaTags isList="true" count="0" />
   <Pages isList="true" count="1">
-    <Page1 Ref="5" type="Page" isKey="true">
+    <Page1 Ref="6" type="Page" isKey="true">
       <Border>None;Black;2;Solid;False;4;Black</Border>
       <Brush>Transparent</Brush>
-      <Components isList="true" count="3">
-        <PageHeaderBand1 Ref="6" type="PageHeaderBand" isKey="true">
-          <Border>None;Black;2;Solid;False;4;Black</Border>
+      <Components isList="true" count="4">
+        <PageHeaderBand1 Ref="7" type="PageHeaderBand" isKey="true">
+          <Border>All;Black;2;Solid;False;4;Black</Border>
           <Brush>EmptyBrush</Brush>
-          <ClientRectangle>0,0.4,20,1</ClientRectangle>
-          <Components isList="true" count="0" />
+          <ClientRectangle>0,0.4,20,1.2</ClientRectangle>
+          <Components isList="true" count="2">
+            <Text2 Ref="8" type="Text" isKey="true">
+              <Brush>Transparent</Brush>
+              <ClientRectangle>0.4,0.2,9.6,0.8</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>B Yekan,11</Font>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text2</Name>
+              <Page isRef="6" />
+              <Parent isRef="7" />
+              <Text>شماره قرارداد: {FillViewQarardadPersonById.IdQarardad}</Text>
+              <TextBrush>Black</TextBrush>
+              <Type>Expression</Type>
+              <VertAlignment>Center</VertAlignment>
+            </Text2>
+            <Text1 Ref="9" type="Text" isKey="true">
+              <Brush>Transparent</Brush>
+              <ClientRectangle>0,0,22.2,0.8</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>B Yekan,11</Font>
+              <Guid>6009f7f42d974e21a2a045a0ae8e7143</Guid>
+              <HorAlignment>Center</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text1</Name>
+              <Page isRef="6" />
+              <Parent isRef="7" />
+              <Text>قرارداد</Text>
+              <TextBrush>Black</TextBrush>
+              <Type>Expression</Type>
+              <VertAlignment>Center</VertAlignment>
+            </Text1>
+          </Components>
           <Conditions isList="true" count="0" />
           <Guid>132379f62fdb404f88310a636c9b336b</Guid>
           <Name>PageHeaderBand1</Name>
-          <Page isRef="5" />
-          <Parent isRef="5" />
+          <Page isRef="6" />
+          <Parent isRef="6" />
         </PageHeaderBand1>
-        <DataBand1 Ref="7" type="DataBand" isKey="true">
+        <PageFooterBand1 Ref="10" type="PageFooterBand" isKey="true">
           <Brush>Transparent</Brush>
-          <BusinessObjectGuid isNull="true" />
-          <ClientRectangle>0,2.2,20,2</ClientRectangle>
-          <Components isList="true" count="0" />
-          <Conditions isList="true" count="0" />
-          <DataRelationName isNull="true" />
-          <DataSourceName>FillMatnQarardad</DataSourceName>
-          <Filters isList="true" count="0" />
-          <Guid>7b4e515462394c6c90c482a96a0cce54</Guid>
-          <Name>DataBand1</Name>
-          <Page isRef="5" />
-          <Parent isRef="5" />
-          <RightToLeft>True</RightToLeft>
-          <Sort isList="true" count="0" />
-        </DataBand1>
-        <FooterBand1 Ref="8" type="FooterBand" isKey="true">
-          <Brush>Transparent</Brush>
-          <ClientRectangle>0,5,20,2</ClientRectangle>
-          <Components isList="true" count="4">
-            <Text35 Ref="9" type="Text" isKey="true">
+          <ClientRectangle>0,112,20,2.8</ClientRectangle>
+          <Components isList="true" count="3">
+            <Text4 Ref="11" type="Text" isKey="true">
               <Brush>Transparent</Brush>
-              <ClientRectangle>14.2,0,4.4,2</ClientRectangle>
+              <ClientRectangle>13.8,0,4.4,2</ClientRectangle>
               <Conditions isList="true" count="0" />
               <Font>B Yekan,8</Font>
+              <Guid>4e6cabe0355544208970867fd983836f</Guid>
               <HorAlignment>Center</HorAlignment>
               <Margins>0,0,0,0</Margins>
-              <Name>Text35</Name>
-              <Page isRef="5" />
-              <Parent isRef="8" />
+              <Name>Text4</Name>
+              <Page isRef="6" />
+              <Parent isRef="10" />
               <Text>کارفرما
 
 امضا</Text>
               <TextBrush>Black</TextBrush>
               <Type>Expression</Type>
               <VertAlignment>Center</VertAlignment>
-            </Text35>
-            <Text37 Ref="10" type="Text" isKey="true">
+            </Text4>
+            <Text5 Ref="12" type="Text" isKey="true">
               <Brush>Transparent</Brush>
-              <ClientRectangle>2.6,0,4.4,2</ClientRectangle>
+              <ClientRectangle>2.2,0,4.4,2</ClientRectangle>
               <Conditions isList="true" count="0" />
               <Font>B Yekan,8</Font>
-              <Guid>8ceea89d800c4dd3a164bbc3ce0d5b3a</Guid>
+              <Guid>059934dd4d6046689d7431688bfbe032</Guid>
               <HorAlignment>Center</HorAlignment>
               <Margins>0,0,0,0</Margins>
-              <Name>Text37</Name>
-              <Page isRef="5" />
-              <Parent isRef="8" />
+              <Name>Text5</Name>
+              <Page isRef="6" />
+              <Parent isRef="10" />
               <Text>پیمانکار
 
 امضا</Text>
               <TextBrush>Black</TextBrush>
               <Type>Expression</Type>
               <VertAlignment>Center</VertAlignment>
-            </Text37>
-            <Text5 Ref="11" type="Text" isKey="true">
-              <Border>None;Black;2;Solid;False;4;Black</Border>
-              <Brush>Transparent</Brush>
-              <ClientRectangle>11.4,1.4,1,0.6</ClientRectangle>
-              <Conditions isList="true" count="0" />
-              <Font>B Zar,8,Bold</Font>
-              <Guid>3c66e9862bb54d2b9075e047fff35de0</Guid>
-              <HorAlignment>Center</HorAlignment>
-              <Margins>0,0,0,0</Margins>
-              <Name>Text5</Name>
-              <Page isRef="5" />
-              <Parent isRef="8" />
-              <Text>:صفحه</Text>
-              <TextBrush>Black</TextBrush>
-              <Type>Expression</Type>
-              <VertAlignment>Center</VertAlignment>
             </Text5>
-            <Text6 Ref="12" type="Text" isKey="true">
+            <Text8 Ref="13" type="Text" isKey="true">
               <Border>None;Black;2;Solid;False;4;Black</Border>
               <Brush>Transparent</Brush>
-              <ClientRectangle>8.2,1.4,3.2,0.6</ClientRectangle>
+              <ClientRectangle>0,2,20,0.6</ClientRectangle>
               <Conditions isList="true" count="0" />
               <Font>B Zar,8,Bold</Font>
-              <Guid>c074ab6ce00d403cbd2779d07b5bd16c</Guid>
+              <Guid>d032b6ab899540eea8bf1327272b4940</Guid>
               <HorAlignment>Center</HorAlignment>
               <Margins>0,0,0,0</Margins>
-              <Name>Text6</Name>
-              <Page isRef="5" />
-              <Parent isRef="8" />
-              <Text>{PageNumber}</Text>
+              <Name>Text8</Name>
+              <Page isRef="6" />
+              <Parent isRef="10" />
+              <Text>صفحه : {PageNumber}</Text>
               <TextBrush>Black</TextBrush>
               <Type>Expression</Type>
               <VertAlignment>Center</VertAlignment>
-            </Text6>
+            </Text8>
           </Components>
           <Conditions isList="true" count="0" />
-          <Name>FooterBand1</Name>
-          <Page isRef="5" />
-          <Parent isRef="5" />
-        </FooterBand1>
+          <Name>PageFooterBand1</Name>
+          <Page isRef="6" />
+          <Parent isRef="6" />
+        </PageFooterBand1>
+        <Text7 Ref="14" type="Text" isKey="true">
+          <Border>None;Black;2;Solid;False;4;Black</Border>
+          <Brush>Transparent</Brush>
+          <ClientRectangle>-0.4,115.4,20,0.6</ClientRectangle>
+          <Conditions isList="true" count="0" />
+          <Font>B Zar,8,Bold</Font>
+          <Guid>af12f913ee214b0e8cc517f99ce29b05</Guid>
+          <HorAlignment>Center</HorAlignment>
+          <Margins>0,0,0,0</Margins>
+          <Name>Text7</Name>
+          <Page isRef="6" />
+          <Parent isRef="6" />
+          <Text>صفحه : {PageNumber}</Text>
+          <TextBrush>Black</TextBrush>
+          <Type>Expression</Type>
+          <VertAlignment>Center</VertAlignment>
+        </Text7>
+        <DataBand1 Ref="15" type="DataBand" isKey="true">
+          <Brush>Transparent</Brush>
+          <BusinessObjectGuid isNull="true" />
+          <ClientRectangle>0,2.4,20,13</ClientRectangle>
+          <Components isList="true" count="1">
+            <Text3 Ref="16" type="Text" isKey="true">
+              <AutoWidth>True</AutoWidth>
+              <Brush>Transparent</Brush>
+              <CanBreak>True</CanBreak>
+              <CanGrow>True</CanGrow>
+              <ClientRectangle>0,0,20,13</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <DockStyle>Fill</DockStyle>
+              <Font>B Yekan,11</Font>
+              <GrowToHeight>True</GrowToHeight>
+              <HorAlignment>Right</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text3</Name>
+              <Page isRef="6" />
+              <Parent isRef="15" />
+              <Text>این قرارداد مشتمل بر 3 برگ در تاریخ {FillViewQarardadPersonById.Date} بین {FillViewQarardadPersonById.FName} {FillViewQarardadPersonById.LName} و به نمایندگی {FillViewQarardadPersonById.SherkatName} که از این پس در این قرارداد کارفرما نامیده می شود از یک طرف و شرکت {FilltblSetting.Name} که تحت شماره {FilltblSetting.ShomareSabt} در اداره ثبت شرکت ها و مالکیت صنعتی به ثبت رسیده است و اقامتگاه قانونی آن {FilltblSetting.Address} و کد پستی {FilltblSetting.CodePosti} و دارای کد اقتصادی شماره {FilltblSetting.CodeEqtesadi} می باشد و از این پس در این قرارداد پیمانکار نامیده می شود و به نمایندگی {FilltblSetting.NameNamayande}  {FilltblSetting.FamilyNamyande} به سمت {FilltblSetting.SematNamayande} که به موجب وکالتنامه/ اساسنامه و آگهی منتشره حق امضای این قرارداد را دارد از طرف دیگر با شرایط ذیل منعقد می گردد.
+
+ماده 1) موضوع قرارداد
+موضوع قرار داد عبارت از {FillViewQarardadPersonById.MozoQarardad} مطابق با  شرح  انجام  کار نقشه  ها ، مشخصات و جداول طراحی شده از سوی شرکت توزیع نیروی برق شمال کرمان.
+
+{FillMatnQarardad.Made2}
+
+ماده 3(
+مبلغ قرارداد با احتساب کلیه هزینه های متعلقه برای انجام کارهای موضوع قرارداد منجلمه مالیات بر ارزش افزوده (که پرداخت آن بر عهده پیمانکار است) کلیه کسورات قانونی مربوطه مانند هرگونه مالیات و بیمه و عوارض و غیره به شرح زیر می باشد:(ارقام به ریال)
+(ب3-1- مبلغ برآوردی(پایه): {FillViewQarardadPersonById.PricePaye} ریال ){ToWordsFa(FillViewQarardadPersonById.PricePaye)} ریال
+(ب3-2- مبلغ کل پیشنهادی بابت اجرای عملیات موضوع قرارداد : {FillViewQarardadPersonById.PricePishnahadi} ریال ){ToWordsFa(FillViewQarardadPersonById.PricePishnahadi)} ریال
+ب3-3- ضریب پیمان: {FillViewQarardadPersonById.ZaribPeyman}
+(ب3-4- ضریب مالیات بر ارزش افزوده: {FilltblSetting.Maliyat}% ({ToWordsFa(FilltblSetting.Maliyat)} درصد
+(ب3-5- مالیات بر ارزش افزوده: {FillViewQarardadPersonById.PriceMaliyat} ریال  ){ToWordsFa(FillViewQarardadPersonById.PriceMaliyat)} ریال
+(ب3-6- جمع نهایی مبلغ قرارداد براساس موارد فوق)ماده3(: {FillViewQarardadPersonById.PriceNahayi} ریال  ){ToWordsFa(FillViewQarardadPersonById.PriceNahayi)} ریال
+
+ماده 4) تاریخ شروع قرارداد ومدت قراداد
+ب4-1- شروع قرارداد از تاریخ تنظیم صورتجلسه شروع به کار خواهد بود و شروع و نفوذ قرارداد منوط به تاییدیه پیش پرداخت نمی باشد ضمنا مدت قرارداد از این تاریخ به مدت {FillViewQarardadPersonById.ModatQarardad} روز می باشد
+ب4-2- مدت زمان انتظار برای خاموشی و همچنین شرایط نا مساعد جوی به مدت زمان اجرای طرح اضافه خواهد شد.
+ب4-3- در صورت بروز حوادث قهری (شامل جنگ، زلزله، سیل، شبوع بیماری های واگیردار و ...( مطابق با عرف عمل خواهد شد.
+
+ماده5) شرایط پرداخت
+{MadeFive}
+
+ماده6) نظارت
+نظارت بر انجام کار از طرف کارفرما مستند به قرارداد برقراری انشعاب با شماره {FillViewQarardadPersonById.ShomareEnsheab} مورخ {FillViewQarardadPersonById.DateEnsheab} بر عهده شرکت توزیع نیروی برق شمال استان کرمان یا نمایندگان شرکت مهندسی مشاور معرفی شده از سوی آن شرکت که در این قرارداد، دستگاه نظارت نامیده می شود واگذار گردیده است
+
+ماده 7) تحویل موقت 
+پس از آنکه عملیات موضوع قرارداد مطابق با شرح خدمات و مشخصات فنی و دیگر شرایط مقرر تکمیل گردید و کار آماده بهره برداری شد، کارفرما/پیمانکار ضمن اعلام خاتمه طرح برای تحویل موقت از دستگاه نظارت تقاضای تحویل موقت می کند و نماینده خود را برای عضویت در هیات تحویل معرفی می نماید
+پیمانکار موظف است نواقص و اشکالات اعلام شده از سوی دستگاه نظارت را که (مانع تحویل موقت می باشد)را ظرف مدت {FillViewQarardadPersonById.ModatRafeNaghz} روز تحویل نماید
+اگر زمانی که پیمانکار صرف رفع نقایص می کند، بیش از مهلت تعیین شده باشد، تاریخ تحویل موقت و تاریخ شروع دوره تضمین،تاریخ رفع نقص است که به تایید دستگاه نظارت رسیده باشد همچنین پیمانکار موظف است پس از رفع نواقص صورتجلسهتحویل موقت و گواهی رفع نقایص و معایب را از دستگاه نظارت دریافت نماید
+
+
+ماده8)دوره تضمین
+دوره تضمین {FillViewQarardadPersonById.DoreTazmin} ماه از تاریخ صدور صورتجلسه تحویل موقت خواهد بود
+
+ماده 9)جرائم تاخیر
+ب9-1-درصورتی که پیمانکار/کارفرما در اجرای تعهدات قرارداد تاخیر غیر مجاز نمایند، به ازاء هر روز تاخیر غیر مجاز مبلغ {FillViewQarardadPersonById.PriceJarimeTakhir} ریال ( به عنوان جریمه تاخیر از پیمانکار کسر/به تعهدات مالی کارفرما اضافه می گردد
+
+
+{FillMatnQarardad.Made10}
+
+{FillMatnQarardad.Made11}
+
+{FillMatnQarardad.Made12}
+
+{FillMatnQarardad.Made13}
+{FillMatnQarardad.Made14}
+{FillMatnQarardad.Made15}
+</Text>
+              <TextBrush>Black</TextBrush>
+              <TextOptions>HotkeyPrefix=None, LineLimit=False, RightToLeft=False, Trimming=None, WordWrap=True, Angle=0, FirstTabOffset=40, DistanceBetweenTabs=20,</TextOptions>
+              <Type>Expression</Type>
+            </Text3>
+          </Components>
+          <Conditions isList="true" count="0" />
+          <DataRelationName isNull="true" />
+          <DataSourceName>FillMatnQarardad</DataSourceName>
+          <Filters isList="true" count="0" />
+          <Guid>7b4e515462394c6c90c482a96a0cce54</Guid>
+          <Name>DataBand1</Name>
+          <Page isRef="6" />
+          <Parent isRef="6" />
+          <RightToLeft>True</RightToLeft>
+          <Sort isList="true" count="0" />
+        </DataBand1>
       </Components>
       <Conditions isList="true" count="0" />
       <Guid>b637cccc598a4c9e9ae58f5f51128075</Guid>
@@ -195,13 +327,13 @@
       <PageHeight>29.7</PageHeight>
       <PageWidth>21</PageWidth>
       <Report isRef="0" />
-      <Watermark Ref="13" type="Stimulsoft.Report.Components.StiWatermark" isKey="true">
+      <Watermark Ref="17" type="Stimulsoft.Report.Components.StiWatermark" isKey="true">
         <Font>Arial,100</Font>
         <TextBrush>[50:0:0:0]</TextBrush>
       </Watermark>
     </Page1>
   </Pages>
-  <PrinterSettings Ref="14" type="Stimulsoft.Report.Print.StiPrinterSettings" isKey="true" />
+  <PrinterSettings Ref="18" type="Stimulsoft.Report.Print.StiPrinterSettings" isKey="true" />
   <ReferencedAssemblies isList="true" count="8">
     <value>System.Dll</value>
     <value>System.Drawing.Dll</value>
@@ -213,10 +345,10 @@
     <value>Stimulsoft.Report.Dll</value>
   </ReferencedAssemblies>
   <ReportAlias>Report</ReportAlias>
-  <ReportChanged>1/9/2022 3:29:54 PM</ReportChanged>
+  <ReportChanged>1/13/2022 12:25:41 AM</ReportChanged>
   <ReportCreated>8/5/2016 11:55:54 AM</ReportCreated>
-  <ReportFile>F:\MY  APP\Botiya-Akhtar\Botiya\bin\Debug\rpt_Qarardad.mrt</ReportFile>
-  <ReportGuid>a8d40ca8393e4ddc96980c53055b1c49</ReportGuid>
+  <ReportFile>I:\MY  APP\Botiya-Akhtar\Botiya\bin\Debug\rpt_Qarardad.mrt</ReportFile>
+  <ReportGuid>1f220b01792540bdb7430750f41d2a21</ReportGuid>
   <ReportName>Report</ReportName>
   <ReportUnit>Centimeters</ReportUnit>
   <ReportVersion>2012.2.1304</ReportVersion>

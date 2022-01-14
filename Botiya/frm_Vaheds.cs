@@ -91,17 +91,14 @@ namespace Botiya
             try
             {
                 db.GetVahedByName(txtVahedName.Texts, ref nameVahedCheck);
-                MessageBox.Show(nameVahedCheck);
                 if (txtVahedName.Texts == String.Empty)
                 {
                     errorProvider1.Clear();
                     errorProvider1.SetError(txtVahedName, "ورود مقدار الزامی است");
                 }
-                else if (nameVahedCheck != string.Empty)
+                else if (nameVahedCheck != string.Empty && txtVahedName.Texts!=(string)dgvVaheds.CurrentRow.Cells[1].Value)
                 {
-                    MessageBox.Show(nameVahedCheck);
                     nameVahedCheck = String.Empty;
-                    MessageBox.Show(nameVahedCheck);
                     errorProvider1.Clear();
                     errorProvider1.SetError(txtVahedName, "مثدار تکراری است");
                 }
@@ -151,9 +148,18 @@ namespace Botiya
             {
                 if (MessageBoxFarsi.Show("آیا واحد "+ dgvVaheds.CurrentRow.Cells[1].Value + "  حذف گردد؟" , "حذف", MessageBoxFarsiButtons.YesNo, MessageBoxFarsiIcon.Delete, MessageBoxFarsiDefaultButton.Button1) == DialogResult.Yes)
                 {
-                    db.DeleteVahed((int)dgvVaheds.CurrentRow.Cells[0].Value);
-                    bsVaheds.DataSource = db.FillVaheds();
-                    CheckDgv();
+                    int? resultVahed = null;
+                    db.CheckDeleteVahed((int)dgvVaheds.CurrentRow.Cells[0].Value, ref resultVahed);
+                    if (resultVahed is null)
+                    {
+                        db.DeleteVahed((int)dgvVaheds.CurrentRow.Cells[0].Value);
+                        bsVaheds.DataSource = db.FillVaheds();
+                        CheckDgv();
+                    }
+                    else
+                    {
+                        MessageBoxFarsi.Show("واحد انتخاب شده در محصولات استفاده شده است و امکان حذف آن وجود ندارد", "اخطار", MessageBoxFarsiButtons.OK, MessageBoxFarsiIcon.Error, MessageBoxFarsiDefaultButton.Button1, true, false);
+                    }
                 }
             }
             catch
