@@ -193,7 +193,7 @@
             this.BtnDelete.Name = "BtnDelete";
             this.BtnDelete.Padding = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.BtnDelete.Size = new System.Drawing.Size(140, 42);
-            this.BtnDelete.TabIndex = 13;
+            this.BtnDelete.TabIndex = 2;
             this.BtnDelete.Text = "حذف";
             this.BtnDelete.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.BtnDelete.TextColor = System.Drawing.Color.SteelBlue;
@@ -217,7 +217,7 @@
             this.BtnEdit.Name = "BtnEdit";
             this.BtnEdit.Padding = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.BtnEdit.Size = new System.Drawing.Size(140, 42);
-            this.BtnEdit.TabIndex = 12;
+            this.BtnEdit.TabIndex = 1;
             this.BtnEdit.Text = "ویرایش";
             this.BtnEdit.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.BtnEdit.TextColor = System.Drawing.Color.SteelBlue;
@@ -241,7 +241,7 @@
             this.BtnAdd.Name = "BtnAdd";
             this.BtnAdd.Padding = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.BtnAdd.Size = new System.Drawing.Size(140, 42);
-            this.BtnAdd.TabIndex = 11;
+            this.BtnAdd.TabIndex = 0;
             this.BtnAdd.Text = "افزودن";
             this.BtnAdd.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.BtnAdd.TextColor = System.Drawing.Color.SteelBlue;
@@ -265,7 +265,7 @@
             this.BtnBack.Name = "BtnBack";
             this.BtnBack.Padding = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.BtnBack.Size = new System.Drawing.Size(140, 42);
-            this.BtnBack.TabIndex = 10;
+            this.BtnBack.TabIndex = 4;
             this.BtnBack.Text = "بازگشت";
             this.BtnBack.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.BtnBack.TextColor = System.Drawing.Color.SteelBlue;
@@ -290,7 +290,7 @@
             this.txtSearchFamily.PlaceholderColor = System.Drawing.Color.DarkGray;
             this.txtSearchFamily.PlaceholderText = "جستجو نام خانوادگی";
             this.txtSearchFamily.Size = new System.Drawing.Size(262, 35);
-            this.txtSearchFamily.TabIndex = 14;
+            this.txtSearchFamily.TabIndex = 3;
             this.txtSearchFamily.Texts = "";
             this.txtSearchFamily.UnderlinedStyle = true;
             this.txtSearchFamily._TextChanged += new System.EventHandler(this.txtSearchFamily__TextChanged);

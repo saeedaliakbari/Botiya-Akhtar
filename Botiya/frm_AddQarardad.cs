@@ -71,11 +71,13 @@ namespace Botiya
             if (idQarardad == -1)
             {
                 db.InsertQarardad(ref idQarardad);
+                db.InsertEvent(frm_Main.userName, "افزودن قرارداد به شماره " + idQarardad,frm_Main.strtoday+" "+ DateTime.Now.ToString("HH:mm"));
             }
             else
             {
                 //bsViewFacotrProduct.DataSource = db.FillViewFatcorProduct(idQarardad);
                 bsQarardadPerson.DataSource = db.FillViewQarardadPersonById(idQarardad);
+                
                 UpdateDb();
             }
             if (dateString== string.Empty)
@@ -160,6 +162,7 @@ namespace Botiya
                 if (idProduct != -1)
                 {
                     db.InsertFactor(idQarardad, idProduct, Double.Parse(txtTedad.Texts), Convert.ToDouble(txtPriceVahed.Texts), Convert.ToDouble(txtPriceKol.Texts));
+                    db.InsertEvent(frm_Main.userName, "افزودن محصول" + idProduct + "به فاکتور به قرارداد" + idQarardad, frm_Main.strtoday + " " + DateTime.Now.ToString("HH:mm"));
                     idProduct = -1;
                     txtNameKala.Texts = "";
                     txtCodeKala.Texts = "";
@@ -188,6 +191,7 @@ namespace Botiya
                 if (ShomareQarardad == null)
                 {
                     db.UpdateQarardad(idQarardad, idPerson, txtDate.Texts, Convert.ToDouble(txtPriceHaml.Texts), txtShomareQarardad.Texts, txtMozoQarardad.Texts, txtModatQarardad.Texts, txtShomareEnsheab.Texts, txtDateEnsheab.Texts, txtDoreTazmin.Texts, txtModatRafeNaghz.Texts, Convert.ToDouble(txtPriceJarime.Texts), Convert.ToDouble(txtPaye.Texts), Convert.ToDouble(txtPricePishnahadi.Texts), Convert.ToDouble(txtZaribPeyman.Texts), Convert.ToDouble(txtTakhfif.Texts), Convert.ToDouble(txtMaliyat.Texts), Convert.ToDouble(txtPriceNahayi.Texts));
+                    db.InsertEvent(frm_Main.userName, "بروز رسانی قرارداد به شماره " + txtShomareQarardad.Texts + "و آیدی "+idQarardad, frm_Main.strtoday + " " + DateTime.Now.ToString("HH:mm"));
                     frm_Qarardadha.UpdateDb();
                     MessageBoxFarsi.Show("قرارداد ثبت شد", "عملیات موفق", MessageBoxFarsiButtons.OK, MessageBoxFarsiIcon.Information, MessageBoxFarsiDefaultButton.Button1);
                 }
@@ -338,6 +342,7 @@ namespace Botiya
                 if (idProduct != -1)
                 {
                     db.UpdateFactor(idFactor, idProduct, Double.Parse(txtTedad.Texts), Convert.ToDouble(txtPriceVahed.Texts), Convert.ToDouble(txtPriceKol.Texts));
+                    db.InsertEvent(frm_Main.userName, "اضافه کردن محصول " + idProduct + " به فاکتور به قرارداد" + idProduct, frm_Main.strtoday + " " + DateTime.Now.ToString("HH:mm"));
                     idProduct = -1;
                     txtNameKala.Texts = "";
                     txtCodeKala.Texts = "";
@@ -368,6 +373,7 @@ namespace Botiya
                 if (MessageBoxFarsi.Show("آیا محصول  با مشخصات زیر حذف گردد؟" + "\n" + " کد محصول: " + dgvFactor.CurrentRow.Cells[3].Value + " \n نام محصول: " + dgvFactor.CurrentRow.Cells[4].Value , "حذف", MessageBoxFarsiButtons.YesNo, MessageBoxFarsiIcon.Delete, MessageBoxFarsiDefaultButton.Button1) == DialogResult.Yes)
                 {
                     db.DeleteFactor((int)dgvFactor.CurrentRow.Cells[0].Value);
+                    db.InsertEvent(frm_Main.userName, "+حذف محصول " + dgvFactor.CurrentRow.Cells[3].Value + " از قرارداد " + idQarardad, frm_Main.strtoday + " " + DateTime.Now.ToString("HH:mm"));
                     UpdateDb();
                 }
             }

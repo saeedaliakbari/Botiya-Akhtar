@@ -63,12 +63,14 @@ namespace Botiya
                     if (editMode)
                     {
                         db.UpdateProduct(idProduct, txtCodeKala.Texts, txtNameKala.Texts,Convert.ToInt32(cmbVahedAsli.SelectedValue), Convert.ToDouble(txtPriceKala1.Texts), Convert.ToDouble(txtPriceDastmozd1.Texts), Convert.ToDouble(txtPrice2.Texts), Convert.ToDouble(txtPriceDastmozd2.Texts));
+                        db.InsertEvent(frm_Main.userName, "بروز رسانی محصول با کد محصول " + txtCodeKala.Texts + " آیدی محصول" + idProduct, frm_Main.strtoday + " " + DateTime.Now.ToString("HH:mm"));
                         MessageBoxFarsi.Show("کالا ویرایش شد", "عملیات موفق", MessageBoxFarsiButtons.OK, MessageBoxFarsiIcon.Information, MessageBoxFarsiDefaultButton.Button1);
                         this.Close();
                     }
                     else
                     {
-                        db.InsertProducts(txtCodeKala.Texts, txtNameKala.Texts, Convert.ToInt32(cmbVahedAsli.SelectedValue), Convert.ToDouble(txtPriceKala1.Texts), Convert.ToDouble(txtPriceDastmozd1.Texts), Convert.ToDouble(txtPrice2.Texts), Convert.ToDouble(txtPriceDastmozd2.Texts)); 
+                        db.InsertProducts(txtCodeKala.Texts, txtNameKala.Texts, Convert.ToInt32(cmbVahedAsli.SelectedValue), Convert.ToDouble(txtPriceKala1.Texts), Convert.ToDouble(txtPriceDastmozd1.Texts), Convert.ToDouble(txtPrice2.Texts), Convert.ToDouble(txtPriceDastmozd2.Texts));
+                        db.InsertEvent(frm_Main.userName, "اضافه کردن محصول با کد محصول " + txtCodeKala.Texts + , frm_Main.strtoday + " " + DateTime.Now.ToString("HH:mm"));
                         MessageBoxFarsi.Show("کالا جدید افزوده شد", "عملیات موفق", MessageBoxFarsiButtons.OK, MessageBoxFarsiIcon.Information, MessageBoxFarsiDefaultButton.Button1);
                         clear();
                     }

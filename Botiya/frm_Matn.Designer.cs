@@ -210,7 +210,7 @@
             this.txtMade1.PlaceholderColor = System.Drawing.Color.DarkGray;
             this.txtMade1.PlaceholderText = "ماده1";
             this.txtMade1.Size = new System.Drawing.Size(976, 617);
-            this.txtMade1.TabIndex = 11;
+            this.txtMade1.TabIndex = 0;
             this.txtMade1.Texts = "";
             this.txtMade1.UnderlinedStyle = false;
             // 
@@ -527,7 +527,7 @@
             this.BtnBack.Name = "BtnBack";
             this.BtnBack.Padding = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.BtnBack.Size = new System.Drawing.Size(140, 42);
-            this.BtnBack.TabIndex = 45;
+            this.BtnBack.TabIndex = 2;
             this.BtnBack.Text = "بازگشت";
             this.BtnBack.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.BtnBack.TextColor = System.Drawing.Color.SteelBlue;
@@ -576,7 +576,7 @@
             this.BtnSave.Name = "BtnSave";
             this.BtnSave.Padding = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.BtnSave.Size = new System.Drawing.Size(140, 42);
-            this.BtnSave.TabIndex = 44;
+            this.BtnSave.TabIndex = 1;
             this.BtnSave.Text = "ذخیره";
             this.BtnSave.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.BtnSave.TextColor = System.Drawing.Color.SteelBlue;
@@ -617,7 +617,7 @@
             this.tabControl1.RightToLeftLayout = true;
             this.tabControl1.SelectedIndex = 0;
             this.tabControl1.Size = new System.Drawing.Size(998, 669);
-            this.tabControl1.TabIndex = 46;
+            this.tabControl1.TabIndex = 0;
             // 
             // tabPage10
             // 

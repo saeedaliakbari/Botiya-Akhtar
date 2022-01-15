@@ -34,11 +34,6 @@
             this.label1 = new System.Windows.Forms.Label();
             this.txtSerachNameKala = new CustomControls.RJControls.RJTextBox();
             this.dgvProducts = new System.Windows.Forms.DataGridView();
-            this.bsViewProduct = new System.Windows.Forms.BindingSource(this.components);
-            this.BtnOk = new CustomControls.RJControls.RJButton();
-            this.btnCancel = new CustomControls.RJControls.RJButton();
-            this.rdbName = new System.Windows.Forms.RadioButton();
-            this.rdbCode = new System.Windows.Forms.RadioButton();
             this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.codeIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -48,6 +43,11 @@
             this.pricKala2DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.priceDastMozd2DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.vahedNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.bsViewProduct = new System.Windows.Forms.BindingSource(this.components);
+            this.BtnOk = new CustomControls.RJControls.RJButton();
+            this.btnCancel = new CustomControls.RJControls.RJButton();
+            this.rdbName = new System.Windows.Forms.RadioButton();
+            this.rdbCode = new System.Windows.Forms.RadioButton();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProducts)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bsViewProduct)).BeginInit();
             this.SuspendLayout();
@@ -70,7 +70,7 @@
             this.txtSerachCodeKala.PlaceholderColor = System.Drawing.Color.DarkGray;
             this.txtSerachCodeKala.PlaceholderText = "جستجو براساس کدکالا";
             this.txtSerachCodeKala.Size = new System.Drawing.Size(137, 35);
-            this.txtSerachCodeKala.TabIndex = 24;
+            this.txtSerachCodeKala.TabIndex = 3;
             this.txtSerachCodeKala.Texts = "";
             this.txtSerachCodeKala.UnderlinedStyle = true;
             this.txtSerachCodeKala._TextChanged += new System.EventHandler(this.txtSerachCodeKala__TextChanged);
@@ -107,7 +107,7 @@
             this.txtSerachNameKala.PlaceholderColor = System.Drawing.Color.DarkGray;
             this.txtSerachNameKala.PlaceholderText = "جستجو براساس نام کالا";
             this.txtSerachNameKala.Size = new System.Drawing.Size(250, 35);
-            this.txtSerachNameKala.TabIndex = 22;
+            this.txtSerachNameKala.TabIndex = 1;
             this.txtSerachNameKala.Texts = "";
             this.txtSerachNameKala.UnderlinedStyle = true;
             this.txtSerachNameKala._TextChanged += new System.EventHandler(this.txtSerachNameKala__TextChanged);
@@ -137,80 +137,6 @@
             this.dgvProducts.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvProducts.Size = new System.Drawing.Size(774, 396);
             this.dgvProducts.TabIndex = 21;
-            // 
-            // bsViewProduct
-            // 
-            this.bsViewProduct.DataSource = typeof(Botiya.ViewProductsVahed);
-            // 
-            // BtnOk
-            // 
-            this.BtnOk.BackColor = System.Drawing.Color.White;
-            this.BtnOk.BackgroundColor = System.Drawing.Color.White;
-            this.BtnOk.BorderColor = System.Drawing.Color.SteelBlue;
-            this.BtnOk.BorderRadius = 12;
-            this.BtnOk.BorderSize = 2;
-            this.BtnOk.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.BtnOk.FlatAppearance.BorderSize = 0;
-            this.BtnOk.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BtnOk.ForeColor = System.Drawing.Color.SteelBlue;
-            this.BtnOk.Image = ((System.Drawing.Image)(resources.GetObject("BtnOk.Image")));
-            this.BtnOk.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.BtnOk.Location = new System.Drawing.Point(12, 490);
-            this.BtnOk.Name = "BtnOk";
-            this.BtnOk.Padding = new System.Windows.Forms.Padding(5, 0, 5, 0);
-            this.BtnOk.Size = new System.Drawing.Size(140, 42);
-            this.BtnOk.TabIndex = 20;
-            this.BtnOk.Text = "تایید";
-            this.BtnOk.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.BtnOk.TextColor = System.Drawing.Color.SteelBlue;
-            this.BtnOk.UseVisualStyleBackColor = false;
-            this.BtnOk.Click += new System.EventHandler(this.BtnOk_Click);
-            // 
-            // btnCancel
-            // 
-            this.btnCancel.BackColor = System.Drawing.Color.White;
-            this.btnCancel.BackgroundColor = System.Drawing.Color.White;
-            this.btnCancel.BorderColor = System.Drawing.Color.SteelBlue;
-            this.btnCancel.BorderRadius = 12;
-            this.btnCancel.BorderSize = 2;
-            this.btnCancel.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnCancel.FlatAppearance.BorderSize = 0;
-            this.btnCancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCancel.ForeColor = System.Drawing.Color.SteelBlue;
-            this.btnCancel.Image = ((System.Drawing.Image)(resources.GetObject("btnCancel.Image")));
-            this.btnCancel.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnCancel.Location = new System.Drawing.Point(646, 490);
-            this.btnCancel.Name = "btnCancel";
-            this.btnCancel.Padding = new System.Windows.Forms.Padding(5, 0, 5, 0);
-            this.btnCancel.Size = new System.Drawing.Size(140, 42);
-            this.btnCancel.TabIndex = 19;
-            this.btnCancel.Text = "انصراف";
-            this.btnCancel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnCancel.TextColor = System.Drawing.Color.SteelBlue;
-            this.btnCancel.UseVisualStyleBackColor = false;
-            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
-            // 
-            // rdbName
-            // 
-            this.rdbName.AutoSize = true;
-            this.rdbName.Checked = true;
-            this.rdbName.Location = new System.Drawing.Point(12, 55);
-            this.rdbName.Name = "rdbName";
-            this.rdbName.Size = new System.Drawing.Size(14, 13);
-            this.rdbName.TabIndex = 25;
-            this.rdbName.TabStop = true;
-            this.rdbName.UseVisualStyleBackColor = true;
-            this.rdbName.CheckedChanged += new System.EventHandler(this.rdbName_CheckedChanged);
-            // 
-            // rdbCode
-            // 
-            this.rdbCode.AutoSize = true;
-            this.rdbCode.Location = new System.Drawing.Point(290, 55);
-            this.rdbCode.Name = "rdbCode";
-            this.rdbCode.Size = new System.Drawing.Size(14, 13);
-            this.rdbCode.TabIndex = 26;
-            this.rdbCode.UseVisualStyleBackColor = true;
-            this.rdbCode.CheckedChanged += new System.EventHandler(this.rdbCode_CheckedChanged);
             // 
             // idDataGridViewTextBoxColumn
             // 
@@ -276,6 +202,80 @@
             this.vahedNameDataGridViewTextBoxColumn.HeaderText = "واحد";
             this.vahedNameDataGridViewTextBoxColumn.Name = "vahedNameDataGridViewTextBoxColumn";
             this.vahedNameDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // bsViewProduct
+            // 
+            this.bsViewProduct.DataSource = typeof(Botiya.ViewProductsVahed);
+            // 
+            // BtnOk
+            // 
+            this.BtnOk.BackColor = System.Drawing.Color.White;
+            this.BtnOk.BackgroundColor = System.Drawing.Color.White;
+            this.BtnOk.BorderColor = System.Drawing.Color.SteelBlue;
+            this.BtnOk.BorderRadius = 12;
+            this.BtnOk.BorderSize = 2;
+            this.BtnOk.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.BtnOk.FlatAppearance.BorderSize = 0;
+            this.BtnOk.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BtnOk.ForeColor = System.Drawing.Color.SteelBlue;
+            this.BtnOk.Image = ((System.Drawing.Image)(resources.GetObject("BtnOk.Image")));
+            this.BtnOk.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.BtnOk.Location = new System.Drawing.Point(12, 490);
+            this.BtnOk.Name = "BtnOk";
+            this.BtnOk.Padding = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.BtnOk.Size = new System.Drawing.Size(140, 42);
+            this.BtnOk.TabIndex = 4;
+            this.BtnOk.Text = "تایید";
+            this.BtnOk.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.BtnOk.TextColor = System.Drawing.Color.SteelBlue;
+            this.BtnOk.UseVisualStyleBackColor = false;
+            this.BtnOk.Click += new System.EventHandler(this.BtnOk_Click);
+            // 
+            // btnCancel
+            // 
+            this.btnCancel.BackColor = System.Drawing.Color.White;
+            this.btnCancel.BackgroundColor = System.Drawing.Color.White;
+            this.btnCancel.BorderColor = System.Drawing.Color.SteelBlue;
+            this.btnCancel.BorderRadius = 12;
+            this.btnCancel.BorderSize = 2;
+            this.btnCancel.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnCancel.FlatAppearance.BorderSize = 0;
+            this.btnCancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCancel.ForeColor = System.Drawing.Color.SteelBlue;
+            this.btnCancel.Image = ((System.Drawing.Image)(resources.GetObject("btnCancel.Image")));
+            this.btnCancel.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnCancel.Location = new System.Drawing.Point(646, 490);
+            this.btnCancel.Name = "btnCancel";
+            this.btnCancel.Padding = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.btnCancel.Size = new System.Drawing.Size(140, 42);
+            this.btnCancel.TabIndex = 5;
+            this.btnCancel.Text = "انصراف";
+            this.btnCancel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnCancel.TextColor = System.Drawing.Color.SteelBlue;
+            this.btnCancel.UseVisualStyleBackColor = false;
+            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
+            // 
+            // rdbName
+            // 
+            this.rdbName.AutoSize = true;
+            this.rdbName.Checked = true;
+            this.rdbName.Location = new System.Drawing.Point(12, 55);
+            this.rdbName.Name = "rdbName";
+            this.rdbName.Size = new System.Drawing.Size(14, 13);
+            this.rdbName.TabIndex = 0;
+            this.rdbName.TabStop = true;
+            this.rdbName.UseVisualStyleBackColor = true;
+            this.rdbName.CheckedChanged += new System.EventHandler(this.rdbName_CheckedChanged);
+            // 
+            // rdbCode
+            // 
+            this.rdbCode.AutoSize = true;
+            this.rdbCode.Location = new System.Drawing.Point(290, 55);
+            this.rdbCode.Name = "rdbCode";
+            this.rdbCode.Size = new System.Drawing.Size(14, 13);
+            this.rdbCode.TabIndex = 2;
+            this.rdbCode.UseVisualStyleBackColor = true;
+            this.rdbCode.CheckedChanged += new System.EventHandler(this.rdbCode_CheckedChanged);
             // 
             // frm_Qarardad_SelectProduct
             // 

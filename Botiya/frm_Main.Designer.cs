@@ -50,7 +50,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.bsUser = new System.Windows.Forms.BindingSource(this.components);
-            this.label2 = new System.Windows.Forms.Label();
+            this.lblUsername = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.btnPrint = new CustomControls.RJControls.RJButton();
             this.rjComboBox1 = new CustomControls.RJControls.RJComboBox();
@@ -275,16 +275,17 @@
             // 
             this.bsUser.DataSource = typeof(Botiya.tblUser);
             // 
-            // label2
+            // lblUsername
             // 
-            this.label2.BackColor = System.Drawing.Color.Chocolate;
-            this.label2.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bsUser, "UserName", true));
-            this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(77, 641);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(172, 39);
-            this.label2.TabIndex = 16;
-            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.lblUsername.BackColor = System.Drawing.Color.Chocolate;
+            this.lblUsername.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bsUser, "UserName", true));
+            this.lblUsername.ForeColor = System.Drawing.Color.White;
+            this.lblUsername.Location = new System.Drawing.Point(77, 641);
+            this.lblUsername.Name = "lblUsername";
+            this.lblUsername.Size = new System.Drawing.Size(172, 39);
+            this.lblUsername.TabIndex = 16;
+            this.lblUsername.Text = "username";
+            this.lblUsername.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // label3
             // 
@@ -547,7 +548,7 @@
             this.ClientSize = new System.Drawing.Size(1024, 680);
             this.ControlBox = false;
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.label2);
+            this.Controls.Add(this.lblUsername);
             this.Controls.Add(this.btnPrint);
             this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.rjComboBox1);
@@ -611,7 +612,7 @@
         private System.Windows.Forms.ToolStripMenuItem ذخیرهسازیToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem بازیابیToolStripMenuItem;
         private System.Windows.Forms.BindingSource bsUser;
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label lblUsername;
         private System.Windows.Forms.Label label3;
     }
 }

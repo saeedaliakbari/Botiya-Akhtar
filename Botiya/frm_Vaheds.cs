@@ -59,6 +59,7 @@ namespace Botiya
                 {
                     errorProvider1.Clear();
                     db.InsertVahed(txtVahedName.Texts);
+                    db.InsertEvent(frm_Main.userName, "اضافه کردن واحد " + txtVahedName.Texts, frm_Main.strtoday + " " + DateTime.Now.ToString("HH:mm"));
                     MessageBoxFarsi.Show("واحد جدید افزوده شد", "عملیات موفق", MessageBoxFarsiButtons.OK, MessageBoxFarsiIcon.Information, MessageBoxFarsiDefaultButton.Button1);
                     txtVahedName.Texts = String.Empty;
                     nameVahedCheck = String.Empty;
@@ -106,6 +107,7 @@ namespace Botiya
                 {
                     errorProvider1.Clear();
                     db.UpdateVahed(idVahed, txtVahedName.Texts);
+                    db.InsertEvent(frm_Main.userName, "بروز کردن واحد " + txtVahedName.Texts, frm_Main.strtoday + " " + DateTime.Now.ToString("HH:mm"));
                     MessageBoxFarsi.Show("واحد ویرایش شد", "عملیات موفق", MessageBoxFarsiButtons.OK, MessageBoxFarsiIcon.Information, MessageBoxFarsiDefaultButton.Button1);
                     txtVahedName.Texts = String.Empty;
                         nameVahedCheck = String.Empty;
@@ -153,6 +155,7 @@ namespace Botiya
                     if (resultVahed is null)
                     {
                         db.DeleteVahed((int)dgvVaheds.CurrentRow.Cells[0].Value);
+                        db.InsertEvent(frm_Main.userName, "حذف کردن واحد " + dgvVaheds.CurrentRow.Cells[1].Value, frm_Main.strtoday + " " + DateTime.Now.ToString("HH:mm"));
                         bsVaheds.DataSource = db.FillVaheds();
                         CheckDgv();
                     }

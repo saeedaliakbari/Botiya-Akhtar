@@ -197,7 +197,7 @@
             this.btnViewPic.Name = "btnViewPic";
             this.btnViewPic.Padding = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.btnViewPic.Size = new System.Drawing.Size(140, 42);
-            this.btnViewPic.TabIndex = 52;
+            this.btnViewPic.TabIndex = 8;
             this.btnViewPic.Text = "نمایش عکس";
             this.btnViewPic.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnViewPic.TextColor = System.Drawing.Color.SteelBlue;
@@ -221,7 +221,7 @@
             this.BtnOk.Name = "BtnOk";
             this.BtnOk.Padding = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.BtnOk.Size = new System.Drawing.Size(140, 42);
-            this.BtnOk.TabIndex = 50;
+            this.BtnOk.TabIndex = 5;
             this.BtnOk.Text = "تایید";
             this.BtnOk.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.BtnOk.TextColor = System.Drawing.Color.SteelBlue;
@@ -242,11 +242,11 @@
             this.btnCancel.ForeColor = System.Drawing.Color.SteelBlue;
             this.btnCancel.Image = ((System.Drawing.Image)(resources.GetObject("btnCancel.Image")));
             this.btnCancel.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnCancel.Location = new System.Drawing.Point(194, 205);
+            this.btnCancel.Location = new System.Drawing.Point(195, 205);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Padding = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.btnCancel.Size = new System.Drawing.Size(140, 42);
-            this.btnCancel.TabIndex = 51;
+            this.btnCancel.TabIndex = 6;
             this.btnCancel.Text = "انصراف";
             this.btnCancel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnCancel.TextColor = System.Drawing.Color.SteelBlue;
@@ -272,7 +272,7 @@
             this.BtnDelete.Name = "BtnDelete";
             this.BtnDelete.Padding = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.BtnDelete.Size = new System.Drawing.Size(140, 42);
-            this.BtnDelete.TabIndex = 48;
+            this.BtnDelete.TabIndex = 7;
             this.BtnDelete.Text = "حذف";
             this.BtnDelete.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.BtnDelete.TextColor = System.Drawing.Color.SteelBlue;
@@ -297,7 +297,7 @@
             this.BtnEdit.Name = "BtnEdit";
             this.BtnEdit.Padding = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.BtnEdit.Size = new System.Drawing.Size(140, 42);
-            this.BtnEdit.TabIndex = 47;
+            this.BtnEdit.TabIndex = 4;
             this.BtnEdit.Text = "ویرایش";
             this.BtnEdit.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.BtnEdit.TextColor = System.Drawing.Color.SteelBlue;
@@ -321,7 +321,7 @@
             this.btnSelect.Name = "btnSelect";
             this.btnSelect.Padding = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.btnSelect.Size = new System.Drawing.Size(140, 42);
-            this.btnSelect.TabIndex = 44;
+            this.btnSelect.TabIndex = 2;
             this.btnSelect.Text = "انتخاب عکس";
             this.btnSelect.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnSelect.TextColor = System.Drawing.Color.SteelBlue;
@@ -348,7 +348,7 @@
             this.txtComment.PlaceholderText = "";
             this.txtComment.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.txtComment.Size = new System.Drawing.Size(403, 79);
-            this.txtComment.TabIndex = 42;
+            this.txtComment.TabIndex = 1;
             this.txtComment.Texts = "";
             this.txtComment.UnderlinedStyle = true;
             // 
@@ -373,7 +373,7 @@
             this.txtShomareQarardad.PlaceholderText = "";
             this.txtShomareQarardad.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.txtShomareQarardad.Size = new System.Drawing.Size(92, 35);
-            this.txtShomareQarardad.TabIndex = 40;
+            this.txtShomareQarardad.TabIndex = 0;
             this.txtShomareQarardad.Texts = "";
             this.txtShomareQarardad.UnderlinedStyle = true;
             // 
@@ -394,7 +394,7 @@
             this.BtnAdd.Name = "BtnAdd";
             this.BtnAdd.Padding = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.BtnAdd.Size = new System.Drawing.Size(140, 42);
-            this.BtnAdd.TabIndex = 25;
+            this.BtnAdd.TabIndex = 3;
             this.BtnAdd.Text = "افزودن";
             this.BtnAdd.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.BtnAdd.TextColor = System.Drawing.Color.SteelBlue;
@@ -418,7 +418,7 @@
             this.BtnBack.Name = "BtnBack";
             this.BtnBack.Padding = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.BtnBack.Size = new System.Drawing.Size(140, 42);
-            this.BtnBack.TabIndex = 24;
+            this.BtnBack.TabIndex = 9;
             this.BtnBack.Text = "بازگشت";
             this.BtnBack.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.BtnBack.TextColor = System.Drawing.Color.SteelBlue;

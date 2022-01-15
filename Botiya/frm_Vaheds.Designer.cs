@@ -36,16 +36,16 @@
             this.BtnBack = new CustomControls.RJControls.RJButton();
             this.txtVahedName = new CustomControls.RJControls.RJTextBox();
             this.dgvVaheds = new System.Windows.Forms.DataGridView();
+            this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.bsVaheds = new System.Windows.Forms.BindingSource(this.components);
             this.label1 = new System.Windows.Forms.Label();
             this.BtnOk = new CustomControls.RJControls.RJButton();
             this.btnCancel = new CustomControls.RJControls.RJButton();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
-            this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.bsVaheds = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.dgvVaheds)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bsVaheds)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
             // BtnDelete
@@ -65,7 +65,7 @@
             this.BtnDelete.Name = "BtnDelete";
             this.BtnDelete.Padding = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.BtnDelete.Size = new System.Drawing.Size(140, 42);
-            this.BtnDelete.TabIndex = 21;
+            this.BtnDelete.TabIndex = 3;
             this.BtnDelete.Text = "حذف";
             this.BtnDelete.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.BtnDelete.TextColor = System.Drawing.Color.SteelBlue;
@@ -89,7 +89,7 @@
             this.BtnEdit.Name = "BtnEdit";
             this.BtnEdit.Padding = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.BtnEdit.Size = new System.Drawing.Size(140, 42);
-            this.BtnEdit.TabIndex = 20;
+            this.BtnEdit.TabIndex = 2;
             this.BtnEdit.Text = "ویرایش";
             this.BtnEdit.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.BtnEdit.TextColor = System.Drawing.Color.SteelBlue;
@@ -113,7 +113,7 @@
             this.BtnAdd.Name = "BtnAdd";
             this.BtnAdd.Padding = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.BtnAdd.Size = new System.Drawing.Size(140, 42);
-            this.BtnAdd.TabIndex = 19;
+            this.BtnAdd.TabIndex = 1;
             this.BtnAdd.Text = "افزودن";
             this.BtnAdd.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.BtnAdd.TextColor = System.Drawing.Color.SteelBlue;
@@ -137,7 +137,7 @@
             this.BtnBack.Name = "BtnBack";
             this.BtnBack.Padding = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.BtnBack.Size = new System.Drawing.Size(140, 42);
-            this.BtnBack.TabIndex = 18;
+            this.BtnBack.TabIndex = 6;
             this.BtnBack.Text = "بازگشت";
             this.BtnBack.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.BtnBack.TextColor = System.Drawing.Color.SteelBlue;
@@ -162,7 +162,7 @@
             this.txtVahedName.PlaceholderColor = System.Drawing.Color.DarkGray;
             this.txtVahedName.PlaceholderText = "نام";
             this.txtVahedName.Size = new System.Drawing.Size(285, 35);
-            this.txtVahedName.TabIndex = 22;
+            this.txtVahedName.TabIndex = 0;
             this.txtVahedName.Texts = "";
             this.txtVahedName.UnderlinedStyle = true;
             // 
@@ -184,6 +184,26 @@
             this.dgvVaheds.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvVaheds.Size = new System.Drawing.Size(436, 282);
             this.dgvVaheds.TabIndex = 23;
+            // 
+            // idDataGridViewTextBoxColumn
+            // 
+            this.idDataGridViewTextBoxColumn.DataPropertyName = "Id";
+            this.idDataGridViewTextBoxColumn.HeaderText = "Id";
+            this.idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
+            this.idDataGridViewTextBoxColumn.ReadOnly = true;
+            this.idDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // nameDataGridViewTextBoxColumn
+            // 
+            this.nameDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.nameDataGridViewTextBoxColumn.DataPropertyName = "Name";
+            this.nameDataGridViewTextBoxColumn.HeaderText = "نام واحد";
+            this.nameDataGridViewTextBoxColumn.Name = "nameDataGridViewTextBoxColumn";
+            this.nameDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // bsVaheds
+            // 
+            this.bsVaheds.DataSource = typeof(Botiya.Vahed);
             // 
             // label1
             // 
@@ -212,11 +232,11 @@
             this.BtnOk.ForeColor = System.Drawing.Color.SteelBlue;
             this.BtnOk.Image = ((System.Drawing.Image)(resources.GetObject("BtnOk.Image")));
             this.BtnOk.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.BtnOk.Location = new System.Drawing.Point(309, 44);
+            this.BtnOk.Location = new System.Drawing.Point(309, 46);
             this.BtnOk.Name = "BtnOk";
             this.BtnOk.Padding = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.BtnOk.Size = new System.Drawing.Size(140, 42);
-            this.BtnOk.TabIndex = 25;
+            this.BtnOk.TabIndex = 4;
             this.BtnOk.Text = "تایید";
             this.BtnOk.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.BtnOk.TextColor = System.Drawing.Color.SteelBlue;
@@ -237,11 +257,11 @@
             this.btnCancel.ForeColor = System.Drawing.Color.SteelBlue;
             this.btnCancel.Image = ((System.Drawing.Image)(resources.GetObject("btnCancel.Image")));
             this.btnCancel.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnCancel.Location = new System.Drawing.Point(12, 382);
+            this.btnCancel.Location = new System.Drawing.Point(13, 382);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Padding = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.btnCancel.Size = new System.Drawing.Size(140, 42);
-            this.btnCancel.TabIndex = 26;
+            this.btnCancel.TabIndex = 5;
             this.btnCancel.Text = "انصراف";
             this.btnCancel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnCancel.TextColor = System.Drawing.Color.SteelBlue;
@@ -252,26 +272,6 @@
             // errorProvider1
             // 
             this.errorProvider1.ContainerControl = this;
-            // 
-            // idDataGridViewTextBoxColumn
-            // 
-            this.idDataGridViewTextBoxColumn.DataPropertyName = "Id";
-            this.idDataGridViewTextBoxColumn.HeaderText = "Id";
-            this.idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
-            this.idDataGridViewTextBoxColumn.ReadOnly = true;
-            this.idDataGridViewTextBoxColumn.Visible = false;
-            // 
-            // nameDataGridViewTextBoxColumn
-            // 
-            this.nameDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.nameDataGridViewTextBoxColumn.DataPropertyName = "Name";
-            this.nameDataGridViewTextBoxColumn.HeaderText = "نام واحد";
-            this.nameDataGridViewTextBoxColumn.Name = "nameDataGridViewTextBoxColumn";
-            this.nameDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // bsVaheds
-            // 
-            this.bsVaheds.DataSource = typeof(Botiya.Vahed);
             // 
             // frm_Vaheds
             // 
@@ -298,8 +298,8 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Load += new System.EventHandler(this.frm_Vaheds_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvVaheds)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bsVaheds)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
 
         }

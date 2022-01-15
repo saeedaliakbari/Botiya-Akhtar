@@ -46,10 +46,12 @@ namespace Botiya
                     if (idUser == null)
                     {
                         errorProvider1.SetError(txtUserName, "نام کاربری یا رمزعبور اشتباه است");
+                        db.InsertEvent(txtUserName.Texts, "اشتباه در وارد کردن رمز عبور یا نام کاربری",DateTime.Now.ToString());
                         txtUserName.Focus();
                     }
                     else
                     {
+                        db.InsertEvent(txtUserName.Texts, "ورود موفقیت آمیز", DateTime.Now.ToString());
                         frm_Main.idUser = (int)idUser;
                         new frm_Main().ShowDialog();
                     }
@@ -59,6 +61,12 @@ namespace Botiya
                     MessageBoxFarsi.Show("ارتباط با پایگاه داده قطع است", "اخطار", MessageBoxFarsiButtons.OK, MessageBoxFarsiIcon.Error, MessageBoxFarsiDefaultButton.Button1, true, false);
                 }
             }
+        }
+
+        private void frm_Login_Load(object sender, EventArgs e)
+        {
+            //MessageBox.Show(DateTime.Now.ToString());
+            //MessageBox.Show(DateTime.Now.ToString("HH:mm"));
         }
     }
 }

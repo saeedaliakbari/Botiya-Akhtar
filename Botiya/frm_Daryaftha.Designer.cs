@@ -181,7 +181,7 @@
             this.BtnAdd.Name = "BtnAdd";
             this.BtnAdd.Padding = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.BtnAdd.Size = new System.Drawing.Size(140, 42);
-            this.BtnAdd.TabIndex = 23;
+            this.BtnAdd.TabIndex = 5;
             this.BtnAdd.Text = "افزودن";
             this.BtnAdd.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.BtnAdd.TextColor = System.Drawing.Color.SteelBlue;
@@ -205,7 +205,7 @@
             this.BtnBack.Name = "BtnBack";
             this.BtnBack.Padding = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.BtnBack.Size = new System.Drawing.Size(140, 42);
-            this.BtnBack.TabIndex = 22;
+            this.BtnBack.TabIndex = 10;
             this.BtnBack.Text = "بازگشت";
             this.BtnBack.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.BtnBack.TextColor = System.Drawing.Color.SteelBlue;
@@ -232,7 +232,7 @@
             this.txtShomareQarardad.PlaceholderText = "";
             this.txtShomareQarardad.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.txtShomareQarardad.Size = new System.Drawing.Size(92, 35);
-            this.txtShomareQarardad.TabIndex = 40;
+            this.txtShomareQarardad.TabIndex = 0;
             this.txtShomareQarardad.Texts = "";
             this.txtShomareQarardad.UnderlinedStyle = true;
             // 
@@ -280,7 +280,7 @@
             this.cmbBank.Name = "cmbBank";
             this.cmbBank.Padding = new System.Windows.Forms.Padding(2);
             this.cmbBank.Size = new System.Drawing.Size(200, 35);
-            this.cmbBank.TabIndex = 44;
+            this.cmbBank.TabIndex = 1;
             this.cmbBank.Texts = "";
             this.cmbBank.ValueMember = "Id";
             // 
@@ -303,7 +303,7 @@
             this.txtPrice.PlaceholderText = "";
             this.txtPrice.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.txtPrice.Size = new System.Drawing.Size(127, 35);
-            this.txtPrice.TabIndex = 46;
+            this.txtPrice.TabIndex = 3;
             this.txtPrice.Texts = "0";
             this.txtPrice.UnderlinedStyle = true;
             this.txtPrice.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPrice_KeyPress);
@@ -338,7 +338,7 @@
             this.txtShomareCheck.PlaceholderText = "";
             this.txtShomareCheck.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.txtShomareCheck.Size = new System.Drawing.Size(122, 35);
-            this.txtShomareCheck.TabIndex = 48;
+            this.txtShomareCheck.TabIndex = 4;
             this.txtShomareCheck.Texts = "";
             this.txtShomareCheck.UnderlinedStyle = true;
             // 
@@ -372,7 +372,7 @@
             this.txtDateSar.PlaceholderText = "1400/01/01";
             this.txtDateSar.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.txtDateSar.Size = new System.Drawing.Size(125, 35);
-            this.txtDateSar.TabIndex = 50;
+            this.txtDateSar.TabIndex = 2;
             this.txtDateSar.Texts = "";
             this.txtDateSar.UnderlinedStyle = true;
             // 
@@ -432,7 +432,7 @@
             this.BtnDelete.Name = "BtnDelete";
             this.BtnDelete.Padding = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.BtnDelete.Size = new System.Drawing.Size(140, 42);
-            this.BtnDelete.TabIndex = 54;
+            this.BtnDelete.TabIndex = 9;
             this.BtnDelete.Text = "حذف";
             this.BtnDelete.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.BtnDelete.TextColor = System.Drawing.Color.SteelBlue;
@@ -457,7 +457,7 @@
             this.BtnEdit.Name = "BtnEdit";
             this.BtnEdit.Padding = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.BtnEdit.Size = new System.Drawing.Size(140, 42);
-            this.BtnEdit.TabIndex = 53;
+            this.BtnEdit.TabIndex = 6;
             this.BtnEdit.Text = "ویرایش";
             this.BtnEdit.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.BtnEdit.TextColor = System.Drawing.Color.SteelBlue;
@@ -481,7 +481,7 @@
             this.BtnOk.Name = "BtnOk";
             this.BtnOk.Padding = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.BtnOk.Size = new System.Drawing.Size(140, 42);
-            this.BtnOk.TabIndex = 55;
+            this.BtnOk.TabIndex = 7;
             this.BtnOk.Text = "تایید";
             this.BtnOk.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.BtnOk.TextColor = System.Drawing.Color.SteelBlue;
@@ -506,7 +506,7 @@
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Padding = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.btnCancel.Size = new System.Drawing.Size(140, 42);
-            this.btnCancel.TabIndex = 56;
+            this.btnCancel.TabIndex = 8;
             this.btnCancel.Text = "انصراف";
             this.btnCancel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnCancel.TextColor = System.Drawing.Color.SteelBlue;

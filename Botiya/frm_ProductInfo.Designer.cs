@@ -39,6 +39,8 @@
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.cmbVahedAsli = new System.Windows.Forms.ComboBox();
+            this.bsProducts = new System.Windows.Forms.BindingSource(this.components);
+            this.bsVaheds = new System.Windows.Forms.BindingSource(this.components);
             this.txtPriceKol2 = new CustomControls.RJControls.RJTextBox();
             this.txtPriceKol1 = new CustomControls.RJControls.RJTextBox();
             this.txtPriceDastmozd2 = new CustomControls.RJControls.RJTextBox();
@@ -50,11 +52,9 @@
             this.txtCodeKala = new CustomControls.RJControls.RJTextBox();
             this.BtnBack = new CustomControls.RJControls.RJButton();
             this.BtnSave = new CustomControls.RJControls.RJButton();
-            this.bsVaheds = new System.Windows.Forms.BindingSource(this.components);
-            this.bsProducts = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bsVaheds)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bsProducts)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bsVaheds)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -156,6 +156,14 @@
             this.cmbVahedAsli.TabIndex = 26;
             this.cmbVahedAsli.ValueMember = "Id";
             this.cmbVahedAsli.Visible = false;
+            // 
+            // bsProducts
+            // 
+            this.bsProducts.DataSource = typeof(Botiya.Product);
+            // 
+            // bsVaheds
+            // 
+            this.bsVaheds.DataSource = typeof(Botiya.Vahed);
             // 
             // txtPriceKol2
             // 
@@ -420,14 +428,6 @@
             this.BtnSave.UseVisualStyleBackColor = false;
             this.BtnSave.Click += new System.EventHandler(this.BtnSave_Click);
             // 
-            // bsVaheds
-            // 
-            this.bsVaheds.DataSource = typeof(Botiya.Vahed);
-            // 
-            // bsProducts
-            // 
-            this.bsProducts.DataSource = typeof(Botiya.Product);
-            // 
             // frm_ProductInfo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 23F);
@@ -463,8 +463,8 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Load += new System.EventHandler(this.frm_ProductInfo_Load);
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bsVaheds)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bsProducts)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bsVaheds)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

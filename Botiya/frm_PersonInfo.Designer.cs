@@ -67,7 +67,7 @@
             this.label1.Margin = new System.Windows.Forms.Padding(0);
             this.label1.Name = "label1";
             this.label1.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.label1.Size = new System.Drawing.Size(668, 34);
+            this.label1.Size = new System.Drawing.Size(664, 34);
             this.label1.TabIndex = 29;
             this.label1.Text = "مشتریان";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -138,7 +138,7 @@
             this.txtSherkatName.PlaceholderColor = System.Drawing.Color.DarkGray;
             this.txtSherkatName.PlaceholderText = "نام شرکت";
             this.txtSherkatName.Size = new System.Drawing.Size(281, 35);
-            this.txtSherkatName.TabIndex = 8;
+            this.txtSherkatName.TabIndex = 1;
             this.txtSherkatName.Texts = "";
             this.txtSherkatName.UnderlinedStyle = true;
             // 
@@ -157,7 +157,7 @@
             this.TgbHoghoghi.OnBackColor = System.Drawing.Color.SteelBlue;
             this.TgbHoghoghi.OnToggleColor = System.Drawing.Color.WhiteSmoke;
             this.TgbHoghoghi.Size = new System.Drawing.Size(45, 22);
-            this.TgbHoghoghi.TabIndex = 7;
+            this.TgbHoghoghi.TabIndex = 0;
             this.TgbHoghoghi.UseVisualStyleBackColor = true;
             // 
             // txtFatherName
@@ -178,7 +178,7 @@
             this.txtFatherName.PlaceholderColor = System.Drawing.Color.DarkGray;
             this.txtFatherName.PlaceholderText = "نام پدر";
             this.txtFatherName.Size = new System.Drawing.Size(281, 35);
-            this.txtFatherName.TabIndex = 2;
+            this.txtFatherName.TabIndex = 4;
             this.txtFatherName.Texts = "";
             this.txtFatherName.UnderlinedStyle = true;
             // 
@@ -200,7 +200,7 @@
             this.txtfName.PlaceholderColor = System.Drawing.Color.DarkGray;
             this.txtfName.PlaceholderText = "نام";
             this.txtfName.Size = new System.Drawing.Size(281, 35);
-            this.txtfName.TabIndex = 0;
+            this.txtfName.TabIndex = 2;
             this.txtfName.Texts = "";
             this.txtfName.UnderlinedStyle = true;
             // 
@@ -222,7 +222,7 @@
             this.txtMobile.PlaceholderColor = System.Drawing.Color.DarkGray;
             this.txtMobile.PlaceholderText = "شماره همراه";
             this.txtMobile.Size = new System.Drawing.Size(281, 35);
-            this.txtMobile.TabIndex = 5;
+            this.txtMobile.TabIndex = 7;
             this.txtMobile.Texts = "";
             this.txtMobile.UnderlinedStyle = true;
             this.txtMobile.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtMobile_KeyPress);
@@ -245,7 +245,7 @@
             this.txtLName.PlaceholderColor = System.Drawing.Color.DarkGray;
             this.txtLName.PlaceholderText = "نام خانوادگی";
             this.txtLName.Size = new System.Drawing.Size(281, 35);
-            this.txtLName.TabIndex = 1;
+            this.txtLName.TabIndex = 3;
             this.txtLName.Texts = "";
             this.txtLName.UnderlinedStyle = true;
             // 
@@ -267,7 +267,7 @@
             this.txtPhone.PlaceholderColor = System.Drawing.Color.DarkGray;
             this.txtPhone.PlaceholderText = "شماره تماس";
             this.txtPhone.Size = new System.Drawing.Size(281, 35);
-            this.txtPhone.TabIndex = 4;
+            this.txtPhone.TabIndex = 6;
             this.txtPhone.Texts = "";
             this.txtPhone.UnderlinedStyle = true;
             this.txtPhone.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPhone_KeyPress);
@@ -290,7 +290,7 @@
             this.txtCodeMelli.PlaceholderColor = System.Drawing.Color.DarkGray;
             this.txtCodeMelli.PlaceholderText = "کدملی";
             this.txtCodeMelli.Size = new System.Drawing.Size(281, 35);
-            this.txtCodeMelli.TabIndex = 3;
+            this.txtCodeMelli.TabIndex = 5;
             this.txtCodeMelli.Texts = "";
             this.txtCodeMelli.UnderlinedStyle = true;
             this.txtCodeMelli.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCodeMelli_KeyPress);
@@ -313,7 +313,7 @@
             this.txtAddress.PlaceholderColor = System.Drawing.Color.DarkGray;
             this.txtAddress.PlaceholderText = "آدرس";
             this.txtAddress.Size = new System.Drawing.Size(614, 70);
-            this.txtAddress.TabIndex = 6;
+            this.txtAddress.TabIndex = 8;
             this.txtAddress.Texts = "";
             this.txtAddress.UnderlinedStyle = true;
             // 
@@ -326,7 +326,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 23F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(668, 405);
+            this.ClientSize = new System.Drawing.Size(664, 401);
             this.ControlBox = false;
             this.Controls.Add(this.BtnBack);
             this.Controls.Add(this.BtnSave);

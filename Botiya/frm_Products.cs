@@ -45,6 +45,7 @@ namespace Botiya
                     if (resultProduct is null)
                     {
                         db.DeleteProducts((int)dgvProducts.CurrentRow.Cells[0].Value);
+                        db.InsertEvent(frm_Main.userName, "حذف محصول با کد محصول " + dgvProducts.CurrentRow.Cells[1].Value, frm_Main.strtoday + " " + DateTime.Now.ToString("HH:mm"));
                         UpdateDb();
                     }
                     else

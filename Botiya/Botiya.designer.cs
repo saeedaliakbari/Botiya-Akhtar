@@ -63,6 +63,9 @@ namespace Botiya
     partial void InserttblUser(tblUser instance);
     partial void UpdatetblUser(tblUser instance);
     partial void DeletetblUser(tblUser instance);
+    partial void InserttblEvent(tblEvent instance);
+    partial void UpdatetblEvent(tblEvent instance);
+    partial void DeletetblEvent(tblEvent instance);
     #endregion
 		
 		public BotiyaDataContext() : 
@@ -212,6 +215,14 @@ namespace Botiya
 			get
 			{
 				return this.GetTable<tblUser>();
+			}
+		}
+		
+		public System.Data.Linq.Table<tblEvent> tblEvents
+		{
+			get
+			{
+				return this.GetTable<tblEvent>();
 			}
 		}
 		
@@ -807,6 +818,20 @@ namespace Botiya
 		{
 			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), id);
 			return ((ISingleResult<FillUsersByIdResult>)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.FillEvent")]
+		public ISingleResult<FillEventResult> FillEvent()
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())));
+			return ((ISingleResult<FillEventResult>)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.InsertEvent")]
+		public int InsertEvent([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(50)")] string username, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="event", DbType="NVarChar(MAX)")] string @event, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(200)")] string time)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), username, @event, time);
+			return ((int)(result.ReturnValue));
 		}
 	}
 	
@@ -4179,6 +4204,140 @@ namespace Botiya
 					this._Password = value;
 					this.SendPropertyChanged("Password");
 					this.OnPasswordChanged();
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.tblEvent")]
+	public partial class tblEvent : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _Id;
+		
+		private string _event;
+		
+		private string _username;
+		
+		private string _time;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnIdChanging(int value);
+    partial void OnIdChanged();
+    partial void OneventChanging(string value);
+    partial void OneventChanged();
+    partial void OnusernameChanging(string value);
+    partial void OnusernameChanged();
+    partial void OntimeChanging(string value);
+    partial void OntimeChanged();
+    #endregion
+		
+		public tblEvent()
+		{
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Id", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public int Id
+		{
+			get
+			{
+				return this._Id;
+			}
+			set
+			{
+				if ((this._Id != value))
+				{
+					this.OnIdChanging(value);
+					this.SendPropertyChanging();
+					this._Id = value;
+					this.SendPropertyChanged("Id");
+					this.OnIdChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="event", Storage="_event", DbType="NVarChar(MAX)")]
+		public string @event
+		{
+			get
+			{
+				return this._event;
+			}
+			set
+			{
+				if ((this._event != value))
+				{
+					this.OneventChanging(value);
+					this.SendPropertyChanging();
+					this._event = value;
+					this.SendPropertyChanged("@event");
+					this.OneventChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_username", DbType="NVarChar(50)")]
+		public string username
+		{
+			get
+			{
+				return this._username;
+			}
+			set
+			{
+				if ((this._username != value))
+				{
+					this.OnusernameChanging(value);
+					this.SendPropertyChanging();
+					this._username = value;
+					this.SendPropertyChanged("username");
+					this.OnusernameChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_time", DbType="NVarChar(200)")]
+		public string time
+		{
+			get
+			{
+				return this._time;
+			}
+			set
+			{
+				if ((this._time != value))
+				{
+					this.OntimeChanging(value);
+					this.SendPropertyChanging();
+					this._time = value;
+					this.SendPropertyChanged("time");
+					this.OntimeChanged();
 				}
 			}
 		}
@@ -8557,6 +8716,68 @@ namespace Botiya
 				if ((this._Password != value))
 				{
 					this._Password = value;
+				}
+			}
+		}
+	}
+	
+	public partial class FillEventResult
+	{
+		
+		private int _Id;
+		
+		private string _event;
+		
+		private string _username;
+		
+		public FillEventResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Id", DbType="Int NOT NULL")]
+		public int Id
+		{
+			get
+			{
+				return this._Id;
+			}
+			set
+			{
+				if ((this._Id != value))
+				{
+					this._Id = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="event", Storage="_event", DbType="NVarChar(MAX)")]
+		public string @event
+		{
+			get
+			{
+				return this._event;
+			}
+			set
+			{
+				if ((this._event != value))
+				{
+					this._event = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_username", DbType="NChar(10)")]
+		public string username
+		{
+			get
+			{
+				return this._username;
+			}
+			set
+			{
+				if ((this._username != value))
+				{
+					this._username = value;
 				}
 			}
 		}

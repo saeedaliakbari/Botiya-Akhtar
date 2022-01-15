@@ -15,8 +15,9 @@ namespace Botiya
     {
         BotiyaDataContext db = new BotiyaDataContext();
         PersianCalendar pc = new PersianCalendar();
-        string strtoday = "";
+        public static string strtoday = "";
         public static int idUser = -1;
+        public static string userName = null;
         public frm_Main()
         {
             InitializeComponent();
@@ -94,6 +95,8 @@ namespace Botiya
             try
             {
                 bsUser.DataSource = db.FillUsersById(idUser);
+                userName = lblUsername.Text;
+                MessageBox.Show(userName);
                 lblMain.Text = "تاریخ امروز: " + strtoday;
             }
             catch
@@ -160,6 +163,7 @@ namespace Botiya
                 this.Cursor = Cursors.WaitCursor;
                 db.ExecuteCommand(@"BACKUP DATABASE " + db.Mapping.DatabaseName + " to DISK='" + str_filename + "'");
                 this.Cursor = Cursors.Default;
+                db.InsertEvent(userName, "پشتیبان گیری به تاریخ" + strtoday, strtoday + " " + DateTime.Now.ToString("HH:mm"));
                 MessageBox.Show("عملیات ذخیره سازی موفقیت آمیز بود");
             }
             catch (Exception ex)
@@ -195,6 +199,7 @@ namespace Botiya
                + " USE MASTER " +
                "  RESTORE DATABASE " + db.Mapping.DatabaseName + " from DISK='" + str_filename + "' with REPLACE");
                 this.Cursor = Cursors.Default;
+                db.InsertEvent(userName, "بازیابی فایل " + str_filename, strtoday + " " + DateTime.Now.ToString("HH:mm"));
                 MessageBox.Show("عملیات بازیابی پشتیبان موفقیت آمیز بود");
             }
             catch (Exception ex)

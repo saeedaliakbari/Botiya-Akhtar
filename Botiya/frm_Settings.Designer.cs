@@ -31,6 +31,7 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frm_Settings));
             this.txtAddress = new CustomControls.RJControls.RJTextBox();
+            this.bsSetting = new System.Windows.Forms.BindingSource(this.components);
             this.txtCodePosti = new CustomControls.RJControls.RJTextBox();
             this.txtCodeMelliNamayande = new CustomControls.RJControls.RJTextBox();
             this.txtNameNamayande = new CustomControls.RJControls.RJTextBox();
@@ -53,7 +54,6 @@
             this.BtnBack = new CustomControls.RJControls.RJButton();
             this.BtnSave = new CustomControls.RJControls.RJButton();
             this.label1 = new System.Windows.Forms.Label();
-            this.bsSetting = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.bsSetting)).BeginInit();
             this.SuspendLayout();
             // 
@@ -79,6 +79,10 @@
             this.txtAddress.TabIndex = 8;
             this.txtAddress.Texts = "";
             this.txtAddress.UnderlinedStyle = true;
+            // 
+            // bsSetting
+            // 
+            this.bsSetting.DataSource = typeof(Botiya.tblSetting);
             // 
             // txtCodePosti
             // 
@@ -461,10 +465,6 @@
             this.label1.TabIndex = 41;
             this.label1.Text = "تعیین مالیات بر ارزش افزوده";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // bsSetting
-            // 
-            this.bsSetting.DataSource = typeof(Botiya.tblSetting);
             // 
             // frm_Settings
             // 

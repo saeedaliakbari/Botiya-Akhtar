@@ -65,7 +65,6 @@
             this.BtnDelete = new CustomControls.RJControls.RJButton();
             this.BtnEdit = new CustomControls.RJControls.RJButton();
             this.dgvDaryafti = new System.Windows.Forms.DataGridView();
-            this.bsDaryaftha = new System.Windows.Forms.BindingSource(this.components);
             this.idDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.idQarardadDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.idBankDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -73,6 +72,7 @@
             this.shomareCheckDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.priceChekDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.bsDaryaftha = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.dgvQarardad)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bsViewQarardadPerson)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDaryafti)).BeginInit();
@@ -309,7 +309,7 @@
             this.btnAttach.Name = "btnAttach";
             this.btnAttach.Padding = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.btnAttach.Size = new System.Drawing.Size(140, 42);
-            this.btnAttach.TabIndex = 28;
+            this.btnAttach.TabIndex = 5;
             this.btnAttach.Text = "ثبت ضمیمه ";
             this.btnAttach.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnAttach.TextColor = System.Drawing.Color.SteelBlue;
@@ -333,7 +333,7 @@
             this.btnDaryafty.Name = "btnDaryafty";
             this.btnDaryafty.Padding = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.btnDaryafty.Size = new System.Drawing.Size(140, 42);
-            this.btnDaryafty.TabIndex = 27;
+            this.btnDaryafty.TabIndex = 4;
             this.btnDaryafty.Text = "ثبت دریافت ها";
             this.btnDaryafty.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnDaryafty.TextColor = System.Drawing.Color.SteelBlue;
@@ -357,7 +357,7 @@
             this.btnPrintFactor.Name = "btnPrintFactor";
             this.btnPrintFactor.Padding = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.btnPrintFactor.Size = new System.Drawing.Size(140, 42);
-            this.btnPrintFactor.TabIndex = 26;
+            this.btnPrintFactor.TabIndex = 7;
             this.btnPrintFactor.Text = "پرینت فاکتور";
             this.btnPrintFactor.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnPrintFactor.TextColor = System.Drawing.Color.SteelBlue;
@@ -382,7 +382,7 @@
             this.txtSearchFamily.PlaceholderColor = System.Drawing.Color.DarkGray;
             this.txtSearchFamily.PlaceholderText = "جستجو براساس نام خانوادگی یا نام شرکت";
             this.txtSearchFamily.Size = new System.Drawing.Size(536, 35);
-            this.txtSearchFamily.TabIndex = 25;
+            this.txtSearchFamily.TabIndex = 3;
             this.txtSearchFamily.Texts = "";
             this.txtSearchFamily.UnderlinedStyle = true;
             this.txtSearchFamily._TextChanged += new System.EventHandler(this.txtSearchFamily__TextChanged);
@@ -404,7 +404,7 @@
             this.btnPrint.Name = "btnPrint";
             this.btnPrint.Padding = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.btnPrint.Size = new System.Drawing.Size(140, 42);
-            this.btnPrint.TabIndex = 24;
+            this.btnPrint.TabIndex = 6;
             this.btnPrint.Text = "پرینت قرارداد";
             this.btnPrint.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnPrint.TextColor = System.Drawing.Color.SteelBlue;
@@ -428,7 +428,7 @@
             this.BtnAdd.Name = "BtnAdd";
             this.BtnAdd.Padding = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.BtnAdd.Size = new System.Drawing.Size(140, 42);
-            this.BtnAdd.TabIndex = 23;
+            this.BtnAdd.TabIndex = 0;
             this.BtnAdd.Text = "افزودن";
             this.BtnAdd.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.BtnAdd.TextColor = System.Drawing.Color.SteelBlue;
@@ -452,7 +452,7 @@
             this.BtnBack.Name = "BtnBack";
             this.BtnBack.Padding = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.BtnBack.Size = new System.Drawing.Size(140, 42);
-            this.BtnBack.TabIndex = 22;
+            this.BtnBack.TabIndex = 8;
             this.BtnBack.Text = "بازگشت";
             this.BtnBack.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.BtnBack.TextColor = System.Drawing.Color.SteelBlue;
@@ -477,7 +477,7 @@
             this.BtnDelete.Name = "BtnDelete";
             this.BtnDelete.Padding = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.BtnDelete.Size = new System.Drawing.Size(140, 42);
-            this.BtnDelete.TabIndex = 21;
+            this.BtnDelete.TabIndex = 1;
             this.BtnDelete.Text = "حذف";
             this.BtnDelete.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.BtnDelete.TextColor = System.Drawing.Color.SteelBlue;
@@ -502,7 +502,7 @@
             this.BtnEdit.Name = "BtnEdit";
             this.BtnEdit.Padding = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.BtnEdit.Size = new System.Drawing.Size(140, 42);
-            this.BtnEdit.TabIndex = 20;
+            this.BtnEdit.TabIndex = 2;
             this.BtnEdit.Text = "ویرایش";
             this.BtnEdit.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.BtnEdit.TextColor = System.Drawing.Color.SteelBlue;
@@ -533,10 +533,6 @@
             this.dgvDaryafti.Size = new System.Drawing.Size(252, 233);
             this.dgvDaryafti.TabIndex = 29;
             this.dgvDaryafti.Visible = false;
-            // 
-            // bsDaryaftha
-            // 
-            this.bsDaryaftha.DataSource = typeof(Botiya.ViewDaryaftiBank);
             // 
             // idDataGridViewTextBoxColumn1
             // 
@@ -586,6 +582,10 @@
             this.nameDataGridViewTextBoxColumn.HeaderText = "Name";
             this.nameDataGridViewTextBoxColumn.Name = "nameDataGridViewTextBoxColumn";
             this.nameDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // bsDaryaftha
+            // 
+            this.bsDaryaftha.DataSource = typeof(Botiya.ViewDaryaftiBank);
             // 
             // frm_Qarardadha
             // 

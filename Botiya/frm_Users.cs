@@ -48,6 +48,7 @@ namespace Botiya
                 {
                     errorProvider1.Clear();
                     db.InsertUsers(txtFName.Texts,txtLName.Texts,txtUserName.Texts,txtPassword.Texts);
+                    db.InsertEvent(frm_Main.userName, "اضافه کردن کاربر با نام کاربری " + txtUserName.Texts, frm_Main.strtoday + " " + DateTime.Now.ToString("HH:mm"));
                     MessageBoxFarsi.Show("کاربر جدید افزوده شد", "عملیات موفق", MessageBoxFarsiButtons.OK, MessageBoxFarsiIcon.Information, MessageBoxFarsiDefaultButton.Button1);
                     txtFName.Texts = String.Empty;
                     txtLName.Texts = String.Empty;
@@ -92,6 +93,7 @@ namespace Botiya
                 if (MessageBoxFarsi.Show("آیا کاربر " + dgvUsers.CurrentRow.Cells[3].Value + "  حذف گردد؟", "حذف", MessageBoxFarsiButtons.YesNo, MessageBoxFarsiIcon.Delete, MessageBoxFarsiDefaultButton.Button1) == DialogResult.Yes)
                 {
                     db.DeleteUser((int)dgvUsers.CurrentRow.Cells[0].Value);
+                    db.InsertEvent(frm_Main.userName, " حذف کاربر با نام کاربری " + dgvUsers.CurrentRow.Cells[3].Value, frm_Main.strtoday + " " + DateTime.Now.ToString("HH:mm"));
                     CheckDgv();
                 }
             }
@@ -171,6 +173,7 @@ namespace Botiya
                 {
                     errorProvider1.Clear();
                     db.UpdateUsers((int)dgvUsers.CurrentRow.Cells[0].Value,txtFName.Texts, txtLName.Texts, txtUserName.Texts, txtPassword.Texts);
+                    db.InsertEvent(frm_Main.userName, " بروز کردن کاربر با نام کاربری " + txtUserName.Texts, frm_Main.strtoday + " " + DateTime.Now.ToString("HH:mm"));
                     MessageBoxFarsi.Show("کاربر ویرایش افزوده شد", "عملیات موفق", MessageBoxFarsiButtons.OK, MessageBoxFarsiIcon.Information, MessageBoxFarsiDefaultButton.Button1);
                     txtFName.Texts = String.Empty;
                     txtLName.Texts = String.Empty;

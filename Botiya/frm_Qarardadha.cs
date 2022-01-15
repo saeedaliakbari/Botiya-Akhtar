@@ -88,6 +88,7 @@ namespace Botiya
                 if (MessageBoxFarsi.Show("آیا قرارداد  با مشخصات زیر حذف گردد؟" + "\n" + " شماره قرارداد: " + dgvQarardad.CurrentRow.Cells[8].Value + "\n" + " نام و نام خانوادگی مشتری: " + dgvQarardad.CurrentRow.Cells[2].Value + " " + dgvQarardad.CurrentRow.Cells[3].Value, "حذف", MessageBoxFarsiButtons.YesNo, MessageBoxFarsiIcon.Delete, MessageBoxFarsiDefaultButton.Button1) == DialogResult.Yes)
                 {
                     db.DeleteQarardad((int)dgvQarardad.CurrentRow.Cells[0].Value);
+                    db.InsertEvent(frm_Main.userName, "حذف قرارداد با شماره " + dgvQarardad.CurrentRow.Cells[8].Value, frm_Main.strtoday + " " + DateTime.Now.ToString("HH:mm"));
                     UpdateDb();
                 }
             }
