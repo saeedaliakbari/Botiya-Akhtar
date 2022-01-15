@@ -88,7 +88,7 @@
             this.label1.Margin = new System.Windows.Forms.Padding(0);
             this.label1.Name = "label1";
             this.label1.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.label1.Size = new System.Drawing.Size(998, 34);
+            this.label1.Size = new System.Drawing.Size(994, 34);
             this.label1.TabIndex = 2;
             this.label1.Text = "قراردادها";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -592,7 +592,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 23F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(998, 697);
+            this.ClientSize = new System.Drawing.Size(994, 693);
             this.ControlBox = false;
             this.Controls.Add(this.dgvDaryafti);
             this.Controls.Add(this.btnAttach);
@@ -612,6 +612,8 @@
             this.Name = "frm_Qarardadha";
             this.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.RightToLeftLayout = true;
+            this.ShowIcon = false;
+            this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Load += new System.EventHandler(this.frm_Qarardadha_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvQarardad)).EndInit();

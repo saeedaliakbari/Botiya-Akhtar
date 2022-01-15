@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
-using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
@@ -14,8 +13,6 @@ namespace Botiya
     public partial class frm_Main : Form
     {
         BotiyaDataContext db = new BotiyaDataContext();
-        PersianCalendar pc = new PersianCalendar();
-        public static string strtoday = "";
         public static int idUser = -1;
         public static string userName = null;
         public frm_Main()
@@ -91,13 +88,12 @@ namespace Botiya
 
         private void frm_Main_Load(object sender, EventArgs e)
         {
-            strtoday = pc.GetYear(DateTime.Now).ToString("0000") + "/" + pc.GetMonth(DateTime.Now).ToString("00") + "/" + pc.GetDayOfMonth(DateTime.Now).ToString("00");
             try
             {
                 bsUser.DataSource = db.FillUsersById(idUser);
                 userName = lblUsername.Text;
-                MessageBox.Show(userName);
-                lblMain.Text = "تاریخ امروز: " + strtoday;
+                //MessageBox.Show(userName);
+                lblMain.Text = "تاریخ امروز: " + frm_Login.strtoday;
             }
             catch
             {
@@ -145,7 +141,7 @@ namespace Botiya
         {
             SaveFileDialog sfd = new SaveFileDialog();
             string str_filename = string.Empty;
-            sfd.FileName = "backup_BeratAj_" + strtoday.Replace("/", "_");
+            sfd.FileName = "backup_BeratAj_" + frm_Login.strtoday.Replace("/", "_");
             sfd.Filter = @"backup files(*.bak)|*.bak|all files(*.*)|*.*";
             sfd.FilterIndex = 1;
             sfd.OverwritePrompt = true;
@@ -163,12 +159,12 @@ namespace Botiya
                 this.Cursor = Cursors.WaitCursor;
                 db.ExecuteCommand(@"BACKUP DATABASE " + db.Mapping.DatabaseName + " to DISK='" + str_filename + "'");
                 this.Cursor = Cursors.Default;
-                db.InsertEvent(userName, "پشتیبان گیری به تاریخ" + strtoday, strtoday + " " + DateTime.Now.ToString("HH:mm"));
-                MessageBox.Show("عملیات ذخیره سازی موفقیت آمیز بود");
+                db.InsertEvent(userName, "پشتیبان گیری به تاریخ" + frm_Login.strtoday, frm_Login.strtoday + " " + DateTime.Now.ToString("HH:mm"));
+                MessageBoxFarsi.Show("عملیات پشتیبان گیری با موفقیت انجام شد", "موفق", MessageBoxFarsiButtons.OK, MessageBoxFarsiIcon.Information, MessageBoxFarsiDefaultButton.Button1, true, false);
             }
             catch (Exception ex)
             {
-                MessageBox.Show("عملیات ذخیره سازی موفقیت آمیز نبود |" + ex.Message);
+                MessageBoxFarsi.Show("عملیات پشتیبان گیری با خطا مواجه شد\n" + ex.Message, "اخطار", MessageBoxFarsiButtons.OK, MessageBoxFarsiIcon.Error, MessageBoxFarsiDefaultButton.Button1, true, false);
             }
         }
 
@@ -199,12 +195,12 @@ namespace Botiya
                + " USE MASTER " +
                "  RESTORE DATABASE " + db.Mapping.DatabaseName + " from DISK='" + str_filename + "' with REPLACE");
                 this.Cursor = Cursors.Default;
-                db.InsertEvent(userName, "بازیابی فایل " + str_filename, strtoday + " " + DateTime.Now.ToString("HH:mm"));
-                MessageBox.Show("عملیات بازیابی پشتیبان موفقیت آمیز بود");
+                db.InsertEvent(userName, "بازیابی فایل " + str_filename, frm_Login.strtoday + " " + DateTime.Now.ToString("HH:mm"));
+                MessageBoxFarsi.Show("عملیات بازیابی اطلاعات با موفقیت انجام شد", "موفق", MessageBoxFarsiButtons.OK, MessageBoxFarsiIcon.Information, MessageBoxFarsiDefaultButton.Button1, true, false);
             }
             catch (Exception ex)
             {
-                MessageBox.Show("عملیات بازیابی پشتیبان موفقیت آمیز نبود|" + ex.Message);
+                MessageBoxFarsi.Show("عملیات بازیابی اطلاعات با خطا مواجه شد\n" + ex.Message, "اخطار", MessageBoxFarsiButtons.OK, MessageBoxFarsiIcon.Error, MessageBoxFarsiDefaultButton.Button1, true, false);
             }
         }
 

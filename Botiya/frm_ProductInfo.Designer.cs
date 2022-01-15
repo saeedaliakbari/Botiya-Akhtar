@@ -66,7 +66,7 @@
             this.label1.Margin = new System.Windows.Forms.Padding(0);
             this.label1.Name = "label1";
             this.label1.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.label1.Size = new System.Drawing.Size(580, 34);
+            this.label1.Size = new System.Drawing.Size(576, 34);
             this.label1.TabIndex = 2;
             this.label1.Text = "جزئیات محصول";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -433,7 +433,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 23F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(580, 425);
+            this.ClientSize = new System.Drawing.Size(576, 421);
             this.ControlBox = false;
             this.Controls.Add(this.cmbVahedAsli);
             this.Controls.Add(this.label7);
@@ -460,6 +460,8 @@
             this.Name = "frm_ProductInfo";
             this.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.RightToLeftLayout = true;
+            this.ShowIcon = false;
+            this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Load += new System.EventHandler(this.frm_ProductInfo_Load);
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();

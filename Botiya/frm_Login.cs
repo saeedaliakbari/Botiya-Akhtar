@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
@@ -13,6 +14,8 @@ namespace Botiya
     public partial class frm_Login : Form
     {
         BotiyaDataContext db = new BotiyaDataContext();
+        PersianCalendar pc = new PersianCalendar();
+        public static string strtoday = "";
         public frm_Login()
         {
             InitializeComponent();
@@ -46,12 +49,12 @@ namespace Botiya
                     if (idUser == null)
                     {
                         errorProvider1.SetError(txtUserName, "نام کاربری یا رمزعبور اشتباه است");
-                        db.InsertEvent(txtUserName.Texts, "اشتباه در وارد کردن رمز عبور یا نام کاربری",DateTime.Now.ToString());
+                        db.InsertEvent(txtUserName.Texts, "اشتباه در وارد کردن رمز عبور یا نام کاربری", strtoday + " " + DateTime.Now.ToString("HH:mm"));
                         txtUserName.Focus();
                     }
                     else
                     {
-                        db.InsertEvent(txtUserName.Texts, "ورود موفقیت آمیز", DateTime.Now.ToString());
+                        db.InsertEvent(txtUserName.Texts, "ورود موفقیت آمیز", strtoday + " " + DateTime.Now.ToString("HH:mm"));
                         frm_Main.idUser = (int)idUser;
                         new frm_Main().ShowDialog();
                     }
@@ -65,6 +68,7 @@ namespace Botiya
 
         private void frm_Login_Load(object sender, EventArgs e)
         {
+            strtoday = pc.GetYear(DateTime.Now).ToString("0000") + "/" + pc.GetMonth(DateTime.Now).ToString("00") + "/" + pc.GetDayOfMonth(DateTime.Now).ToString("00");
             //MessageBox.Show(DateTime.Now.ToString());
             //MessageBox.Show(DateTime.Now.ToString("HH:mm"));
         }

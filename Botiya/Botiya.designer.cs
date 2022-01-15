@@ -784,13 +784,6 @@ namespace Botiya
 			return ((int)(result.ReturnValue));
 		}
 		
-		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.FillUsers")]
-		public ISingleResult<FillUsersResult> FillUsers()
-		{
-			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())));
-			return ((ISingleResult<FillUsersResult>)(result.ReturnValue));
-		}
-		
 		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.InsertUsers")]
 		public int InsertUsers([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(50)")] string fName, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="NVarChar(100)")] string lName, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="UserName", DbType="NVarChar(50)")] string userName, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Password", DbType="NVarChar(50)")] string password)
 		{
@@ -832,6 +825,13 @@ namespace Botiya
 		{
 			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), username, @event, time);
 			return ((int)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.FillUsers")]
+		public ISingleResult<FillUsersResult> FillUsers()
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())));
+			return ((ISingleResult<FillUsersResult>)(result.ReturnValue));
 		}
 	}
 	
@@ -3627,7 +3627,7 @@ namespace Botiya
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Image", DbType="Image", CanBeNull=true, UpdateCheck=UpdateCheck.Never)]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Image", DbType="Image", UpdateCheck=UpdateCheck.Never)]
 		public System.Data.Linq.Binary Image
 		{
 			get
@@ -8054,7 +8054,7 @@ namespace Botiya
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Image", DbType="Image", CanBeNull=true)]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Image", DbType="Image")]
 		public System.Data.Linq.Binary Image
 		{
 			get
@@ -8134,7 +8134,7 @@ namespace Botiya
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Image", DbType="Image", CanBeNull=true)]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Image", DbType="Image")]
 		public System.Data.Linq.Binary Image
 		{
 			get
@@ -8525,104 +8525,6 @@ namespace Botiya
 		}
 	}
 	
-	public partial class FillUsersResult
-	{
-		
-		private int _Id;
-		
-		private string _fName;
-		
-		private string _lName;
-		
-		private string _UserName;
-		
-		private string _Password;
-		
-		public FillUsersResult()
-		{
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Id", DbType="Int NOT NULL")]
-		public int Id
-		{
-			get
-			{
-				return this._Id;
-			}
-			set
-			{
-				if ((this._Id != value))
-				{
-					this._Id = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_fName", DbType="NVarChar(50)")]
-		public string fName
-		{
-			get
-			{
-				return this._fName;
-			}
-			set
-			{
-				if ((this._fName != value))
-				{
-					this._fName = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_lName", DbType="NVarChar(100)")]
-		public string lName
-		{
-			get
-			{
-				return this._lName;
-			}
-			set
-			{
-				if ((this._lName != value))
-				{
-					this._lName = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_UserName", DbType="NVarChar(50)")]
-		public string UserName
-		{
-			get
-			{
-				return this._UserName;
-			}
-			set
-			{
-				if ((this._UserName != value))
-				{
-					this._UserName = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Password", DbType="NVarChar(50)")]
-		public string Password
-		{
-			get
-			{
-				return this._Password;
-			}
-			set
-			{
-				if ((this._Password != value))
-				{
-					this._Password = value;
-				}
-			}
-		}
-	}
-	
 	public partial class FillUsersByIdResult
 	{
 		
@@ -8778,6 +8680,104 @@ namespace Botiya
 				if ((this._username != value))
 				{
 					this._username = value;
+				}
+			}
+		}
+	}
+	
+	public partial class FillUsersResult
+	{
+		
+		private int _Id;
+		
+		private string _fName;
+		
+		private string _lName;
+		
+		private string _UserName;
+		
+		private string _Password;
+		
+		public FillUsersResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Id", DbType="Int NOT NULL")]
+		public int Id
+		{
+			get
+			{
+				return this._Id;
+			}
+			set
+			{
+				if ((this._Id != value))
+				{
+					this._Id = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_fName", DbType="NVarChar(50)")]
+		public string fName
+		{
+			get
+			{
+				return this._fName;
+			}
+			set
+			{
+				if ((this._fName != value))
+				{
+					this._fName = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_lName", DbType="NVarChar(100)")]
+		public string lName
+		{
+			get
+			{
+				return this._lName;
+			}
+			set
+			{
+				if ((this._lName != value))
+				{
+					this._lName = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_UserName", DbType="NVarChar(50)")]
+		public string UserName
+		{
+			get
+			{
+				return this._UserName;
+			}
+			set
+			{
+				if ((this._UserName != value))
+				{
+					this._UserName = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Password", DbType="NVarChar(50)")]
+		public string Password
+		{
+			get
+			{
+				return this._Password;
+			}
+			set
+			{
+				if ((this._Password != value))
+				{
+					this._Password = value;
 				}
 			}
 		}

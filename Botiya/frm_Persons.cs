@@ -83,7 +83,7 @@ namespace Botiya
                     if (resultIdPerson == null)
                     {
                         db.DeletePerson((int)dgvPesons.CurrentRow.Cells[0].Value);
-                        db.InsertEvent(frm_Main.userName, "حذف مشتری با آیدی " + dgvPesons.CurrentRow.Cells[0].Value, frm_Main.strtoday + " " + DateTime.Now.ToString("HH:mm"));
+                        db.InsertEvent(frm_Main.userName, "حذف مشتری با آیدی " + dgvPesons.CurrentRow.Cells[0].Value, frm_Login.strtoday + " " + DateTime.Now.ToString("HH:mm"));
                         UpdateDb();
                     }
                     else

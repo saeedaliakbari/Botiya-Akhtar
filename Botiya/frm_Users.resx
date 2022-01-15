@@ -151,9 +151,6 @@
   <metadata name="bsUsers.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>251, 17</value>
   </metadata>
-  <metadata name="bsUsers.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>251, 17</value>
-  </metadata>
   <data name="BtnDelete.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABwAAAAcCAYAAAByDd+UAAAABGdBTUEAALGPC/xhBQAAAYFJREFUSEvt
@@ -211,15 +208,15 @@
   </metadata>
   <data name="btnShowHide.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
-        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAG1SURBVDhPrVNLLwRBEF4Rz/gDInFykIiTAxJkrZnudRDidXLh5JH1G2a6l6ODg4S44DY329Ub
-        Nz+AmzgIEiHixMEjsh47qmZ7Zq3HwaOSSndXffV1fTU9MVvqOcsFHvutWWnVxQRcc1cPmtDP7SsSLjIt
-        XILFBXRbjmo04e8tIpGwhusJul/iEg7QZ8Y8r9yUlFr/craKOTCFoDwX6oW5sMKkGsKuRpBgCz0fELmw
-        96kjS+hWJvR5UsKwLdQ0E+qW5LSt7lcQMWGQbDQiEXDFne2moDiRVg0YuDSJp1A3k/oeSR8x9oxdpQKS
-        QiehrFO+sFMfw5sO3wV9W8AEgZNCzeM5vPFpwFG1Rk6EpVokgOP3QdIdd3arqeWQBDG5ziWv5iMBXnYU
-        Y45qxsNNMaE3qAN6YFzo8YBEwj3NBNf1Ig7uojnYrurDQM4k8EY9QvExx6uktTATwMHCq8E84L6XcpFZ
-        6WwHtnQWkthSbRIRdcFkNsHcTIo+MeZw4LrdlJVa3PHqmKsXEXRhiELPcamT3FWTuL8hOabkG/P9MtLH
-        0rqHPisWtYUvMJDz13/nf0hQEhMw+wb4NUugSQ24OQAAAABJRU5ErkJggg==
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAbVJREFUOE+t
+        U0svBEEQXhHP+AMicXKQiJMDEmStme51EOJ1cuHkkfUbZrqXo4ODhLjgNjfb1Rs3P4CbOAgSIeLEwSOy
+        HjuqZntmrcfBo5JKd1d99XV9NT0xW+o5ywUe+61ZadXFBFxzVw+a0M/tKxIuMi1cgsUFdFuOajTh7y0i
+        kbCG6wm6X+ISDtBnxjyv3JSUWv9ytoo5MIWgPBfqhbmwwqQawq5GkGALPR8QubD3qSNL6FYm9HlSwrAt
+        1DQT6pbktK3uVxAxYZBsNCIRcMWd7aagOJFWDRi4NImnUDeT+h5JHzH2jF2lApJCJ6GsU76wUx/Dmw7f
+        BX1bwASBk0LN4zm88WnAUbVGToSlWiSA4/dB0h13dqup5ZAEMbnOJa/mIwFedhRjjmrGw00xoTeoA3pg
+        XOjxgETCPc0E1/UiDu6iOdiu6sNAziTwRj1C8THHq6S1MBPAwcKrwTzgvpdykVnpbAe2dBaS2FJtEhF1
+        wWQ2wdxMij4x5nDgut2UlVrc8eqYqxcRdGGIQs9xqZPcVZO4vyE5puQb8/0y0sfSuoc+Kxa1hS8wkPPX
+        f+d/SFASEzD7Bvg1S6BJDbg5AAAAAElFTkSuQmCC
 </value>
   </data>
   <data name="errorProvider1.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">

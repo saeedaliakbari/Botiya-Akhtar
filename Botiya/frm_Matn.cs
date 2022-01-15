@@ -28,7 +28,7 @@ namespace Botiya
             try
             {
                 db.UpdateMatnQarardad(txtMade1.Texts, txtMade2.Texts, txtMade3.Texts, txtMade4.Texts, txtMade5.Texts, txtMade6.Texts, txtMade7.Texts, txtMade8.Texts, txtMade9.Texts, txtMade10.Texts, txtMade11.Texts, txtMade12.Texts, txtMade13.Texts, txtMade14.Texts, txtMade15.Texts);
-                db.InsertEvent(frm_Main.userName, "بروز رسانی متن قر ارداد ", frm_Main.strtoday + " " + DateTime.Now.ToString("HH:mm"));
+                db.InsertEvent(frm_Main.userName, "بروز رسانی متن قر ارداد ", frm_Login.strtoday + " " + DateTime.Now.ToString("HH:mm"));
                 MessageBoxFarsi.Show("متن قرارداد ثبت شد", "عملیات موفق", MessageBoxFarsiButtons.OK, MessageBoxFarsiIcon.Information, MessageBoxFarsiDefaultButton.Button1);
             }
             catch

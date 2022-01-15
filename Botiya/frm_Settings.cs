@@ -56,7 +56,7 @@ namespace Botiya
             try
             {
                 db.UpdatetblSetting(txtNameSherkat.Texts, txtShomareSabt.Texts, txtCodeEqtesadi.Texts, txtNameNamayande.Texts, txtFamilyNamayande.Texts, txtCodeMelliNamayande.Texts, txtSematNamayande.Texts, txtCodePosti.Texts, txtAddress.Texts, Convert.ToDouble(txtMaliyat.Texts));
-                db.InsertEvent(frm_Main.userName, "بروزرسانی تنظیمات  ", frm_Main.strtoday + " " + DateTime.Now.ToString("HH:mm"));
+                db.InsertEvent(frm_Main.userName, "بروزرسانی تنظیمات  ", frm_Login.strtoday + " " + DateTime.Now.ToString("HH:mm"));
                 MessageBoxFarsi.Show("تنظیمات بروزرسانی شد", "عملیات موفق", MessageBoxFarsiButtons.OK, MessageBoxFarsiIcon.Information, MessageBoxFarsiDefaultButton.Button1);
             }
             catch

@@ -78,7 +78,7 @@ namespace Botiya
                 else
                 {
                     db.InsertDaryaft(idQarardad, (int)cmbBankAsli.SelectedValue, txtDateSar.Texts, txtShomareCheck.Texts, Convert.ToDouble(txtPrice.Texts));
-                    db.InsertEvent(frm_Main.userName, "ثبت دریافت برای قرارداد ایدی" + idQarardad, frm_Main.strtoday + " " + DateTime.Now.ToString("HH:mm"));
+                    db.InsertEvent(frm_Main.userName, "ثبت دریافت برای قرارداد ایدی" + idQarardad, frm_Login.strtoday + " " + DateTime.Now.ToString("HH:mm"));
                     updateDb();
                     MessageBoxFarsi.Show("دریافتی جدید ثبت شد", "عملیات موفق", MessageBoxFarsiButtons.OK, MessageBoxFarsiIcon.Information, MessageBoxFarsiDefaultButton.Button1);
                 }
@@ -154,7 +154,7 @@ namespace Botiya
                 else
                 {
                     db.UpdateDaryaft(idDaryafti, (int)cmbBankAsli.SelectedValue, txtDateSar.Texts, txtShomareCheck.Texts, Convert.ToDouble(txtPrice.Texts));
-                    db.InsertEvent(frm_Main.userName, "بروزرسانی دریافت برای قرارداد ایدی" + idQarardad, frm_Main.strtoday + " " + DateTime.Now.ToString("HH:mm"));
+                    db.InsertEvent(frm_Main.userName, "بروزرسانی دریافت برای قرارداد ایدی" + idQarardad, frm_Login.strtoday + " " + DateTime.Now.ToString("HH:mm"));
                     updateDb();
                     MessageBoxFarsi.Show("دریافتی بروزرسانی شد", "عملیات موفق", MessageBoxFarsiButtons.OK, MessageBoxFarsiIcon.Information, MessageBoxFarsiDefaultButton.Button1);
                     txtDateSar.Texts = pc.GetYear(DateTime.Now).ToString("0000") + "/" + pc.GetMonth(DateTime.Now).ToString("00") + "/" + pc.GetDayOfMonth(DateTime.Now).ToString("00");
@@ -182,7 +182,7 @@ namespace Botiya
                 if (MessageBoxFarsi.Show("آیا  دریافتی  با مشخصات زیر حذف گردد؟" + "\n" + " شماره چک: " + dgvDaryafti.CurrentRow.Cells[3].Value + " \n مبلغ: " + dgvDaryafti.CurrentRow.Cells[6].Value + " \n تاریخ سررسید: " + dgvDaryafti.CurrentRow.Cells[4].Value, "حذف", MessageBoxFarsiButtons.YesNo, MessageBoxFarsiIcon.Delete, MessageBoxFarsiDefaultButton.Button1) == DialogResult.Yes)
                 {
                     db.DeleteDaryafti((int)dgvDaryafti.CurrentRow.Cells[0].Value);
-                    db.InsertEvent(frm_Main.userName, "حذف دریافت برای قرارداد ایدی" + dgvDaryafti.CurrentRow.Cells[0].Value, frm_Main.strtoday + " " + DateTime.Now.ToString("HH:mm"));
+                    db.InsertEvent(frm_Main.userName, "حذف دریافت برای قرارداد ایدی" + dgvDaryafti.CurrentRow.Cells[0].Value, frm_Login.strtoday + " " + DateTime.Now.ToString("HH:mm"));
                     updateDb();
                 }
             }

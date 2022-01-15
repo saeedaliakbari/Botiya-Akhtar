@@ -135,7 +135,7 @@
             this.BtnAdd.Name = "BtnAdd";
             this.BtnAdd.Padding = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.BtnAdd.Size = new System.Drawing.Size(140, 42);
-            this.BtnAdd.TabIndex = 3;
+            this.BtnAdd.TabIndex = 1;
             this.BtnAdd.Text = "افزودن";
             this.BtnAdd.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.BtnAdd.TextColor = System.Drawing.Color.SteelBlue;
@@ -247,7 +247,7 @@
             this.BtnOk.Name = "BtnOk";
             this.BtnOk.Padding = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.BtnOk.Size = new System.Drawing.Size(140, 42);
-            this.BtnOk.TabIndex = 1;
+            this.BtnOk.TabIndex = 3;
             this.BtnOk.Text = "تایید";
             this.BtnOk.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.BtnOk.TextColor = System.Drawing.Color.SteelBlue;
@@ -264,7 +264,7 @@
             this.label1.Margin = new System.Windows.Forms.Padding(0);
             this.label1.Name = "label1";
             this.label1.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.label1.Size = new System.Drawing.Size(461, 34);
+            this.label1.Size = new System.Drawing.Size(457, 34);
             this.label1.TabIndex = 33;
             this.label1.Text = "بانک";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -279,7 +279,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 23F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(461, 441);
+            this.ClientSize = new System.Drawing.Size(457, 437);
             this.ControlBox = false;
             this.Controls.Add(this.txtName);
             this.Controls.Add(this.BtnDelete);
@@ -296,6 +296,8 @@
             this.Name = "frm_Banks";
             this.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.RightToLeftLayout = true;
+            this.ShowIcon = false;
+            this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Load += new System.EventHandler(this.frm_Banks_Load);
             ((System.ComponentModel.ISupportInitialize)(this.bsBank)).EndInit();

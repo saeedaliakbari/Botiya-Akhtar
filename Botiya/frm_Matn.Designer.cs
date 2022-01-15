@@ -543,7 +543,7 @@
             this.label8.Margin = new System.Windows.Forms.Padding(0);
             this.label8.Name = "label8";
             this.label8.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.label8.Size = new System.Drawing.Size(1022, 34);
+            this.label8.Size = new System.Drawing.Size(1018, 34);
             this.label8.TabIndex = 43;
             this.label8.Text = "متن قراداد";
             this.label8.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -691,7 +691,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 23F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1022, 766);
+            this.ClientSize = new System.Drawing.Size(1018, 762);
             this.ControlBox = false;
             this.Controls.Add(this.BtnBack);
             this.Controls.Add(this.label8);
@@ -701,6 +701,8 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "frm_Matn";
+            this.ShowIcon = false;
+            this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Load += new System.EventHandler(this.frm_Matn_Load);
             ((System.ComponentModel.ISupportInitialize)(this.bsMatnQarardad)).EndInit();

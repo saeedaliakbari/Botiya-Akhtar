@@ -214,7 +214,7 @@
             this.label1.Margin = new System.Windows.Forms.Padding(0);
             this.label1.Name = "label1";
             this.label1.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.label1.Size = new System.Drawing.Size(461, 34);
+            this.label1.Size = new System.Drawing.Size(457, 34);
             this.label1.TabIndex = 24;
             this.label1.Text = "واحد";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -278,7 +278,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 23F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(461, 441);
+            this.ClientSize = new System.Drawing.Size(457, 437);
             this.ControlBox = false;
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.BtnOk);
@@ -295,6 +295,8 @@
             this.Name = "frm_Vaheds";
             this.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.RightToLeftLayout = true;
+            this.ShowIcon = false;
+            this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Load += new System.EventHandler(this.frm_Vaheds_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvVaheds)).EndInit();

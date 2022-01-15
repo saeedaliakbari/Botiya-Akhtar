@@ -61,7 +61,7 @@
             this.label1.Margin = new System.Windows.Forms.Padding(0);
             this.label1.Name = "label1";
             this.label1.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.label1.Size = new System.Drawing.Size(1004, 34);
+            this.label1.Size = new System.Drawing.Size(1000, 34);
             this.label1.TabIndex = 0;
             this.label1.Text = "مشتریان";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -300,7 +300,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 23F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1004, 637);
+            this.ClientSize = new System.Drawing.Size(1000, 633);
             this.ControlBox = false;
             this.Controls.Add(this.txtSearchFamily);
             this.Controls.Add(this.BtnDelete);
@@ -315,6 +315,8 @@
             this.Name = "frm_Persons";
             this.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.RightToLeftLayout = true;
+            this.ShowIcon = false;
+            this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Load += new System.EventHandler(this.frm_Persons_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvPesons)).EndInit();

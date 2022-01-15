@@ -75,7 +75,7 @@
             this.label1.Margin = new System.Windows.Forms.Padding(0);
             this.label1.Name = "label1";
             this.label1.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.label1.Size = new System.Drawing.Size(683, 34);
+            this.label1.Size = new System.Drawing.Size(675, 34);
             this.label1.TabIndex = 3;
             this.label1.Text = "ثبت دریافت ها";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -279,7 +279,7 @@
             this.cmbBank.MinimumSize = new System.Drawing.Size(200, 30);
             this.cmbBank.Name = "cmbBank";
             this.cmbBank.Padding = new System.Windows.Forms.Padding(2);
-            this.cmbBank.Size = new System.Drawing.Size(200, 35);
+            this.cmbBank.Size = new System.Drawing.Size(200, 38);
             this.cmbBank.TabIndex = 1;
             this.cmbBank.Texts = "";
             this.cmbBank.ValueMember = "Id";
@@ -524,7 +524,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 23F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(683, 425);
+            this.ClientSize = new System.Drawing.Size(675, 425);
             this.ControlBox = false;
             this.Controls.Add(this.BtnOk);
             this.Controls.Add(this.btnCancel);
@@ -552,6 +552,8 @@
             this.Name = "frm_Daryaftha";
             this.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.RightToLeftLayout = true;
+            this.ShowIcon = false;
+            this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Load += new System.EventHandler(this.frm_Daryaftha_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvDaryafti)).EndInit();

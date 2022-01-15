@@ -130,6 +130,7 @@
             // بانکToolStripMenuItem
             // 
             this.بانکToolStripMenuItem.ForeColor = System.Drawing.Color.Chocolate;
+            this.بانکToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("بانکToolStripMenuItem.Image")));
             this.بانکToolStripMenuItem.Name = "بانکToolStripMenuItem";
             this.بانکToolStripMenuItem.Size = new System.Drawing.Size(132, 28);
             this.بانکToolStripMenuItem.Text = "بانک";
@@ -173,6 +174,7 @@
             // 
             this.کاربرانToolStripMenuItem.BackColor = System.Drawing.Color.White;
             this.کاربرانToolStripMenuItem.ForeColor = System.Drawing.Color.Chocolate;
+            this.کاربرانToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("کاربرانToolStripMenuItem.Image")));
             this.کاربرانToolStripMenuItem.Name = "کاربرانToolStripMenuItem";
             this.کاربرانToolStripMenuItem.Size = new System.Drawing.Size(159, 28);
             this.کاربرانToolStripMenuItem.Text = "کاربران";
@@ -182,6 +184,7 @@
             // 
             this.متنقراردادToolStripMenuItem.BackColor = System.Drawing.Color.White;
             this.متنقراردادToolStripMenuItem.ForeColor = System.Drawing.Color.Chocolate;
+            this.متنقراردادToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("متنقراردادToolStripMenuItem.Image")));
             this.متنقراردادToolStripMenuItem.Name = "متنقراردادToolStripMenuItem";
             this.متنقراردادToolStripMenuItem.Size = new System.Drawing.Size(159, 28);
             this.متنقراردادToolStripMenuItem.Text = "متن قرارداد";
@@ -190,6 +193,7 @@
             // نرخارزشافزودهToolStripMenuItem
             // 
             this.نرخارزشافزودهToolStripMenuItem.ForeColor = System.Drawing.Color.Chocolate;
+            this.نرخارزشافزودهToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("نرخارزشافزودهToolStripMenuItem.Image")));
             this.نرخارزشافزودهToolStripMenuItem.Name = "نرخارزشافزودهToolStripMenuItem";
             this.نرخارزشافزودهToolStripMenuItem.Size = new System.Drawing.Size(159, 28);
             this.نرخارزشافزودهToolStripMenuItem.Text = "تنظیمات برنامه";
@@ -211,6 +215,7 @@
             // ذخیرهسازیToolStripMenuItem
             // 
             this.ذخیرهسازیToolStripMenuItem.ForeColor = System.Drawing.Color.Chocolate;
+            this.ذخیرهسازیToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("ذخیرهسازیToolStripMenuItem.Image")));
             this.ذخیرهسازیToolStripMenuItem.Name = "ذخیرهسازیToolStripMenuItem";
             this.ذخیرهسازیToolStripMenuItem.Size = new System.Drawing.Size(145, 28);
             this.ذخیرهسازیToolStripMenuItem.Text = "ذخیره سازی";
@@ -219,6 +224,7 @@
             // بازیابیToolStripMenuItem
             // 
             this.بازیابیToolStripMenuItem.ForeColor = System.Drawing.Color.Chocolate;
+            this.بازیابیToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("بازیابیToolStripMenuItem.Image")));
             this.بازیابیToolStripMenuItem.Name = "بازیابیToolStripMenuItem";
             this.بازیابیToolStripMenuItem.Size = new System.Drawing.Size(145, 28);
             this.بازیابیToolStripMenuItem.Text = "بازیابی";
@@ -565,6 +571,7 @@
             this.Controls.Add(this.menuStrip1);
             this.Font = new System.Drawing.Font("B Yekan", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.menuStrip1;
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "frm_Main";

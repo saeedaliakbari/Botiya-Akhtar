@@ -94,14 +94,14 @@ namespace Botiya
                     if (editMode)
                     {
                         db.UpdatePerson(idPerson, txtfName.Texts, txtLName.Texts, txtFatherName.Texts, txtCodeMelli.Texts, txtPhone.Texts, txtMobile.Texts, txtAddress.Texts, TgbHoghoghi.Checked ? 1 : 0, txtSherkatName.Texts);
-                        db.InsertEvent(frm_Main.userName, "بروز رسانی مشتری با کدملی " + txtCodeMelli.Texts + "شماره آیدی " + idPerson, frm_Main.strtoday + " " + DateTime.Now.ToString("HH:mm"));
+                        db.InsertEvent(frm_Main.userName, "بروز رسانی مشتری با کدملی " + txtCodeMelli.Texts + "شماره آیدی " + idPerson, frm_Login.strtoday + " " + DateTime.Now.ToString("HH:mm"));
                         MessageBoxFarsi.Show("مشتری ویرایش شد", "عملیات موفق", MessageBoxFarsiButtons.OK, MessageBoxFarsiIcon.Information, MessageBoxFarsiDefaultButton.Button1);
                         this.Close();
                     }
                     else
                     {
                         db.InsertPersons(txtfName.Texts, txtLName.Texts, txtFatherName.Texts, txtCodeMelli.Texts, txtPhone.Texts, txtMobile.Texts, txtAddress.Texts, TgbHoghoghi.Checked ? 1 : 0, txtSherkatName.Texts);
-                        db.InsertEvent(frm_Main.userName, "اضافه کردن مشتری با کدملی " + txtCodeMelli.Texts + "شماره آیدی " + idPerson, frm_Main.strtoday + " " + DateTime.Now.ToString("HH:mm"));
+                        db.InsertEvent(frm_Main.userName, "اضافه کردن مشتری با کدملی " + txtCodeMelli.Texts + "شماره آیدی " + idPerson, frm_Login.strtoday + " " + DateTime.Now.ToString("HH:mm"));
                         MessageBoxFarsi.Show("مشتری جدید افزوده شد", "عملیات موفق", MessageBoxFarsiButtons.OK, MessageBoxFarsiIcon.Information, MessageBoxFarsiDefaultButton.Button1);
                         clear();
                     }

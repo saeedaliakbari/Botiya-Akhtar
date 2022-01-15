@@ -41,7 +41,7 @@ namespace Botiya
                 {
                     errorProvider1.Clear();
                     db.UpdateVahed(idBank, txtName.Texts);
-                    db.InsertEvent(frm_Main.userName, "بروز کردن بانک "+txtName.Texts, frm_Main.strtoday + " " + DateTime.Now.ToString("HH:mm"));
+                    db.InsertEvent(frm_Main.userName, "بروز کردن بانک "+txtName.Texts, frm_Login.strtoday + " " + DateTime.Now.ToString("HH:mm"));
                     MessageBoxFarsi.Show("بانک ویرایش شد", "عملیات موفق", MessageBoxFarsiButtons.OK, MessageBoxFarsiIcon.Information, MessageBoxFarsiDefaultButton.Button1);
                     txtName.Texts = String.Empty;
                     nameBankCheck = String.Empty;
@@ -94,7 +94,7 @@ namespace Botiya
                 {
                     errorProvider1.Clear();
                     db.InsertBank(txtName.Texts);
-                    db.InsertEvent(frm_Main.userName, "اضافه کردن بانک " + txtName.Texts, frm_Main.strtoday + " " + DateTime.Now.ToString("HH:mm"));
+                    db.InsertEvent(frm_Main.userName, "اضافه کردن بانک " + txtName.Texts, frm_Login.strtoday + " " + DateTime.Now.ToString("HH:mm"));
                     MessageBoxFarsi.Show("بانک جدید افزوده شد", "عملیات موفق", MessageBoxFarsiButtons.OK, MessageBoxFarsiIcon.Information, MessageBoxFarsiDefaultButton.Button1);
                     txtName.Texts = String.Empty;
                     nameBankCheck = String.Empty;
@@ -152,7 +152,7 @@ namespace Botiya
                 if (MessageBoxFarsi.Show("آیا بانک " + dgvBanks.CurrentRow.Cells[1].Value + "  حذف گردد؟", "حذف", MessageBoxFarsiButtons.YesNo, MessageBoxFarsiIcon.Delete, MessageBoxFarsiDefaultButton.Button1) == DialogResult.Yes)
                 {
                     db.DeleteBank((int)dgvBanks.CurrentRow.Cells[0].Value);
-                    db.InsertEvent(frm_Main.userName, "حذف کردن بانک " + dgvBanks.CurrentRow.Cells[1].Value, frm_Main.strtoday + " " + DateTime.Now.ToString("HH:mm"));
+                    db.InsertEvent(frm_Main.userName, "حذف کردن بانک " + dgvBanks.CurrentRow.Cells[1].Value, frm_Login.strtoday + " " + DateTime.Now.ToString("HH:mm"));
                     bsBank.DataSource = db.FillBank();
                     CheckDgv();
                 }

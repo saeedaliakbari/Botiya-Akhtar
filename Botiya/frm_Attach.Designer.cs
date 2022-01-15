@@ -114,7 +114,7 @@
             this.label2.Margin = new System.Windows.Forms.Padding(0);
             this.label2.Name = "label2";
             this.label2.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.label2.Size = new System.Drawing.Size(815, 34);
+            this.label2.Size = new System.Drawing.Size(811, 34);
             this.label2.TabIndex = 46;
             this.label2.Text = "ثبت ضمیمه";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -430,7 +430,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 23F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(815, 510);
+            this.ClientSize = new System.Drawing.Size(811, 506);
             this.ControlBox = false;
             this.Controls.Add(this.btnViewPic);
             this.Controls.Add(this.BtnOk);
@@ -453,6 +453,8 @@
             this.Name = "frm_Attach";
             this.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.RightToLeftLayout = true;
+            this.ShowIcon = false;
+            this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Load += new System.EventHandler(this.frm_Attach_Load);
             ((System.ComponentModel.ISupportInitialize)(this.bsFile)).EndInit();

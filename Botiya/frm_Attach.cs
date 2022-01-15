@@ -59,7 +59,7 @@ namespace Botiya
                 try
                 {
                     db.InsertFile(idQararad, txtComment.Texts, fileBinary);
-                    db.InsertEvent(frm_Main.userName, "اضافه کردن فایل ضمیمه به قرارداد" +idQararad+"با توضیحات "+ txtComment.Texts, frm_Main.strtoday + " " + DateTime.Now.ToString("HH:mm"));
+                    db.InsertEvent(frm_Main.userName, "اضافه کردن فایل ضمیمه به قرارداد" +idQararad+"با توضیحات "+ txtComment.Texts, frm_Login.strtoday + " " + DateTime.Now.ToString("HH:mm"));
                     txtComment.Texts = string.Empty;
                     picAttach.Image = null;
                     updateDb();
@@ -110,7 +110,7 @@ namespace Botiya
                 if (MessageBoxFarsi.Show("آیا فایل ضمیمه  با مشخصات زیر حذف گردد؟" + "\n" + " توضیحات: " + dgvAttach.CurrentRow.Cells[2].Value , "حذف", MessageBoxFarsiButtons.YesNo, MessageBoxFarsiIcon.Delete, MessageBoxFarsiDefaultButton.Button1) == DialogResult.Yes)
                 {
                     db.DeleteFile((int)dgvAttach.CurrentRow.Cells[0].Value);
-                    db.InsertEvent(frm_Main.userName, "حذف کردن فایل ضمیمه به قرارداد" + idQararad + "با توضیحات " + dgvAttach.CurrentRow.Cells[2].Value, frm_Main.strtoday + " " + DateTime.Now.ToString("HH:mm"));
+                    db.InsertEvent(frm_Main.userName, "حذف کردن فایل ضمیمه به قرارداد" + idQararad + "با توضیحات " + dgvAttach.CurrentRow.Cells[2].Value, frm_Login.strtoday + " " + DateTime.Now.ToString("HH:mm"));
                     updateDb();
                 }
             }
@@ -187,7 +187,7 @@ namespace Botiya
                 try
                 {
                     db.UpdateFile(idFile, idQararad, txtComment.Texts, fileBinary);
-                    db.InsertEvent(frm_Main.userName, "بروز کردن فایل ضمیمه به قرارداد" + idQararad + "با توضیحات " + txtComment.Texts, frm_Main.strtoday + " " + DateTime.Now.ToString("HH:mm"));
+                    db.InsertEvent(frm_Main.userName, "بروز کردن فایل ضمیمه به قرارداد" + idQararad + "با توضیحات " + txtComment.Texts, frm_Login.strtoday + " " + DateTime.Now.ToString("HH:mm"));
                     txtComment.Texts = string.Empty;
                     picAttach.Image = null;
                     updateDb();

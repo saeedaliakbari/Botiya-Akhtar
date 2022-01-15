@@ -84,7 +84,7 @@
             this.label1.Location = new System.Drawing.Point(0, 0);
             this.label1.Margin = new System.Windows.Forms.Padding(0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(798, 34);
+            this.label1.Size = new System.Drawing.Size(794, 34);
             this.label1.TabIndex = 23;
             this.label1.Text = "انتخاب محصول";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -282,7 +282,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 23F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(798, 538);
+            this.ClientSize = new System.Drawing.Size(794, 534);
             this.ControlBox = false;
             this.Controls.Add(this.rdbCode);
             this.Controls.Add(this.rdbName);
@@ -299,6 +299,7 @@
             this.Name = "frm_Qarardad_SelectProduct";
             this.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.RightToLeftLayout = true;
+            this.ShowIcon = false;
             this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Load += new System.EventHandler(this.frm_Qarardad_SelectProduct_Load);
